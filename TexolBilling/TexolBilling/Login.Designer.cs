@@ -34,12 +34,9 @@
             this.TxtUserName = new System.Windows.Forms.TextBox();
             this.TxtPassword = new System.Windows.Forms.TextBox();
             this.BtnSignIn = new System.Windows.Forms.Button();
-            this.LblUserName = new System.Windows.Forms.Label();
-            this.LblPassword = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
@@ -47,7 +44,7 @@
             // UserName
             // 
             this.UserName.AutoSize = true;
-            this.UserName.Location = new System.Drawing.Point(179, 92);
+            this.UserName.Location = new System.Drawing.Point(92, 55);
             this.UserName.Name = "UserName";
             this.UserName.Size = new System.Drawing.Size(57, 13);
             this.UserName.TabIndex = 0;
@@ -56,7 +53,7 @@
             // Password
             // 
             this.Password.AutoSize = true;
-            this.Password.Location = new System.Drawing.Point(179, 158);
+            this.Password.Location = new System.Drawing.Point(96, 109);
             this.Password.Name = "Password";
             this.Password.Size = new System.Drawing.Size(53, 13);
             this.Password.TabIndex = 1;
@@ -65,14 +62,14 @@
             // TxtUserName
             // 
             this.TxtUserName.CausesValidation = false;
-            this.TxtUserName.Location = new System.Drawing.Point(337, 92);
+            this.TxtUserName.Location = new System.Drawing.Point(182, 52);
             this.TxtUserName.Name = "TxtUserName";
             this.TxtUserName.Size = new System.Drawing.Size(129, 20);
             this.TxtUserName.TabIndex = 2;
             // 
             // TxtPassword
             // 
-            this.TxtPassword.Location = new System.Drawing.Point(337, 158);
+            this.TxtPassword.Location = new System.Drawing.Point(182, 109);
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.Size = new System.Drawing.Size(129, 20);
             this.TxtPassword.TabIndex = 3;
@@ -81,29 +78,13 @@
             // 
             // BtnSignIn
             // 
-            this.BtnSignIn.Location = new System.Drawing.Point(283, 232);
+            this.BtnSignIn.Location = new System.Drawing.Point(133, 160);
             this.BtnSignIn.Name = "BtnSignIn";
-            this.BtnSignIn.Size = new System.Drawing.Size(75, 23);
+            this.BtnSignIn.Size = new System.Drawing.Size(51, 23);
             this.BtnSignIn.TabIndex = 4;
             this.BtnSignIn.Text = "Sign In";
             this.BtnSignIn.UseVisualStyleBackColor = true;
             this.BtnSignIn.Click += new System.EventHandler(this.BtnSignIn_Click);
-            // 
-            // LblUserName
-            // 
-            this.LblUserName.AutoSize = true;
-            this.LblUserName.Location = new System.Drawing.Point(522, 98);
-            this.LblUserName.Name = "LblUserName";
-            this.LblUserName.Size = new System.Drawing.Size(0, 13);
-            this.LblUserName.TabIndex = 5;
-            // 
-            // LblPassword
-            // 
-            this.LblPassword.AutoSize = true;
-            this.LblPassword.Location = new System.Drawing.Point(522, 161);
-            this.LblPassword.Name = "LblPassword";
-            this.LblPassword.Size = new System.Drawing.Size(0, 13);
-            this.LblPassword.TabIndex = 6;
             // 
             // errorProvider1
             // 
@@ -113,37 +94,22 @@
             // 
             this.errorProvider2.ContainerControl = this;
             // 
-            // label1
+            // button1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(272, 92);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(13, 16);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "*";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(272, 159);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(13, 16);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "*";
+            this.button1.Location = new System.Drawing.Point(215, 160);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(49, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Cancel";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 310);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.LblPassword);
-            this.Controls.Add(this.LblUserName);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnSignIn);
             this.Controls.Add(this.TxtPassword);
             this.Controls.Add(this.TxtUserName);
@@ -166,11 +132,8 @@
         private System.Windows.Forms.TextBox TxtUserName;
         private System.Windows.Forms.TextBox TxtPassword;
         private System.Windows.Forms.Button BtnSignIn;
-        private System.Windows.Forms.Label LblUserName;
-        private System.Windows.Forms.Label LblPassword;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

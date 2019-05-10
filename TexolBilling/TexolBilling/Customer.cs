@@ -149,9 +149,14 @@ namespace TexolBilling
             v.digitonly(e);
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void txtCphoneno_KeyPress(object sender, KeyPressEventArgs e)
         {
+            v.digitonly(e);
+        }
 
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

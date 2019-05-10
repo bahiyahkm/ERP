@@ -73,11 +73,16 @@ namespace TexolBilling
 
         private void TxtQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar)))
+            if (!(char.IsDigit(e.KeyChar)))
             {
                 e.Handled = true;
                 MessageBox.Show("Please enter the digits only");
             }
+        }
+
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

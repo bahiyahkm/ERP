@@ -31,50 +31,38 @@ namespace TexolBilling
         public bool Validation()
         {
             bool isValid = true;
-            if (txtPurchaseTranNo.Text == "")
+            if (txtPurchaseTNo.Text == "")
             {
-                errorProvider1.SetError(txtPurchaseTranNo, "Please enter the transactionNo");
+                errorProvider1.SetError(txtPurchaseTNo, "Please enter the transactionNo");
             }
             else
             {
-                errorProvider1.SetError(txtPurchaseTranNo, "");
+                errorProvider1.SetError(txtPurchaseTNo, "");
             }
-            if (txtPurchaseDate.Text == "")
+            if (CBName.SelectedItem == null)
             {
-                errorProvider2.SetError(txtPurchaseDate, "Please enter the purchase date");
+                errorProvider2.SetError(CBName, "Please select a name");
             }
             else
             {
-                errorProvider2.SetError(txtPurchaseDate, "");
+                errorProvider2.SetError(CBName, "");
             }
-            if (txtVendorId.Text == "")
+            if (CBPayMet.SelectedItem == null)
             {
-                errorProvider3.SetError(txtVendorId, "Please enter the vendorId");
+                errorProvider3.SetError(CBPayMet, "Please select a Payment Method");
             }
             else
             {
-                errorProvider3.SetError(txtVendorId, "");
+                errorProvider3.SetError(CBPayMet, "");
             }
-            if (txtPTotalAmont.Text == "")
-            {
-                errorProvider4.SetError(txtPTotalAmont, "Please enter the total amount");
-            }
-            else
-            {
-                errorProvider4.SetError(txtPTotalAmont, "");
-            }
+
+
             return isValid;
         }
 
-        private void txtPTotalAmont_KeyPress(object sender, KeyPressEventArgs e)
+        private void BtnCancel_Click(object sender, EventArgs e)
         {
-            if(!(char.IsDigit(e.KeyChar)||char.IsControl(e.KeyChar)))
-            {
-                e.Handled = true;
-                MessageBox.Show("Please enter the digits only");
-            }
-
-            
+            this.Close();
         }
     }
 }

@@ -41,42 +41,34 @@ namespace TexolBilling
             {
                 errorProvider1.SetError(txtSalesTranNo, "");
             }
-            if (txtSalesDate.Text == "")
+            if (dtpSales.Text == "")
             {
-                errorProvider2.SetError(txtSalesDate, "Please enter the Sales date");
+                errorProvider2.SetError(dtpSales, "Please Select the Sales date");
                 isValid = false;
             }
             else
             {
-                errorProvider2.SetError(txtSalesDate, "");
+                errorProvider2.SetError(dtpSales, "");
             }
-            if (txtSalSId.Text == "")
+            if (cbSPayMet.SelectedItem == null)
             {
-                errorProvider3.SetError(txtSalSId, "Please enter the Sales StaffId");
+                errorProvider3.SetError(cbSPayMet, "Please select the Payment Method");
                 isValid = false;
             }
             else
             {
-                errorProvider3.SetError(txtSalSId, "");
+                errorProvider3.SetError(cbSPayMet, "");
             }
-            if (txtCustomerId.Text == "")
+            if (cbSname.SelectedItem == null)
             {
-                errorProvider3.SetError(txtCustomerId, "Please enter the CustomerId");
+                errorProvider4.SetError(cbSname, "Please select the Name");
                 isValid = false;
             }
             else
             {
-                errorProvider3.SetError(txtCustomerId, "");
+                errorProvider4.SetError(cbSname, "");
             }
-            if (txtSTotalAmount.Text == "")
-            {
-                errorProvider4.SetError(txtSTotalAmount, "Please enter the Total Amount");
-                isValid = false;
-            }
-            else
-            {
-                errorProvider4.SetError(txtSTotalAmount, "");
-            }
+
             return isValid;
         }
 
@@ -87,6 +79,11 @@ namespace TexolBilling
                 e.Handled = true;
                 MessageBox.Show("Please enter the digits only");
             }
+        }
+
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

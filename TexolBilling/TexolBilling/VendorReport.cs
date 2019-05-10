@@ -10,22 +10,16 @@ using System.Windows.Forms;
 
 namespace TexolBilling
 {
-    public partial class Form1 : Form
+    public partial class VendorReport : Form
     {
-        public Form1()
+        public VendorReport()
         {
             InitializeComponent();
         }
 
-        private void addItemToolStripMenuItem_Click(object sender, EventArgs e)
+        private void BtnCancel_Click(object sender, EventArgs e)
         {
-            ItemAdd objItem = new ItemAdd();
-            objItem.Show();
-        }
-
-        private void masterToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
     }
 }

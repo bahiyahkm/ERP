@@ -56,6 +56,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblMessage = new System.Windows.Forms.Label();
+            this.BtnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
@@ -68,7 +69,7 @@
             // VendorName
             // 
             this.VendorName.AutoSize = true;
-            this.VendorName.Location = new System.Drawing.Point(223, 67);
+            this.VendorName.Location = new System.Drawing.Point(40, 23);
             this.VendorName.Name = "VendorName";
             this.VendorName.Size = new System.Drawing.Size(69, 13);
             this.VendorName.TabIndex = 0;
@@ -77,7 +78,7 @@
             // VendorAddress
             // 
             this.VendorAddress.AutoSize = true;
-            this.VendorAddress.Location = new System.Drawing.Point(223, 111);
+            this.VendorAddress.Location = new System.Drawing.Point(40, 67);
             this.VendorAddress.Name = "VendorAddress";
             this.VendorAddress.Size = new System.Drawing.Size(79, 13);
             this.VendorAddress.TabIndex = 1;
@@ -86,7 +87,7 @@
             // VendorCity
             // 
             this.VendorCity.AutoSize = true;
-            this.VendorCity.Location = new System.Drawing.Point(223, 154);
+            this.VendorCity.Location = new System.Drawing.Point(40, 110);
             this.VendorCity.Name = "VendorCity";
             this.VendorCity.Size = new System.Drawing.Size(58, 13);
             this.VendorCity.TabIndex = 2;
@@ -95,7 +96,7 @@
             // VendorState
             // 
             this.VendorState.AutoSize = true;
-            this.VendorState.Location = new System.Drawing.Point(223, 195);
+            this.VendorState.Location = new System.Drawing.Point(40, 151);
             this.VendorState.Name = "VendorState";
             this.VendorState.Size = new System.Drawing.Size(66, 13);
             this.VendorState.TabIndex = 3;
@@ -104,7 +105,7 @@
             // VendorZipCode
             // 
             this.VendorZipCode.AutoSize = true;
-            this.VendorZipCode.Location = new System.Drawing.Point(223, 234);
+            this.VendorZipCode.Location = new System.Drawing.Point(40, 194);
             this.VendorZipCode.Name = "VendorZipCode";
             this.VendorZipCode.Size = new System.Drawing.Size(81, 13);
             this.VendorZipCode.TabIndex = 4;
@@ -113,7 +114,7 @@
             // VendorAreaCode
             // 
             this.VendorAreaCode.AutoSize = true;
-            this.VendorAreaCode.Location = new System.Drawing.Point(223, 276);
+            this.VendorAreaCode.Location = new System.Drawing.Point(40, 236);
             this.VendorAreaCode.Name = "VendorAreaCode";
             this.VendorAreaCode.Size = new System.Drawing.Size(88, 13);
             this.VendorAreaCode.TabIndex = 5;
@@ -122,7 +123,7 @@
             // VendorPhoneNo
             // 
             this.VendorPhoneNo.AutoSize = true;
-            this.VendorPhoneNo.Location = new System.Drawing.Point(223, 317);
+            this.VendorPhoneNo.Location = new System.Drawing.Point(42, 280);
             this.VendorPhoneNo.Name = "VendorPhoneNo";
             this.VendorPhoneNo.Size = new System.Drawing.Size(86, 13);
             this.VendorPhoneNo.TabIndex = 6;
@@ -130,59 +131,59 @@
             // 
             // txtVname
             // 
-            this.txtVname.Location = new System.Drawing.Point(385, 64);
+            this.txtVname.Location = new System.Drawing.Point(206, 20);
             this.txtVname.Name = "txtVname";
-            this.txtVname.Size = new System.Drawing.Size(100, 20);
+            this.txtVname.Size = new System.Drawing.Size(153, 20);
             this.txtVname.TabIndex = 7;
             // 
             // txtVaddress
             // 
-            this.txtVaddress.Location = new System.Drawing.Point(385, 108);
+            this.txtVaddress.Location = new System.Drawing.Point(206, 64);
             this.txtVaddress.Name = "txtVaddress";
-            this.txtVaddress.Size = new System.Drawing.Size(100, 20);
+            this.txtVaddress.Size = new System.Drawing.Size(153, 20);
             this.txtVaddress.TabIndex = 8;
             // 
             // txtVcity
             // 
-            this.txtVcity.Location = new System.Drawing.Point(385, 151);
+            this.txtVcity.Location = new System.Drawing.Point(206, 107);
             this.txtVcity.Name = "txtVcity";
-            this.txtVcity.Size = new System.Drawing.Size(100, 20);
+            this.txtVcity.Size = new System.Drawing.Size(153, 20);
             this.txtVcity.TabIndex = 9;
             // 
             // txtVstate
             // 
-            this.txtVstate.Location = new System.Drawing.Point(385, 192);
+            this.txtVstate.Location = new System.Drawing.Point(206, 148);
             this.txtVstate.Name = "txtVstate";
-            this.txtVstate.Size = new System.Drawing.Size(100, 20);
+            this.txtVstate.Size = new System.Drawing.Size(153, 20);
             this.txtVstate.TabIndex = 10;
             // 
             // txtVzipcode
             // 
-            this.txtVzipcode.Location = new System.Drawing.Point(385, 231);
+            this.txtVzipcode.Location = new System.Drawing.Point(206, 187);
             this.txtVzipcode.Name = "txtVzipcode";
-            this.txtVzipcode.Size = new System.Drawing.Size(100, 20);
+            this.txtVzipcode.Size = new System.Drawing.Size(153, 20);
             this.txtVzipcode.TabIndex = 11;
             // 
             // txtVareacode
             // 
-            this.txtVareacode.Location = new System.Drawing.Point(385, 273);
+            this.txtVareacode.Location = new System.Drawing.Point(206, 229);
             this.txtVareacode.Name = "txtVareacode";
-            this.txtVareacode.Size = new System.Drawing.Size(100, 20);
+            this.txtVareacode.Size = new System.Drawing.Size(153, 20);
             this.txtVareacode.TabIndex = 12;
             // 
             // txtVphoneno
             // 
-            this.txtVphoneno.Location = new System.Drawing.Point(385, 314);
+            this.txtVphoneno.Location = new System.Drawing.Point(206, 270);
             this.txtVphoneno.Name = "txtVphoneno";
-            this.txtVphoneno.Size = new System.Drawing.Size(100, 20);
+            this.txtVphoneno.Size = new System.Drawing.Size(153, 20);
             this.txtVphoneno.TabIndex = 13;
             this.txtVphoneno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVphoneno_KeyPress);
             // 
             // BtnAdd
             // 
-            this.BtnAdd.Location = new System.Drawing.Point(318, 368);
+            this.BtnAdd.Location = new System.Drawing.Point(115, 325);
             this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(75, 23);
+            this.BtnAdd.Size = new System.Drawing.Size(72, 23);
             this.BtnAdd.TabIndex = 14;
             this.BtnAdd.Text = "Add Vendor";
             this.BtnAdd.UseVisualStyleBackColor = true;
@@ -221,7 +222,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(323, 317);
+            this.label4.Location = new System.Drawing.Point(142, 280);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(17, 24);
             this.label4.TabIndex = 18;
@@ -232,7 +233,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(323, 276);
+            this.label1.Location = new System.Drawing.Point(140, 236);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(17, 24);
             this.label1.TabIndex = 19;
@@ -243,7 +244,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(323, 234);
+            this.label2.Location = new System.Drawing.Point(140, 194);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(17, 24);
             this.label2.TabIndex = 20;
@@ -254,7 +255,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(323, 67);
+            this.label3.Location = new System.Drawing.Point(140, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(17, 24);
             this.label3.TabIndex = 21;
@@ -263,16 +264,27 @@
             // lblMessage
             // 
             this.lblMessage.AutoSize = true;
-            this.lblMessage.Location = new System.Drawing.Point(318, 398);
+            this.lblMessage.Location = new System.Drawing.Point(318, 402);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(0, 13);
             this.lblMessage.TabIndex = 22;
+            // 
+            // BtnCancel
+            // 
+            this.BtnCancel.Location = new System.Drawing.Point(227, 325);
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Size = new System.Drawing.Size(72, 23);
+            this.BtnCancel.TabIndex = 23;
+            this.BtnCancel.Text = "Cancel";
+            this.BtnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // Vendor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -295,7 +307,7 @@
             this.Controls.Add(this.VendorName);
             this.Name = "Vendor";
             this.Text = "Vendor";
-            this.Load += new System.EventHandler(this.Vendor_Load);
+            
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
@@ -337,5 +349,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.Button BtnCancel;
     }
 }

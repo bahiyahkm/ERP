@@ -49,11 +49,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Biilling System.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Biilling System.Designer.cs">
+      <DependentUpon>Biilling System.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Customer.Designer.cs">
       <DependentUpon>Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerReport.Designer.cs">
+      <DependentUpon>CustomerReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -66,6 +78,12 @@
     </Compile>
     <Compile Include="ItemAdd.Designer.cs">
       <DependentUpon>ItemAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemReport.Designer.cs">
+      <DependentUpon>ItemReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -81,11 +99,11 @@
     <Compile Include="Purchase.Designer.cs">
       <DependentUpon>Purchase.cs</DependentUpon>
     </Compile>
-    <Compile Include="PurchaseItem.cs">
+    <Compile Include="PurchaseReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PurchaseItem.Designer.cs">
-      <DependentUpon>PurchaseItem.cs</DependentUpon>
+    <Compile Include="PurchaseReport.Designer.cs">
+      <DependentUpon>PurchaseReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Sales.cs">
       <SubType>Form</SubType>
@@ -93,11 +111,11 @@
     <Compile Include="Sales.Designer.cs">
       <DependentUpon>Sales.cs</DependentUpon>
     </Compile>
-    <Compile Include="SalesItem.cs">
+    <Compile Include="SalesReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SalesItem.Designer.cs">
-      <DependentUpon>SalesItem.cs</DependentUpon>
+    <Compile Include="SalesReport.Designer.cs">
+      <DependentUpon>SalesReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Validation.cs" />
     <Compile Include="Vendor.cs">
@@ -106,14 +124,29 @@
     <Compile Include="Vendor.Designer.cs">
       <DependentUpon>Vendor.cs</DependentUpon>
     </Compile>
+    <Compile Include="VendorReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VendorReport.Designer.cs">
+      <DependentUpon>VendorReport.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Biilling System.resx">
+      <DependentUpon>Biilling System.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerReport.resx">
+      <DependentUpon>CustomerReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ItemAdd.resx">
       <DependentUpon>ItemAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemReport.resx">
+      <DependentUpon>ItemReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -130,17 +163,20 @@
     <EmbeddedResource Include="Purchase.resx">
       <DependentUpon>Purchase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PurchaseItem.resx">
-      <DependentUpon>PurchaseItem.cs</DependentUpon>
+    <EmbeddedResource Include="PurchaseReport.resx">
+      <DependentUpon>PurchaseReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sales.resx">
       <DependentUpon>Sales.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SalesItem.resx">
-      <DependentUpon>SalesItem.cs</DependentUpon>
+    <EmbeddedResource Include="SalesReport.resx">
+      <DependentUpon>SalesReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vendor.resx">
       <DependentUpon>Vendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VendorReport.resx">
+      <DependentUpon>VendorReport.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

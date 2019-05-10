@@ -25,7 +25,7 @@ namespace TexolBilling
                 if (!(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar) || char.IsPunctuation(e.KeyChar)))
                 {
                     e.Handled = true;
-                    MessageBox.Show("Enter only digit and decimal point.", "Alert!");
+                    MessageBox.Show("Enter only digit", "Alert!");
                 }
             }
             catch { }

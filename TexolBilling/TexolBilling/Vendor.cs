@@ -96,19 +96,17 @@ namespace TexolBilling
             }
             return isValid;
         }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
         Validation v = new Validation();
         private void txtVphoneno_KeyPress(object sender, KeyPressEventArgs e)
         {
             v.digitonly(e);
         }
 
-        private void Vendor_Load(object sender, EventArgs e)
+        
+        private void BtnCancel_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

@@ -59,6 +59,10 @@
             this.errorProvider9 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.lblMessage = new System.Windows.Forms.Label();
+            this.BtnCancel = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
@@ -73,7 +77,7 @@
             // CustomNumber
             // 
             this.CustomNumber.AutoSize = true;
-            this.CustomNumber.Location = new System.Drawing.Point(238, 31);
+            this.CustomNumber.Location = new System.Drawing.Point(22, 28);
             this.CustomNumber.Name = "CustomNumber";
             this.CustomNumber.Size = new System.Drawing.Size(82, 13);
             this.CustomNumber.TabIndex = 0;
@@ -82,7 +86,7 @@
             // CustomLastName
             // 
             this.CustomLastName.AutoSize = true;
-            this.CustomLastName.Location = new System.Drawing.Point(238, 73);
+            this.CustomLastName.Location = new System.Drawing.Point(22, 70);
             this.CustomLastName.Name = "CustomLastName";
             this.CustomLastName.Size = new System.Drawing.Size(99, 13);
             this.CustomLastName.TabIndex = 1;
@@ -91,7 +95,7 @@
             // CustomerFirstName
             // 
             this.CustomerFirstName.AutoSize = true;
-            this.CustomerFirstName.Location = new System.Drawing.Point(238, 117);
+            this.CustomerFirstName.Location = new System.Drawing.Point(22, 114);
             this.CustomerFirstName.Name = "CustomerFirstName";
             this.CustomerFirstName.Size = new System.Drawing.Size(98, 13);
             this.CustomerFirstName.TabIndex = 2;
@@ -100,7 +104,7 @@
             // CustomerAddress
             // 
             this.CustomerAddress.AutoSize = true;
-            this.CustomerAddress.Location = new System.Drawing.Point(238, 160);
+            this.CustomerAddress.Location = new System.Drawing.Point(22, 157);
             this.CustomerAddress.Name = "CustomerAddress";
             this.CustomerAddress.Size = new System.Drawing.Size(89, 13);
             this.CustomerAddress.TabIndex = 3;
@@ -109,7 +113,7 @@
             // CustomerCity
             // 
             this.CustomerCity.AutoSize = true;
-            this.CustomerCity.Location = new System.Drawing.Point(238, 204);
+            this.CustomerCity.Location = new System.Drawing.Point(22, 201);
             this.CustomerCity.Name = "CustomerCity";
             this.CustomerCity.Size = new System.Drawing.Size(68, 13);
             this.CustomerCity.TabIndex = 4;
@@ -119,7 +123,7 @@
             // CustomerState
             // 
             this.CustomerState.AutoSize = true;
-            this.CustomerState.Location = new System.Drawing.Point(238, 246);
+            this.CustomerState.Location = new System.Drawing.Point(22, 243);
             this.CustomerState.Name = "CustomerState";
             this.CustomerState.Size = new System.Drawing.Size(76, 13);
             this.CustomerState.TabIndex = 5;
@@ -128,7 +132,7 @@
             // CustomerZipCode
             // 
             this.CustomerZipCode.AutoSize = true;
-            this.CustomerZipCode.Location = new System.Drawing.Point(238, 292);
+            this.CustomerZipCode.Location = new System.Drawing.Point(22, 289);
             this.CustomerZipCode.Name = "CustomerZipCode";
             this.CustomerZipCode.Size = new System.Drawing.Size(91, 13);
             this.CustomerZipCode.TabIndex = 6;
@@ -137,7 +141,7 @@
             // CustomerAreaCode
             // 
             this.CustomerAreaCode.AutoSize = true;
-            this.CustomerAreaCode.Location = new System.Drawing.Point(238, 334);
+            this.CustomerAreaCode.Location = new System.Drawing.Point(22, 331);
             this.CustomerAreaCode.Name = "CustomerAreaCode";
             this.CustomerAreaCode.Size = new System.Drawing.Size(98, 13);
             this.CustomerAreaCode.TabIndex = 7;
@@ -146,7 +150,7 @@
             // CustomerPhoneNo
             // 
             this.CustomerPhoneNo.AutoSize = true;
-            this.CustomerPhoneNo.Location = new System.Drawing.Point(238, 377);
+            this.CustomerPhoneNo.Location = new System.Drawing.Point(22, 374);
             this.CustomerPhoneNo.Name = "CustomerPhoneNo";
             this.CustomerPhoneNo.Size = new System.Drawing.Size(96, 13);
             this.CustomerPhoneNo.TabIndex = 8;
@@ -154,76 +158,77 @@
             // 
             // txtCzipcode
             // 
-            this.txtCzipcode.Location = new System.Drawing.Point(391, 289);
+            this.txtCzipcode.Location = new System.Drawing.Point(152, 289);
             this.txtCzipcode.Name = "txtCzipcode";
-            this.txtCzipcode.Size = new System.Drawing.Size(100, 20);
+            this.txtCzipcode.Size = new System.Drawing.Size(167, 20);
             this.txtCzipcode.TabIndex = 9;
             this.txtCzipcode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCzipcode_KeyPress);
             // 
             // txtCnumber
             // 
-            this.txtCnumber.Location = new System.Drawing.Point(391, 28);
+            this.txtCnumber.Location = new System.Drawing.Point(152, 28);
             this.txtCnumber.Name = "txtCnumber";
-            this.txtCnumber.Size = new System.Drawing.Size(100, 20);
+            this.txtCnumber.Size = new System.Drawing.Size(167, 20);
             this.txtCnumber.TabIndex = 10;
             this.txtCnumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCnumber_KeyPress);
             // 
             // txtClastname
             // 
-            this.txtClastname.Location = new System.Drawing.Point(391, 70);
+            this.txtClastname.Location = new System.Drawing.Point(152, 70);
             this.txtClastname.Name = "txtClastname";
-            this.txtClastname.Size = new System.Drawing.Size(100, 20);
+            this.txtClastname.Size = new System.Drawing.Size(167, 20);
             this.txtClastname.TabIndex = 11;
             // 
             // txtCfirstname
             // 
-            this.txtCfirstname.Location = new System.Drawing.Point(391, 114);
+            this.txtCfirstname.Location = new System.Drawing.Point(152, 114);
             this.txtCfirstname.Name = "txtCfirstname";
-            this.txtCfirstname.Size = new System.Drawing.Size(100, 20);
+            this.txtCfirstname.Size = new System.Drawing.Size(167, 20);
             this.txtCfirstname.TabIndex = 12;
             // 
             // txtCaddress
             // 
-            this.txtCaddress.Location = new System.Drawing.Point(391, 157);
+            this.txtCaddress.Location = new System.Drawing.Point(152, 157);
             this.txtCaddress.Name = "txtCaddress";
-            this.txtCaddress.Size = new System.Drawing.Size(100, 20);
+            this.txtCaddress.Size = new System.Drawing.Size(167, 20);
             this.txtCaddress.TabIndex = 13;
             // 
             // txtCcity
             // 
-            this.txtCcity.Location = new System.Drawing.Point(391, 201);
+            this.txtCcity.Location = new System.Drawing.Point(152, 201);
             this.txtCcity.Name = "txtCcity";
-            this.txtCcity.Size = new System.Drawing.Size(100, 20);
+            this.txtCcity.Size = new System.Drawing.Size(167, 20);
             this.txtCcity.TabIndex = 14;
             this.txtCcity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCcity_KeyPress);
             // 
             // txtCstate
             // 
-            this.txtCstate.Location = new System.Drawing.Point(391, 243);
+            this.txtCstate.Location = new System.Drawing.Point(152, 243);
             this.txtCstate.Name = "txtCstate";
-            this.txtCstate.Size = new System.Drawing.Size(100, 20);
+            this.txtCstate.Size = new System.Drawing.Size(167, 20);
             this.txtCstate.TabIndex = 15;
             // 
             // txtCareacode
             // 
-            this.txtCareacode.Location = new System.Drawing.Point(391, 331);
+            this.txtCareacode.Location = new System.Drawing.Point(152, 331);
             this.txtCareacode.Name = "txtCareacode";
-            this.txtCareacode.Size = new System.Drawing.Size(100, 20);
+            this.txtCareacode.Size = new System.Drawing.Size(167, 20);
             this.txtCareacode.TabIndex = 16;
             this.txtCareacode.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // txtCphoneno
             // 
-            this.txtCphoneno.Location = new System.Drawing.Point(391, 374);
+            this.txtCphoneno.Location = new System.Drawing.Point(152, 374);
             this.txtCphoneno.Name = "txtCphoneno";
-            this.txtCphoneno.Size = new System.Drawing.Size(100, 20);
+            this.txtCphoneno.Size = new System.Drawing.Size(167, 20);
             this.txtCphoneno.TabIndex = 17;
+            this.txtCphoneno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCphoneno_KeyPress);
             // 
             // BtnAddCustomer
             // 
-            this.BtnAddCustomer.Location = new System.Drawing.Point(303, 415);
+            this.BtnAddCustomer.Location = new System.Drawing.Point(70, 418);
             this.BtnAddCustomer.Name = "BtnAddCustomer";
-            this.BtnAddCustomer.Size = new System.Drawing.Size(106, 23);
+            this.BtnAddCustomer.Size = new System.Drawing.Size(81, 23);
             this.BtnAddCustomer.TabIndex = 18;
             this.BtnAddCustomer.Text = "Add Customer";
             this.BtnAddCustomer.UseVisualStyleBackColor = true;
@@ -270,7 +275,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(318, 28);
+            this.label1.Location = new System.Drawing.Point(102, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(17, 24);
             this.label1.TabIndex = 19;
@@ -285,13 +290,59 @@
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(0, 15);
             this.lblMessage.TabIndex = 20;
-            this.lblMessage.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // BtnCancel
+            // 
+            this.BtnCancel.Location = new System.Drawing.Point(188, 418);
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Size = new System.Drawing.Size(81, 23);
+            this.BtnCancel.TabIndex = 22;
+            this.BtnCancel.Text = "Cancel";
+            this.BtnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(119, 374);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(17, 24);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "*";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(119, 331);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(17, 24);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "*";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(119, 289);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(17, 24);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "*";
             // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 469);
+            this.ClientSize = new System.Drawing.Size(333, 469);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnAddCustomer);
@@ -361,5 +412,9 @@
         private System.Windows.Forms.ErrorProvider errorProvider9;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.Button BtnCancel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }
