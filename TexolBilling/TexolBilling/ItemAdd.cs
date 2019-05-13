@@ -7,21 +7,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TexolBilling.BAL;
+
 
 namespace TexolBilling
 {
+    
+    
     public partial class ItemAdd : Form
     {
         public ItemAdd()
         {
             InitializeComponent();
         }
-
+        Item objitem = new Item();
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             if (Validation())
             {
-
+               
+                int i = objitem.ItemAdd(TxtItemName.Text, Convert.ToInt32(TxtQuantity.Text), Convert.ToInt32(TxtRate.Text));
+                if(i>0)
+                {
+                    MessageBox.Show("Item Added Successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to Add Item");
+                }
+                
             }
             else
             {

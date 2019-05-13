@@ -211,7 +211,9 @@
             this.Controls.Add(this.PaymentMethod);
             this.Controls.Add(this.PurchaseDate);
             this.Name = "Purchase";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Purchase";
+            this.Load += new System.EventHandler(this.Purchase_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();

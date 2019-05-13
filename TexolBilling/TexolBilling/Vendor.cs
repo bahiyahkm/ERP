@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TexolBilling.BAL;
+
 
 namespace TexolBilling
 {
@@ -16,12 +18,20 @@ namespace TexolBilling
         {
             InitializeComponent();
         }
-
+        AddVendor objvend = new AddVendor();
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             if (Validation())
             {
-
+                int i = objvend.Vendor(txtVname.Text, txtVaddress.Text, txtVcity.Text, txtVstate.Text, txtVzipcode.Text, txtVareacode.Text, txtVphoneno.Text);
+                if(i>0)
+                {
+                    MessageBox.Show("Vendor Added Succesfully");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to Vendor Add");
+                }
             }
             else
             {

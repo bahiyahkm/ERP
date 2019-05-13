@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TexolBilling.BAL;
+
 
 namespace TexolBilling
 {
     public partial class Login : Form
     {
+        Account objaccount = new Account();
         public Login()
         {
             InitializeComponent();
@@ -31,6 +34,18 @@ namespace TexolBilling
         {
             if (Validation())
             {
+                DataTable dt = new DataTable();
+                dt = objaccount.Login(TxtUserName.Text, TxtPassword.Text);
+                if (dt.Rows.Count > 0)
+                {
+                    Form1 objHome = new Form1();
+                    objHome.Show();
+
+                }
+                else
+                {
+                    MessageBox.Show("Login Failed");
+                }
 
             }
             else

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Validation;
+using TexolBilling.BAL;
 
 namespace TexolBilling
 {
@@ -29,12 +30,20 @@ namespace TexolBilling
 
         }
 
-
+        AddCustomer objcust = new AddCustomer();
         private void BtnAddCustomer_Click(object sender, EventArgs e)
         {
             if (Validation())
             {
-
+                int i = objcust.Customer(Convert.ToInt32(txtCnumber.Text), txtClastname.Text, txtCfirstname.Text, txtCaddress.Text, txtCcity.Text, txtCstate.Text, txtCzipcode.Text, txtCareacode.Text, txtCphoneno.Text);
+                if(i>0)
+                {
+                    MessageBox.Show("Customer Added Successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Fail to Add Customer");
+                }
             }
             else 
             {

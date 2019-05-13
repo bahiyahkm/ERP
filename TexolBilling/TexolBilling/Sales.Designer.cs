@@ -217,6 +217,7 @@
             this.Controls.Add(this.SalesDate);
             this.Controls.Add(this.SalesTransactionNo);
             this.Name = "Sales";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sales";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();

@@ -49,6 +49,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BAL\Account.cs" />
+    <Compile Include="BAL\AddCustomer.cs" />
+    <Compile Include="BAL\AddVendor.cs" />
+    <Compile Include="BAL\Item.cs" />
     <Compile Include="Biilling System.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +71,7 @@
     <Compile Include="CustomerReport.Designer.cs">
       <DependentUpon>CustomerReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAL\Connection.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,5 +196,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

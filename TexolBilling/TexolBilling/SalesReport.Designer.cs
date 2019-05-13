@@ -111,6 +111,7 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.FromDateS);
             this.Name = "SalesReport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SalesReport";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
