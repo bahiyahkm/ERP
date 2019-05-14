@@ -74,7 +74,7 @@ namespace TexolBilling
         private void Purchase_Load(object sender, EventArgs e)
         {
             CommonFunctions objcmn = new CommonFunctions();
-            txtPurchaseTNo.Text = objcmn.GenerateRandomNo();
+            txtPurchaseTNo.Text = objcmn.GenerateRandomNo(); //test
             
         }
 
