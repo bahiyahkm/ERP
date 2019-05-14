@@ -52,6 +52,7 @@
     <Compile Include="BAL\Account.cs" />
     <Compile Include="BAL\AddCustomer.cs" />
     <Compile Include="BAL\AddVendor.cs" />
+    <Compile Include="BAL\CommonFunctions.cs" />
     <Compile Include="BAL\Item.cs" />
     <Compile Include="Biilling System.cs">
       <SubType>Form</SubType>

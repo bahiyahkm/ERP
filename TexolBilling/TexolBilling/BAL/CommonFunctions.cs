@@ -16,8 +16,10 @@ namespace TexolBilling.BAL
             int day = DateTime.Now.Day;
             int Month = DateTime.Now.Month;
             int Year = DateTime.Now.Year;
-            return "" + prefix + "" + rand + "" + day + "" + Month + "" + Year + "";
+            return "" + prefix + "" + random + "" + day + "" + Month + "" + Year + "";
 
         }
+
+       
     }
 }
