@@ -50,21 +50,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BAL\Account.cs" />
-    <Compile Include="BAL\AddCustomer.cs" />
-    <Compile Include="BAL\AddVendor.cs" />
     <Compile Include="BAL\CommonFunctions.cs" />
+    <Compile Include="BAL\Customers.cs" />
     <Compile Include="BAL\Item.cs" />
+    <Compile Include="BAL\PurchaseDetails.cs" />
+    <Compile Include="BAL\Vendor.cs" />
     <Compile Include="Biilling System.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Biilling System.Designer.cs">
       <DependentUpon>Biilling System.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer.cs">
+    <Compile Include="AddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer.Designer.cs">
-      <DependentUpon>Customer.cs</DependentUpon>
+    <Compile Include="AddCustomer.Designer.cs">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerReport.cs">
       <SubType>Form</SubType>
@@ -73,6 +74,16 @@
       <DependentUpon>CustomerReport.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\Connection.cs" />
+    <Compile Include="erp_dbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>erp_dbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="erp_dbDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>erp_dbDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,11 +135,11 @@
       <DependentUpon>SalesReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Validation.cs" />
-    <Compile Include="Vendor.cs">
+    <Compile Include="AddVendor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vendor.Designer.cs">
-      <DependentUpon>Vendor.cs</DependentUpon>
+    <Compile Include="AddVendor.Designer.cs">
+      <DependentUpon>AddVendor.cs</DependentUpon>
     </Compile>
     <Compile Include="VendorReport.cs">
       <SubType>Form</SubType>
@@ -139,8 +150,8 @@
     <EmbeddedResource Include="Biilling System.resx">
       <DependentUpon>Biilling System.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer.resx">
-      <DependentUpon>Customer.cs</DependentUpon>
+    <EmbeddedResource Include="AddCustomer.resx">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerReport.resx">
       <DependentUpon>CustomerReport.cs</DependentUpon>
@@ -178,12 +189,34 @@
     <EmbeddedResource Include="SalesReport.resx">
       <DependentUpon>SalesReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vendor.resx">
-      <DependentUpon>Vendor.cs</DependentUpon>
+    <EmbeddedResource Include="AddVendor.resx">
+      <DependentUpon>AddVendor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VendorReport.resx">
       <DependentUpon>VendorReport.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="erp_dbDataSet.xsc">
+      <DependentUpon>erp_dbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="erp_dbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>erp_dbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="erp_dbDataSet.xss">
+      <DependentUpon>erp_dbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="erp_dbDataSet1.xsc">
+      <DependentUpon>erp_dbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="erp_dbDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>erp_dbDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="erp_dbDataSet1.xss">
+      <DependentUpon>erp_dbDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

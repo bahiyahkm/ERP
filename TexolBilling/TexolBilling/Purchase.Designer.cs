@@ -48,11 +48,29 @@
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.BtnCancel = new System.Windows.Forms.Button();
+            this.erp_dbDataSet = new TexolBilling.erp_dbDataSet();
+            this.vendortblBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vendor_tblTableAdapter = new TexolBilling.erp_dbDataSetTableAdapters.vendor_tblTableAdapter();
+            this.erp_dbDataSet1 = new TexolBilling.erp_dbDataSet1();
+            this.customerstblBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customers_tblTableAdapter = new TexolBilling.erp_dbDataSet1TableAdapters.customers_tblTableAdapter();
+            this.LblName = new System.Windows.Forms.Label();
+            this.LblItems = new System.Windows.Forms.Label();
+            this.LblQuantity = new System.Windows.Forms.Label();
+            this.LblPrice = new System.Windows.Forms.Label();
+            this.BtnAdd = new System.Windows.Forms.Button();
+            this.CmbItemName = new System.Windows.Forms.ComboBox();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
+            this.txtPrice = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp_dbDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendortblBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp_dbDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerstblBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // PurchaseDate
@@ -149,6 +167,7 @@
             this.CBName.Name = "CBName";
             this.CBName.Size = new System.Drawing.Size(238, 21);
             this.CBName.TabIndex = 14;
+            this.CBName.SelectedIndexChanged += new System.EventHandler(this.CBName_SelectedIndexChanged);
             // 
             // dgvPurchase
             // 
@@ -157,9 +176,9 @@
             this.ItemName,
             this.Rate,
             this.Quantity});
-            this.dgvPurchase.Location = new System.Drawing.Point(12, 182);
+            this.dgvPurchase.Location = new System.Drawing.Point(12, 243);
             this.dgvPurchase.Name = "dgvPurchase";
-            this.dgvPurchase.Size = new System.Drawing.Size(721, 232);
+            this.dgvPurchase.Size = new System.Drawing.Size(721, 171);
             this.dgvPurchase.TabIndex = 15;
             // 
             // ItemName
@@ -194,11 +213,116 @@
             this.BtnCancel.UseVisualStyleBackColor = true;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
+            // erp_dbDataSet
+            // 
+            this.erp_dbDataSet.DataSetName = "erp_dbDataSet";
+            this.erp_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vendortblBindingSource
+            // 
+            this.vendortblBindingSource.DataMember = "vendor_tbl";
+            this.vendortblBindingSource.DataSource = this.erp_dbDataSet;
+            // 
+            // vendor_tblTableAdapter
+            // 
+            this.vendor_tblTableAdapter.ClearBeforeFill = true;
+            // 
+            // erp_dbDataSet1
+            // 
+            this.erp_dbDataSet1.DataSetName = "erp_dbDataSet1";
+            this.erp_dbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // customerstblBindingSource
+            // 
+            this.customerstblBindingSource.DataMember = "customers_tbl";
+            this.customerstblBindingSource.DataSource = this.erp_dbDataSet1;
+            // 
+            // customers_tblTableAdapter
+            // 
+            this.customers_tblTableAdapter.ClearBeforeFill = true;
+            // 
+            // LblName
+            // 
+            this.LblName.AutoSize = true;
+            this.LblName.Location = new System.Drawing.Point(12, 53);
+            this.LblName.Name = "LblName";
+            this.LblName.Size = new System.Drawing.Size(35, 13);
+            this.LblName.TabIndex = 18;
+            this.LblName.Text = "Name";
+            // 
+            // LblItems
+            // 
+            this.LblItems.AutoSize = true;
+            this.LblItems.Location = new System.Drawing.Point(9, 200);
+            this.LblItems.Name = "LblItems";
+            this.LblItems.Size = new System.Drawing.Size(32, 13);
+            this.LblItems.TabIndex = 19;
+            this.LblItems.Text = "Items";
+            // 
+            // LblQuantity
+            // 
+            this.LblQuantity.AutoSize = true;
+            this.LblQuantity.Location = new System.Drawing.Point(190, 203);
+            this.LblQuantity.Name = "LblQuantity";
+            this.LblQuantity.Size = new System.Drawing.Size(46, 13);
+            this.LblQuantity.TabIndex = 20;
+            this.LblQuantity.Text = "Quantity";
+            // 
+            // LblPrice
+            // 
+            this.LblPrice.AutoSize = true;
+            this.LblPrice.Location = new System.Drawing.Point(346, 206);
+            this.LblPrice.Name = "LblPrice";
+            this.LblPrice.Size = new System.Drawing.Size(31, 13);
+            this.LblPrice.TabIndex = 21;
+            this.LblPrice.Text = "Price";
+            // 
+            // BtnAdd
+            // 
+            this.BtnAdd.Location = new System.Drawing.Point(498, 199);
+            this.BtnAdd.Name = "BtnAdd";
+            this.BtnAdd.Size = new System.Drawing.Size(75, 23);
+            this.BtnAdd.TabIndex = 22;
+            this.BtnAdd.Text = "Add";
+            this.BtnAdd.UseVisualStyleBackColor = true;
+            this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
+            // 
+            // CmbItemName
+            // 
+            this.CmbItemName.FormattingEnabled = true;
+            this.CmbItemName.Location = new System.Drawing.Point(50, 200);
+            this.CmbItemName.Name = "CmbItemName";
+            this.CmbItemName.Size = new System.Drawing.Size(121, 21);
+            this.CmbItemName.TabIndex = 23;
+            this.CmbItemName.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Location = new System.Drawing.Point(242, 201);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(100, 20);
+            this.txtQuantity.TabIndex = 24;
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Location = new System.Drawing.Point(383, 201);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(100, 20);
+            this.txtPrice.TabIndex = 25;
+            // 
             // Purchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(754, 450);
+            this.Controls.Add(this.txtPrice);
+            this.Controls.Add(this.txtQuantity);
+            this.Controls.Add(this.CmbItemName);
+            this.Controls.Add(this.BtnAdd);
+            this.Controls.Add(this.LblPrice);
+            this.Controls.Add(this.LblQuantity);
+            this.Controls.Add(this.LblItems);
+            this.Controls.Add(this.LblName);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.dgvPurchase);
@@ -219,6 +343,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchase)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp_dbDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendortblBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp_dbDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerstblBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,5 +372,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Rate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.Button BtnCancel;
+        private erp_dbDataSet erp_dbDataSet;
+        private System.Windows.Forms.BindingSource vendortblBindingSource;
+        private erp_dbDataSetTableAdapters.vendor_tblTableAdapter vendor_tblTableAdapter;
+        private erp_dbDataSet1 erp_dbDataSet1;
+        private System.Windows.Forms.BindingSource customerstblBindingSource;
+        private erp_dbDataSet1TableAdapters.customers_tblTableAdapter customers_tblTableAdapter;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.TextBox txtQuantity;
+        private System.Windows.Forms.ComboBox CmbItemName;
+        private System.Windows.Forms.Button BtnAdd;
+        private System.Windows.Forms.Label LblPrice;
+        private System.Windows.Forms.Label LblQuantity;
+        private System.Windows.Forms.Label LblItems;
+        private System.Windows.Forms.Label LblName;
     }
 }

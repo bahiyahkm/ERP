@@ -12,18 +12,18 @@ using TexolBilling.BAL;
 
 namespace TexolBilling
 {
-    public partial class Vendor : Form
+    public partial class AddVendor : Form
     {
-        public Vendor()
+        public AddVendor()
         {
             InitializeComponent();
         }
-        AddVendor objvend = new AddVendor();
+        Vendor objvend = new Vendor();
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             if (Validation())
             {
-                int i = objvend.Vendor(txtVname.Text, txtVaddress.Text, txtVcity.Text, txtVstate.Text, txtVzipcode.Text, txtVareacode.Text, txtVphoneno.Text);
+                int i = objvend.InsertVendor(txtVname.Text, txtVaddress.Text, txtVcity.Text, txtVstate.Text, txtVzipcode.Text, txtVareacode.Text, txtVphoneno.Text);
                 if(i>0)
                 {
                     MessageBox.Show("Vendor Added Succesfully");
@@ -38,6 +38,9 @@ namespace TexolBilling
               // lblMessage.Text = "* Please fill the mandatory field";
             }
         }
+
+       
+
         public bool Validation()
         {
             bool isValid = true;

@@ -70,7 +70,7 @@ namespace TexolBilling
 
         private void addVendorToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Vendor objvend = new Vendor();
+            AddVendor objvend = new AddVendor();
             objvend.Show();
         }
 

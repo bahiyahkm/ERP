@@ -9,7 +9,7 @@ using System.Data;
 
 namespace TexolBilling.DAL
 {
-  public  class Connection
+    public class Connection
     {
         public string GetConnection()
         {
@@ -18,14 +18,14 @@ namespace TexolBilling.DAL
         public DataTable GetData(string sql)
         {
             SqlConnection con = new SqlConnection(GetConnection());
-            SqlDataAdapter adp = new SqlDataAdapter(sql,con);
+            SqlDataAdapter adp = new SqlDataAdapter(sql, con);
             DataTable dt = new DataTable();
             adp.Fill(dt);
             return dt;
         }
         public int InsertData(string sql)
         {
-           
+
             SqlConnection con = new SqlConnection(GetConnection());
             SqlCommand cmd = new SqlCommand(sql, con);
             con.Open();
@@ -33,6 +33,7 @@ namespace TexolBilling.DAL
             con.Close();
             return i;
         }
+        
 
     }
 }

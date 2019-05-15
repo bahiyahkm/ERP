@@ -1,6 +1,6 @@
 ﻿namespace TexolBilling
 {
-    partial class Vendor
+    partial class AddVendor
     {
         /// <summary>
         /// Required designer variable.

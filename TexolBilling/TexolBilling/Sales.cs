@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TexolBilling.BAL;
 
 namespace TexolBilling
 {
@@ -59,14 +60,14 @@ namespace TexolBilling
             {
                 errorProvider3.SetError(cbSPayMet, "");
             }
-            if (cbSname.SelectedItem == null)
+            if (CmbNameS.SelectedItem == null)
             {
-                errorProvider4.SetError(cbSname, "Please select the Name");
+                errorProvider4.SetError(CmbNameS, "Please select the Name");
                 isValid = false;
             }
             else
             {
-                errorProvider4.SetError(cbSname, "");
+                errorProvider4.SetError(CmbNameS, "");
             }
 
             return isValid;
@@ -84,6 +85,56 @@ namespace TexolBilling
         private void BtnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Sales_Load(object sender, EventArgs e)
+        {
+            CommonFunctions objcmn = new CommonFunctions();
+            txtSalesTranNo.Text = objcmn.GenerateSaleTransaction();
+
+
+            Customers cust = new Customers();
+
+            DataTable dt = cust.GetAllCustomers();
+
+            CmbNameS.DisplayMember = "CustomerName";
+            CmbNameS.ValueMember = "CustomerId";
+            CmbNameS.DataSource = dt;
+
+
+            Item itm = new Item();
+            DataTable dt1 = itm.GetAllItem();
+            CmbItemS.DisplayMember = "ItemName";
+            CmbItemS.ValueMember = "ItemId";
+            CmbItemS.DataSource = dt1;
+        }
+        Item itm = new Item();
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+            int i = itm.InsertSalesItem(txtSalesTranNo.Text, Convert.ToInt32(CmbItemS.SelectedValue.ToString()), Convert.ToInt32(txtPrice.Text), Convert.ToInt32(txtQuantity.Text));
+            if (i > 0)
+            {
+                MessageBox.Show("Item Added Successfully");
+            }
+            else
+            {
+                MessageBox.Show("Fail to Add Item");
+            } 
+        }
+
+        private void LblPrice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtQuantity_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPrice_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
