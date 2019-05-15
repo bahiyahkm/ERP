@@ -54,6 +54,7 @@
     <Compile Include="BAL\Customers.cs" />
     <Compile Include="BAL\Item.cs" />
     <Compile Include="BAL\PurchaseDetails.cs" />
+    <Compile Include="BAL\SalesDetails.cs" />
     <Compile Include="BAL\Vendor.cs" />
     <Compile Include="Biilling System.cs">
       <SubType>Form</SubType>

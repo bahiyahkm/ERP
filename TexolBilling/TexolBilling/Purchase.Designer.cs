@@ -41,7 +41,7 @@
             this.txtPurchaseTNo = new System.Windows.Forms.TextBox();
             this.PaymentMethod = new System.Windows.Forms.Label();
             this.CBPayMet = new System.Windows.Forms.ComboBox();
-            this.CBName = new System.Windows.Forms.ComboBox();
+            this.CmbName = new System.Windows.Forms.ComboBox();
             this.dgvPurchase = new System.Windows.Forms.DataGridView();
             this.ItemName = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +62,8 @@
             this.CmbItemName = new System.Windows.Forms.ComboBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
+            this.LblAddress = new System.Windows.Forms.Label();
+            this.LblPhno = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
@@ -160,14 +162,14 @@
             this.CBPayMet.Size = new System.Drawing.Size(171, 21);
             this.CBPayMet.TabIndex = 13;
             // 
-            // CBName
+            // CmbName
             // 
-            this.CBName.FormattingEnabled = true;
-            this.CBName.Location = new System.Drawing.Point(70, 46);
-            this.CBName.Name = "CBName";
-            this.CBName.Size = new System.Drawing.Size(238, 21);
-            this.CBName.TabIndex = 14;
-            this.CBName.SelectedIndexChanged += new System.EventHandler(this.CBName_SelectedIndexChanged);
+            this.CmbName.FormattingEnabled = true;
+            this.CmbName.Location = new System.Drawing.Point(70, 46);
+            this.CmbName.Name = "CmbName";
+            this.CmbName.Size = new System.Drawing.Size(238, 21);
+            this.CmbName.TabIndex = 14;
+            this.CmbName.SelectedIndexChanged += new System.EventHandler(this.CBName_SelectedIndexChanged);
             // 
             // dgvPurchase
             // 
@@ -262,7 +264,7 @@
             // LblQuantity
             // 
             this.LblQuantity.AutoSize = true;
-            this.LblQuantity.Location = new System.Drawing.Point(190, 203);
+            this.LblQuantity.Location = new System.Drawing.Point(330, 205);
             this.LblQuantity.Name = "LblQuantity";
             this.LblQuantity.Size = new System.Drawing.Size(46, 13);
             this.LblQuantity.TabIndex = 20;
@@ -271,7 +273,7 @@
             // LblPrice
             // 
             this.LblPrice.AutoSize = true;
-            this.LblPrice.Location = new System.Drawing.Point(346, 206);
+            this.LblPrice.Location = new System.Drawing.Point(187, 205);
             this.LblPrice.Name = "LblPrice";
             this.LblPrice.Size = new System.Drawing.Size(31, 13);
             this.LblPrice.TabIndex = 21;
@@ -298,23 +300,43 @@
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(242, 201);
+            this.txtQuantity.Location = new System.Drawing.Point(382, 202);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(100, 20);
             this.txtQuantity.TabIndex = 24;
+            this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(383, 201);
+            this.txtPrice.Location = new System.Drawing.Point(224, 202);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(100, 20);
             this.txtPrice.TabIndex = 25;
+            this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
+            // 
+            // LblAddress
+            // 
+            this.LblAddress.AutoSize = true;
+            this.LblAddress.Location = new System.Drawing.Point(76, 91);
+            this.LblAddress.Name = "LblAddress";
+            this.LblAddress.Size = new System.Drawing.Size(0, 13);
+            this.LblAddress.TabIndex = 26;
+            // 
+            // LblPhno
+            // 
+            this.LblPhno.AutoSize = true;
+            this.LblPhno.Location = new System.Drawing.Point(76, 113);
+            this.LblPhno.Name = "LblPhno";
+            this.LblPhno.Size = new System.Drawing.Size(0, 13);
+            this.LblPhno.TabIndex = 27;
             // 
             // Purchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(754, 450);
+            this.Controls.Add(this.LblPhno);
+            this.Controls.Add(this.LblAddress);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.CmbItemName);
@@ -326,7 +348,7 @@
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.dgvPurchase);
-            this.Controls.Add(this.CBName);
+            this.Controls.Add(this.CmbName);
             this.Controls.Add(this.CBPayMet);
             this.Controls.Add(this.txtPurchaseTNo);
             this.Controls.Add(this.PurchaseTransactionNo);
@@ -362,7 +384,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.DataGridView dgvPurchase;
-        private System.Windows.Forms.ComboBox CBName;
+        private System.Windows.Forms.ComboBox CmbName;
         private System.Windows.Forms.ComboBox CBPayMet;
         private System.Windows.Forms.TextBox txtPurchaseTNo;
         private System.Windows.Forms.Label PurchaseTransactionNo;
@@ -386,5 +408,7 @@
         private System.Windows.Forms.Label LblQuantity;
         private System.Windows.Forms.Label LblItems;
         private System.Windows.Forms.Label LblName;
+        private System.Windows.Forms.Label LblPhno;
+        private System.Windows.Forms.Label LblAddress;
     }
 }

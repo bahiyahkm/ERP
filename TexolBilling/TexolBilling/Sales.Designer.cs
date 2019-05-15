@@ -43,9 +43,6 @@
             this.cbSPayMet = new System.Windows.Forms.ComboBox();
             this.CmbNameS = new System.Windows.Forms.ComboBox();
             this.dgvSales = new System.Windows.Forms.DataGridView();
-            this.ItemName = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpSales = new System.Windows.Forms.DateTimePicker();
             this.errorProvider6 = new System.Windows.Forms.ErrorProvider(this.components);
             this.BtnCancel = new System.Windows.Forms.Button();
@@ -57,6 +54,8 @@
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.CmbItemS = new System.Windows.Forms.ComboBox();
             this.BtnAdd = new System.Windows.Forms.Button();
+            this.LblAddress = new System.Windows.Forms.Label();
+            this.LblPhno = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
@@ -159,33 +158,15 @@
             this.CmbNameS.Name = "CmbNameS";
             this.CmbNameS.Size = new System.Drawing.Size(251, 21);
             this.CmbNameS.TabIndex = 14;
+            this.CmbNameS.SelectedIndexChanged += new System.EventHandler(this.CmbNameS_SelectedIndexChanged);
             // 
             // dgvSales
             // 
             this.dgvSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ItemName,
-            this.Rate,
-            this.Quantity});
             this.dgvSales.Location = new System.Drawing.Point(32, 230);
             this.dgvSales.Name = "dgvSales";
             this.dgvSales.Size = new System.Drawing.Size(716, 208);
             this.dgvSales.TabIndex = 15;
-            // 
-            // ItemName
-            // 
-            this.ItemName.HeaderText = "ItemName";
-            this.ItemName.Name = "ItemName";
-            // 
-            // Rate
-            // 
-            this.Rate.HeaderText = "Rate";
-            this.Rate.Name = "Rate";
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.Name = "Quantity";
             // 
             // dtpSales
             // 
@@ -247,7 +228,7 @@
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(225, 196);
+            this.txtQuantity.Location = new System.Drawing.Point(383, 198);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(100, 20);
             this.txtQuantity.TabIndex = 23;
@@ -255,7 +236,7 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(383, 196);
+            this.txtPrice.Location = new System.Drawing.Point(225, 198);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(100, 20);
             this.txtPrice.TabIndex = 24;
@@ -268,6 +249,7 @@
             this.CmbItemS.Name = "CmbItemS";
             this.CmbItemS.Size = new System.Drawing.Size(117, 21);
             this.CmbItemS.TabIndex = 25;
+            this.CmbItemS.SelectedIndexChanged += new System.EventHandler(this.CmbItemS_SelectedIndexChanged);
             // 
             // BtnAdd
             // 
@@ -279,11 +261,29 @@
             this.BtnAdd.UseVisualStyleBackColor = true;
             this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
+            // LblAddress
+            // 
+            this.LblAddress.AutoSize = true;
+            this.LblAddress.Location = new System.Drawing.Point(136, 99);
+            this.LblAddress.Name = "LblAddress";
+            this.LblAddress.Size = new System.Drawing.Size(0, 13);
+            this.LblAddress.TabIndex = 27;
+            // 
+            // LblPhno
+            // 
+            this.LblPhno.AutoSize = true;
+            this.LblPhno.Location = new System.Drawing.Point(136, 116);
+            this.LblPhno.Name = "LblPhno";
+            this.LblPhno.Size = new System.Drawing.Size(0, 13);
+            this.LblPhno.TabIndex = 28;
+            // 
             // Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.LblPhno);
+            this.Controls.Add(this.LblAddress);
             this.Controls.Add(this.BtnAdd);
             this.Controls.Add(this.CmbItemS);
             this.Controls.Add(this.txtPrice);
@@ -337,9 +337,6 @@
         private System.Windows.Forms.DataGridView dgvSales;
         private System.Windows.Forms.DateTimePicker dtpSales;
         private System.Windows.Forms.ErrorProvider errorProvider6;
-        private System.Windows.Forms.DataGridViewComboBoxColumn ItemName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Rate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.Button BtnCancel;
         private System.Windows.Forms.Button BtnAdd;
         private System.Windows.Forms.ComboBox CmbItemS;
@@ -349,5 +346,7 @@
         private System.Windows.Forms.Label Lblquantity;
         private System.Windows.Forms.Label LblItem;
         private System.Windows.Forms.Label LblName;
+        private System.Windows.Forms.Label LblPhno;
+        private System.Windows.Forms.Label LblAddress;
     }
 }

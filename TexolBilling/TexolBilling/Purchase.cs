@@ -23,6 +23,7 @@ namespace TexolBilling
         }
         Item itm = new Item();
         PurchaseDetails pd = new PurchaseDetails();
+        Vendor vend = new Vendor();
         private void BtnSave_Click(object sender, EventArgs e)
         {
          if(Validation())
@@ -47,13 +48,13 @@ namespace TexolBilling
             {
                 errorProvider1.SetError(txtPurchaseTNo, "");
             }
-            if (CBName.SelectedItem == null)
+            if (CmbName.SelectedItem == null)
             {
-                errorProvider2.SetError(CBName, "Please select a name");
+                errorProvider2.SetError(CmbName, "Please select a name");
             }
             else
             {
-                errorProvider2.SetError(CBName, "");
+                errorProvider2.SetError(CmbName, "");
             }
             if (CBPayMet.SelectedItem == null)
             {
@@ -79,9 +80,9 @@ namespace TexolBilling
 
             DataTable dt = vend.GetAllVendor();
            
-            CBName.DisplayMember = "VendorName";
-            CBName.ValueMember = "VendorId";
-            CBName.DataSource = dt;
+            CmbName.DisplayMember = "VendorName";
+            CmbName.ValueMember = "VendorId";
+            CmbName.DataSource = dt;
 
             Item itm = new Item();
             DataTable dt1 = itm.GetAllItem();
@@ -102,45 +103,93 @@ namespace TexolBilling
 
         private void CBName_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int VendorId = Convert.ToInt32(CmbName.SelectedValue);
 
+            DataTable dt = vend.GetVendorByName(VendorId);
+            if(dt.Rows.Count>0)
+            {
+                LblAddress.Text = dt.Rows[0]["VendorAddress"].ToString();
+                LblPhno.Text = dt.Rows[0]["VendorPhoneNo"].ToString();
+            }
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int ItemId=Convert.ToInt32(CmbItemName.SelectedValue.ToString());
+            DataTable dt = itm.GetItemById(Convert.ToInt32(ItemId));
+            if(dt.Rows.Count>0)
+            {
+                txtPrice.Text = dt.Rows[0]["Rate"].ToString();
+            }
+            else
+            {
+                
+            }
+          
 
+            
         }
         
+
+
+
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             
-            string purchasetno = txtPurchaseTNo.Text;
-            int ItemId = Convert.ToInt32(CmbItemName.ValueMember);
+            string PurchaseTrNo = txtPurchaseTNo.Text;
+            int ItemId = Convert.ToInt32(CmbItemName.SelectedValue);
             
             
-            if (pd.CheckIfPurchaseItemAlreadyInsert(purchasetno,ItemId ))
+            if (pd.CheckIfPurchaseItemAlreadyInsert(PurchaseTrNo, ItemId ))
             {
-                MessageBox.Show("Customer Already Exists with PurchaseTransactionNo " + txtPurchaseTNo.Text);
+                int i = pd.UpdatePurchaseItem(Convert.ToInt32(txtQuantity.Text), txtPurchaseTNo.Text, Convert.ToInt32(CmbItemName.SelectedValue.ToString()));
+
+                if (i > 0)
+                {
+                    MessageBox.Show("Item  Added succesfully");
+                }
+               
             }
             else
             {
-
-                MessageBox.Show("Customer doesnot exist");
                 
+                int i = pd.InsertPurchaseItem(txtPurchaseTNo.Text,Convert.ToInt32(CmbItemName.SelectedValue.ToString()), Convert.ToInt32(txtPrice.Text), Convert.ToInt32(txtQuantity.Text));
+                if(i>0)
+                {
+                    MessageBox.Show(" New Item Added Succesfully");
+                }
+                else
+                {
+                    MessageBox.Show("Fail to Item Add");
+                }
+
+                txtQuantity.Text = "";
+            
+               
+                 
+
+
+              
+                
+               
+
             }
 
 
 
 
-            int i = itm.InsertPurchaseItem(txtPurchaseTNo.Text,Convert.ToInt32(CmbItemName.SelectedValue.ToString()), Convert.ToInt32(txtPrice.Text), Convert.ToInt32(txtQuantity.Text));
+           
+        }
 
-            if (i > 0)
-            {
-                MessageBox.Show("Item Added Successfully");
-            }
-            else
-            {
-                MessageBox.Show("Fail to Add Item");
-            }
+        private void txtQuantity_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPrice_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

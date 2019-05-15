@@ -29,7 +29,20 @@ namespace TexolBilling.BAL
 
 
         }
+        public int UpdatePurchaseItem(int quantity,string purchaseTrNo,int itemid)
+        {
+            string sql = "update purchaseitem_tbl set Quantity=(Quantity+"+quantity+") where PurchaseTransactionNo='" +purchaseTrNo + "' and ItemId=" + itemid + "";
+            int i= db.InsertData(sql);
+            return i;
+            
 
+        }
+        public int InsertPurchaseItem(string purchasetno, int itemid, int rate, int quantity)
+        {
+            string sql = "insert into purchaseitem_tbl(PurchaseTransactionNo,ItemId,Rate,Quantity) values('" + purchasetno + "'," + itemid + "," + rate + "," + quantity + ")";
+            int i = db.InsertData(sql);
+            return i;
+        }
 
     }
 }

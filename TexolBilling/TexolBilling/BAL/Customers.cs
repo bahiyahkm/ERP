@@ -25,5 +25,10 @@ namespace TexolBilling.BAL
             return db.GetData(sql);
 
         }
+        public DataTable GetCustomerByName(int CustomerId)
+        {
+            string sql = "select * from customers_tbl where CustomerId=" + CustomerId + "";
+            return db.GetData(sql);
+        }
     }
 }

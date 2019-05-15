@@ -26,5 +26,10 @@ namespace TexolBilling.BAL
             return db.GetData(sql);
            
         }
+        public DataTable GetVendorByName(int VendorId)
+        {
+            string sql = "select * from vendor_tbl where VendorId='" + VendorId + "' ";
+            return db.GetData(sql);
+        }
     }
 }

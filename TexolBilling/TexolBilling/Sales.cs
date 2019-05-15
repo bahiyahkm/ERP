@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TexolBilling.BAL;
+using System.Data.SqlClient;
 
 namespace TexolBilling
 {
@@ -17,6 +18,9 @@ namespace TexolBilling
         {
             InitializeComponent();
         }
+        Customers objcust = new Customers();
+        SalesDetails objsaledetails = new SalesDetails();
+        Item itm = new Item();
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
@@ -108,18 +112,33 @@ namespace TexolBilling
             CmbItemS.ValueMember = "ItemId";
             CmbItemS.DataSource = dt1;
         }
-        Item itm = new Item();
+       
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            int i = itm.InsertSalesItem(txtSalesTranNo.Text, Convert.ToInt32(CmbItemS.SelectedValue.ToString()), Convert.ToInt32(txtPrice.Text), Convert.ToInt32(txtQuantity.Text));
-            if (i > 0)
+            string SaleTrNo = txtSalesTranNo.Text;
+            int ItemId = Convert.ToInt32(CmbItemS.SelectedValue);
+            if (objsaledetails.CheckIfSalesItemAlreadyInsert(SaleTrNo, ItemId))
             {
-                MessageBox.Show("Item Added Successfully");
+                int i = objsaledetails.UpdateSalesItem(txtSalesTranNo.Text, Convert.ToInt32(CmbItemS.SelectedValue.ToString()), Convert.ToInt32(txtQuantity.Text));
+                if (i > 0)
+                {
+                    MessageBox.Show("Item Added Succesfully");
+                }
             }
             else
             {
-                MessageBox.Show("Fail to Add Item");
-            } 
+
+
+                int i = objsaledetails.InsertSalesItem(txtSalesTranNo.Text, Convert.ToInt32(CmbItemS.SelectedValue.ToString()), Convert.ToInt32(txtPrice.Text), Convert.ToInt32(txtQuantity.Text));
+                if (i > 0)
+                {
+                    MessageBox.Show("Item Added Successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Fail to Add Item");
+                }
+            }
         }
 
         private void LblPrice_Click(object sender, EventArgs e)
@@ -135,6 +154,27 @@ namespace TexolBilling
         private void txtPrice_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void CmbNameS_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int CustomerId = Convert.ToInt32(CmbNameS.SelectedValue.ToString());
+            DataTable dt = objcust.GetCustomerByName(CustomerId);
+            if(dt.Rows.Count>0)
+            {
+                LblAddress.Text = dt.Rows[0]["CustomerAddress"].ToString();
+                LblPhno.Text = dt.Rows[0]["CustomerPhoneNo"].ToString();
+            }
+        }
+
+        private void CmbItemS_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int ItemId = Convert.ToInt32(CmbItemS.SelectedValue.ToString());
+            DataTable dt = itm.GetItemById(ItemId);
+            if(dt.Rows.Count>0)
+            {
+                txtPrice.Text = dt.Rows[0]["Rate"].ToString();
+            }
         }
     }
 }
