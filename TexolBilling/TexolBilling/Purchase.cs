@@ -22,19 +22,30 @@ namespace TexolBilling
             InitializeComponent();
         }
         Item itm = new Item();
-        PurchaseDetails pd = new PurchaseDetails();
+        PurchaseDetails objprodetails = new PurchaseDetails();
         Vendor vend = new Vendor();
         private void BtnSave_Click(object sender, EventArgs e)
         {
-         if(Validation())
+            if (Validation())
             {
                 {
+                    
+                    int i = objprodetails.InsertDataToPurchaseTbl(txtPurchaseTNo.Text, dateTimePicker1.Value.Date, Convert.ToInt32(CmbName.SelectedValue.ToString()), Convert.ToInt32(lblTotal.Text));
+                    if (i > 0)
+                    {
+                        MessageBox.Show(" Saved Succesfully");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Saving Failed");
+                    }
+
 
                 }
             }
-         else
+            else
             {
-              // LblPurchase.Text = "Please fill the Mandatory feild";
+                // LblPurchase.Text = "Please fill the Mandatory feild";
             }
         }
         public bool Validation()
@@ -64,132 +75,80 @@ namespace TexolBilling
             {
                 errorProvider3.SetError(CBPayMet, "");
             }
-
-
             return isValid;
         }
-
         private void BtnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-       
         private void Purchase_Load(object sender, EventArgs e)
         {
             Vendor vend = new Vendor();
-
             DataTable dt = vend.GetAllVendor();
-           
             CmbName.DisplayMember = "VendorName";
             CmbName.ValueMember = "VendorId";
             CmbName.DataSource = dt;
-
             Item itm = new Item();
             DataTable dt1 = itm.GetAllItem();
             CmbItemName.DisplayMember = "ItemName";
             CmbItemName.ValueMember = "ItemId";
             CmbItemName.DataSource = dt1;
-
-               
-
-
-            
-
-
             CommonFunctions objcmn = new CommonFunctions();
             txtPurchaseTNo.Text = objcmn.GenerateRandomNo(); //testtttt
-            
         }
-
         private void CBName_SelectedIndexChanged(object sender, EventArgs e)
         {
             int VendorId = Convert.ToInt32(CmbName.SelectedValue);
-
             DataTable dt = vend.GetVendorByName(VendorId);
-            if(dt.Rows.Count>0)
+            if (dt.Rows.Count > 0)
             {
                 LblAddress.Text = dt.Rows[0]["VendorAddress"].ToString();
                 LblPhno.Text = dt.Rows[0]["VendorPhoneNo"].ToString();
             }
-            
         }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int ItemId=Convert.ToInt32(CmbItemName.SelectedValue.ToString());
+            int ItemId = Convert.ToInt32(CmbItemName.SelectedValue.ToString());
             DataTable dt = itm.GetItemById(Convert.ToInt32(ItemId));
-            if(dt.Rows.Count>0)
+            if (dt.Rows.Count > 0)
             {
                 txtPrice.Text = dt.Rows[0]["Rate"].ToString();
             }
             else
             {
-                
             }
-          
-
-            
         }
-        
-
-
-
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            
-            string PurchaseTrNo = txtPurchaseTNo.Text;
-            int ItemId = Convert.ToInt32(CmbItemName.SelectedValue);
-            
-            
-            if (pd.CheckIfPurchaseItemAlreadyInsert(PurchaseTrNo, ItemId ))
-            {
-                int i = pd.UpdatePurchaseItem(Convert.ToInt32(txtQuantity.Text), txtPurchaseTNo.Text, Convert.ToInt32(CmbItemName.SelectedValue.ToString()));
+            lblTotal.Text = (Convert.ToInt32(lblTotal.Text)+(Convert.ToInt32(txtPrice.Text) * Convert.ToInt32(txtQuantity.Text))).ToString();
+           
 
-                if (i > 0)
+            string PurchaseTrNo = txtPurchaseTNo.Text;
+                int ItemId = Convert.ToInt32(CmbItemName.SelectedValue);
+                if (objprodetails.CheckIfPurchaseItemAlreadyInsert(PurchaseTrNo, ItemId))
                 {
-                    MessageBox.Show("Item  Added succesfully");
-                }
-               
-            }
-            else
-            {
-                
-                int i = pd.InsertPurchaseItem(txtPurchaseTNo.Text,Convert.ToInt32(CmbItemName.SelectedValue.ToString()), Convert.ToInt32(txtPrice.Text), Convert.ToInt32(txtQuantity.Text));
-                if(i>0)
-                {
-                    MessageBox.Show(" New Item Added Succesfully");
+                    int i = objprodetails.UpdatePurchaseItem(Convert.ToInt32(txtQuantity.Text), txtPurchaseTNo.Text, Convert.ToInt32(CmbItemName.SelectedValue.ToString()));
+                    
+
                 }
                 else
                 {
-                    MessageBox.Show("Fail to Item Add");
+                    int i = objprodetails.InsertPurchaseItem(txtPurchaseTNo.Text, Convert.ToInt32(CmbItemName.SelectedValue.ToString()), Convert.ToInt32(txtPrice.Text), Convert.ToInt32(txtQuantity.Text));
+                    
+                   
                 }
-
-                txtQuantity.Text = "";
-            
-               
-                 
-
-
-              
-                
-               
-
+            txtQuantity.Text = "";
+            BindGrid();
+            }
+            void BindGrid()
+            {
+                DataTable dt = objprodetails.AddedItemIntoGridView(txtPurchaseTNo.Text);
+                dgvPurchase.DataSource = dt;
             }
 
-
-
-
-           
-        }
-
-        private void txtQuantity_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPrice_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
-}
+    }
+
+
+

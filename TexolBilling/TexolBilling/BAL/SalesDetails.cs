@@ -27,7 +27,7 @@ namespace TexolBilling.BAL
         }
         public int UpdateSalesItem(string SaleTrNo,int ItemId,int quantity)
         {
-            string sql = "update sales_tbl set Quantity=(Quantity+" + quantity + ")where SaleTransactionNo='" + SaleTrNo + "' and ItemId=" + ItemId + "";
+            string sql = "update salesitem_tbl set Quantity=(Quantity+" + quantity + ")where SalesTransactionNo='" + SaleTrNo + "' and ItemId=" + ItemId + "";
              int i = db.InsertData(sql);
             return i;
 
@@ -35,6 +35,17 @@ namespace TexolBilling.BAL
         public int InsertSalesItem(string SaleTrNo,int ItemId,int rate,int quantity)
         {
             string sql= "insert into salesitem_tbl (SalesTransactionNo,ItemId,Rate,Quantity) values('"+SaleTrNo+"',"+ItemId+","+rate+","+quantity+")";
+            int i = db.InsertData(sql);
+            return i;
+        }
+        public DataTable AddedItemIntoGridView(string TransactionNo)
+        {
+            string sql = "select  item_tbl.ItemName,salesitem_tbl.Rate,salesitem_tbl.Quantity,(salesitem_tbl.Rate*salesitem_tbl.Quantity) as TotalAmount from item_tbl inner join salesitem_tbl on salesitem_tbl.ItemId=item_tbl.ItemId where salesitem_tbl.SalesTransactionNo='" + TransactionNo + "'";
+            return db.GetData(sql);
+        }
+        public int InsertDataToSalesTbl(string salesTrno, DateTime date, int customerid, int tamount)
+        {
+            string sql = "insert into sales_tbl(SalesTransactionNo,SalesDate,CustomerId,TotalAmount) values('" + salesTrno + "','" + date + "'," + customerid + "," + tamount + ") ";
             int i = db.InsertData(sql);
             return i;
         }
