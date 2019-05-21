@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TexolBilling.BAL
 {
@@ -29,6 +30,7 @@ namespace TexolBilling.BAL
             int Year = DateTime.Now.Year;
             return "" + prefix + "" + random + "" + day + "" + Month + "" + Year + "";
         }
+        
 
        
     }

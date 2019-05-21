@@ -14,59 +14,50 @@ namespace TexolBilling
 {
     public partial class Customer : Form
     {
-        
+
         public Customer()
         {
             InitializeComponent();
         }
         Customers objcust = new Customers();
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-      
+        Validation v = new Validation();
         private void BtnAddCustomer_Click(object sender, EventArgs e)
         {
 
             if (Validation())
             {
-                int i = objcust.InsertCustomer(Convert.ToInt32(txtCnumber.Text), txtCname.Text, txtCaddress.Text, txtCcity.Text, txtCstate.Text, txtCzipcode.Text, txtCareacode.Text, txtCphoneno.Text);
-              
-                if(i>0)
+                int i = objcust.InsertCustomer( txtCname.Text, txtCaddress.Text, txtCcity.Text, txtCstate.Text, txtCzipcode.Text, txtCareacode.Text, txtCphoneno.Text);
+
+                if (i > 0)
                 {
                     MessageBox.Show("Customer Added Successfully");
+                    clear();
                 }
                 else
                 {
                     MessageBox.Show("Fail to Add Customer");
                 }
             }
-            else 
+            else
             {
                 lblMessage.Text = "Please fill the required field";
             }
         }
-
-       
-
+        public void clear()
+        {
+           
+            txtCname.Text = "";
+            txtCcity.Text = "";
+            txtCaddress.Text = "";
+            txtCareacode.Text = "";
+            txtCphoneno.Text = "";
+            txtCzipcode.Text = "";
+            txtCstate.Text = "";
+        }
         public bool Validation()
         {
             bool isValid = true;
-            if (txtCnumber.Text == "")
-            {
-                errorProvider1.SetError(txtCnumber, "Please enter the Number");
-                isValid = false;
-            }
-            else
-            {
-                errorProvider1.SetError(txtCnumber, "");
-            }
+            
             if (txtCname.Text == "")
             {
                 errorProvider2.SetError(txtCname, "Please enter Your Name");
@@ -76,7 +67,7 @@ namespace TexolBilling
             {
                 errorProvider2.SetError(txtCname, "");
             }
-            
+
             if (txtCaddress.Text == "")
             {
                 errorProvider4.SetError(txtCaddress, "Please enter the Address");
@@ -86,7 +77,7 @@ namespace TexolBilling
             {
                 errorProvider4.SetError(txtCaddress, "");
             }
-            if (txtCcity.Text == "")
+            /*if (txtCcity.Text == "")
             {
                 errorProvider5.SetError(txtCcity, "Please enter the City");
                 isValid = false;
@@ -103,7 +94,7 @@ namespace TexolBilling
             else
             {
                 errorProvider6.SetError(txtCstate, "");
-            }
+            }*/
             if (txtCzipcode.Text == "")
             {
                 errorProvider7.SetError(txtCzipcode, "Please enter the ZipCode");
@@ -134,45 +125,34 @@ namespace TexolBilling
             return isValid;
         }
 
-        private void txtCzipcode_KeyPress(object sender, KeyPressEventArgs e)
+       /* private void txtCzipcode_KeyPress(object sender, KeyPressEventArgs e)
         {
-            char ch= e.KeyChar;
-            if(!char.IsDigit(ch) && ch!=8 && ch!=46)
+            char ch = e.KeyChar;
+            if (!char.IsDigit(ch) && ch != 8 && ch != 46)
             {
                 e.Handled = true;
                 MessageBox.Show("Enter only digit and decimel.", "Alert!");
             }
-        }
-        Validation v = new Validation();
-
+        }*/
+       
         private void txtCcity_KeyPress(object sender, KeyPressEventArgs e)
         {
             v.charonly(e);
         }
 
-        private void txtCnumber_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            v.digitonly(e);
-        }
+       
 
-        private void txtCphoneno_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            v.digitonly(e);
-        }
+       
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void CustomerFirstName_Click(object sender, EventArgs e)
+        private void txtCphoneno_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-        }
-
-        private void CustomerAddress_Click(object sender, EventArgs e)
-        {
-
+            v.digitonly(e);
         }
     }
 }
+

@@ -48,6 +48,16 @@ namespace TexolBilling.BAL
             int i = db.InsertData(sql);
             return i;
         }
+        public DataTable GetPurchaseItemByDate(DateTime dtp1,DateTime dtp2)
+        {
+            string sql = "select purchase_tbl.PurchaseTransactionNo,vendor_tbl.VendorName,purchase_tbl.PurchaseDate,purchase_tbl.TotalAmount from purchase_tbl inner join vendor_tbl on purchase_tbl.VendorId=vendor_tbl.VendorId where PurchaseDate between '" + dtp1.Date + "' and '" + dtp2.Date+ "'";
+            return db.GetData(sql);
+        }
+        public DataTable GetSumOFTotalAmount(DateTime dtp1, DateTime dtp2)
+        {
+            string sql = "select sum(TotalAmount) as tt from purchase_tbl inner join vendor_tbl on purchase_tbl.VendorId=vendor_tbl.VendorId where PurchaseDate between '" + dtp1.Date + "' and '" + dtp2.Date + "'";
+            return db.GetData(sql);
+        }
 
     }
 }

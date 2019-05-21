@@ -43,10 +43,7 @@
             this.itemReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.loToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -99,20 +96,20 @@
             this.purchaseToolStripMenuItem1,
             this.salesToolStripMenuItem1});
             this.authorsToolStripMenuItem.Name = "authorsToolStripMenuItem";
-            this.authorsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.authorsToolStripMenuItem.Text = "Authors";
+            this.authorsToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.authorsToolStripMenuItem.Text = "Billing";
             // 
             // purchaseToolStripMenuItem1
             // 
             this.purchaseToolStripMenuItem1.Name = "purchaseToolStripMenuItem1";
-            this.purchaseToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.purchaseToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
             this.purchaseToolStripMenuItem1.Text = "Purchase";
             this.purchaseToolStripMenuItem1.Click += new System.EventHandler(this.purchaseToolStripMenuItem1_Click);
             // 
             // salesToolStripMenuItem1
             // 
             this.salesToolStripMenuItem1.Name = "salesToolStripMenuItem1";
-            this.salesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.salesToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
             this.salesToolStripMenuItem1.Text = "Sales";
             this.salesToolStripMenuItem1.Click += new System.EventHandler(this.salesToolStripMenuItem1_Click);
             // 
@@ -170,32 +167,13 @@
             this.loToolStripMenuItem.Text = "Log out";
             this.loToolStripMenuItem.Click += new System.EventHandler(this.loToolStripMenuItem_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel1.Location = new System.Drawing.Point(0, 27);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1356, 714);
-            this.panel1.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Mistral", 72F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(374, 235);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(562, 114);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Billing Software";
-            // 
             // Biilling_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1356, 741);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Biilling_System";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -203,8 +181,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,8 +194,6 @@
         private System.Windows.Forms.ToolStripMenuItem customerReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem itemReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vendorToolStripMenuItem1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem loToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem masterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addItemToolStripMenuItem1;

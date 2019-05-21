@@ -63,6 +63,9 @@
             this.LblPhno = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.LblMessage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
@@ -168,7 +171,7 @@
             // CmbName
             // 
             this.CmbName.FormattingEnabled = true;
-            this.CmbName.Location = new System.Drawing.Point(79, 16);
+            this.CmbName.Location = new System.Drawing.Point(94, 14);
             this.CmbName.Name = "CmbName";
             this.CmbName.Size = new System.Drawing.Size(238, 21);
             this.CmbName.TabIndex = 14;
@@ -194,7 +197,7 @@
             this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancel.Location = new System.Drawing.Point(668, 143);
             this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(50, 25);
+            this.BtnCancel.Size = new System.Drawing.Size(65, 25);
             this.BtnCancel.TabIndex = 17;
             this.BtnCancel.Text = "Cancel";
             this.BtnCancel.UseVisualStyleBackColor = true;
@@ -232,7 +235,7 @@
             // 
             this.LblName.AutoSize = true;
             this.LblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblName.Location = new System.Drawing.Point(24, 17);
+            this.LblName.Location = new System.Drawing.Point(36, 15);
             this.LblName.Name = "LblName";
             this.LblName.Size = new System.Drawing.Size(49, 15);
             this.LblName.TabIndex = 18;
@@ -307,16 +310,18 @@
             this.LblAddress.AutoSize = true;
             this.LblAddress.Location = new System.Drawing.Point(91, 40);
             this.LblAddress.Name = "LblAddress";
-            this.LblAddress.Size = new System.Drawing.Size(0, 13);
+            this.LblAddress.Size = new System.Drawing.Size(45, 13);
             this.LblAddress.TabIndex = 26;
+            this.LblAddress.Text = "Address";
             // 
             // LblPhno
             // 
             this.LblPhno.AutoSize = true;
-            this.LblPhno.Location = new System.Drawing.Point(91, 62);
+            this.LblPhno.Location = new System.Drawing.Point(91, 64);
             this.LblPhno.Name = "LblPhno";
-            this.LblPhno.Size = new System.Drawing.Size(0, 13);
+            this.LblPhno.Size = new System.Drawing.Size(58, 13);
             this.LblPhno.TabIndex = 27;
+            this.LblPhno.Text = "ContactNo";
             // 
             // lblTotal
             // 
@@ -338,11 +343,45 @@
             this.label1.TabIndex = 31;
             this.label1.Text = "Total :";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(8, 62);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 15);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "ContactNo:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(23, 38);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 15);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "Address:";
+            // 
+            // LblMessage
+            // 
+            this.LblMessage.AutoSize = true;
+            this.LblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblMessage.Location = new System.Drawing.Point(578, 200);
+            this.LblMessage.Name = "LblMessage";
+            this.LblMessage.Size = new System.Drawing.Size(139, 25);
+            this.LblMessage.TabIndex = 35;
+            this.LblMessage.Text = "LblMessage";
+            this.LblMessage.Visible = false;
+            // 
             // Purchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(754, 478);
+            this.Controls.Add(this.LblMessage);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LblPhno);
@@ -419,5 +458,8 @@
         private System.Windows.Forms.Label LblAddress;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label LblMessage;
     }
 }

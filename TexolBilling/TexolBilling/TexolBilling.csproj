@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -56,11 +60,11 @@
     <Compile Include="BAL\PurchaseDetails.cs" />
     <Compile Include="BAL\SalesDetails.cs" />
     <Compile Include="BAL\Vendor.cs" />
-    <Compile Include="Biilling System.cs">
+    <Compile Include="BillingSystem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Biilling System.Designer.cs">
-      <DependentUpon>Biilling System.cs</DependentUpon>
+    <Compile Include="BillingSystem.Designer.cs">
+      <DependentUpon>BillingSystem.cs</DependentUpon>
     </Compile>
     <Compile Include="AddCustomer.cs">
       <SubType>Form</SubType>
@@ -148,8 +152,8 @@
     <Compile Include="VendorReport.Designer.cs">
       <DependentUpon>VendorReport.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Biilling System.resx">
-      <DependentUpon>Biilling System.cs</DependentUpon>
+    <EmbeddedResource Include="BillingSystem.resx">
+      <DependentUpon>BillingSystem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddCustomer.resx">
       <DependentUpon>AddCustomer.cs</DependentUpon>
@@ -218,6 +222,7 @@
     <None Include="erp_dbDataSet1.xss">
       <DependentUpon>erp_dbDataSet1.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -231,6 +236,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Microsoft\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

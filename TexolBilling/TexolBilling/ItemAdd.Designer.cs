@@ -51,27 +51,30 @@
             // LblItemName
             // 
             this.LblItemName.AutoSize = true;
-            this.LblItemName.Location = new System.Drawing.Point(15, 43);
+            this.LblItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblItemName.Location = new System.Drawing.Point(29, 45);
             this.LblItemName.Name = "LblItemName";
-            this.LblItemName.Size = new System.Drawing.Size(55, 13);
+            this.LblItemName.Size = new System.Drawing.Size(63, 13);
             this.LblItemName.TabIndex = 0;
             this.LblItemName.Text = "ItemName";
             // 
             // LblQuantity
             // 
             this.LblQuantity.AutoSize = true;
-            this.LblQuantity.Location = new System.Drawing.Point(15, 103);
+            this.LblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblQuantity.Location = new System.Drawing.Point(32, 105);
             this.LblQuantity.Name = "LblQuantity";
-            this.LblQuantity.Size = new System.Drawing.Size(46, 13);
+            this.LblQuantity.Size = new System.Drawing.Size(54, 13);
             this.LblQuantity.TabIndex = 1;
             this.LblQuantity.Text = "Quantity";
             // 
             // LblRate
             // 
             this.LblRate.AutoSize = true;
-            this.LblRate.Location = new System.Drawing.Point(15, 174);
+            this.LblRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRate.Location = new System.Drawing.Point(32, 176);
             this.LblRate.Name = "LblRate";
-            this.LblRate.Size = new System.Drawing.Size(30, 13);
+            this.LblRate.Size = new System.Drawing.Size(34, 13);
             this.LblRate.TabIndex = 2;
             this.LblRate.Text = "Rate";
             // 
@@ -100,7 +103,8 @@
             // 
             // BtnAddItem
             // 
-            this.BtnAddItem.Location = new System.Drawing.Point(111, 252);
+            this.BtnAddItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAddItem.Location = new System.Drawing.Point(111, 233);
             this.BtnAddItem.Name = "BtnAddItem";
             this.BtnAddItem.Size = new System.Drawing.Size(75, 25);
             this.BtnAddItem.TabIndex = 6;
@@ -125,7 +129,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(67, 43);
+            this.label1.Location = new System.Drawing.Point(92, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(13, 16);
             this.label1.TabIndex = 7;
@@ -136,7 +140,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(57, 104);
+            this.label2.Location = new System.Drawing.Point(92, 103);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(13, 16);
             this.label2.TabIndex = 8;
@@ -147,7 +151,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(48, 174);
+            this.label3.Location = new System.Drawing.Point(92, 175);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(13, 16);
             this.label3.TabIndex = 9;
@@ -155,7 +159,8 @@
             // 
             // BtnCancel
             // 
-            this.BtnCancel.Location = new System.Drawing.Point(229, 252);
+            this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancel.Location = new System.Drawing.Point(198, 233);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(75, 25);
             this.BtnCancel.TabIndex = 10;
@@ -182,6 +187,7 @@
             this.Name = "ItemAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ItemAdd";
+           
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();

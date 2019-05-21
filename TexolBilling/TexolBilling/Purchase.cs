@@ -26,27 +26,47 @@ namespace TexolBilling
         Vendor vend = new Vendor();
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            if (Validation())
+            try
             {
+                if (Validation())
                 {
-                    
-                    int i = objprodetails.InsertDataToPurchaseTbl(txtPurchaseTNo.Text, dateTimePicker1.Value.Date, Convert.ToInt32(CmbName.SelectedValue.ToString()), Convert.ToInt32(lblTotal.Text));
-                    if (i > 0)
                     {
-                        MessageBox.Show(" Saved Succesfully");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Saving Failed");
-                    }
 
-
+                        int i = objprodetails.InsertDataToPurchaseTbl(txtPurchaseTNo.Text, dateTimePicker1.Value.Date, Convert.ToInt32(CmbName.SelectedValue.ToString()), Convert.ToInt32(lblTotal.Text));
+                        if (i > 0)
+                        {
+                            MessageBox.Show(" Saved Succesfully");
+                            clear();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Saving Failed");
+                        }
+                    }
+                }
+                else
+                {
+                    // LblPurchase.Text = "Please fill the Mandatory feild";
                 }
             }
-            else
+            catch(Exception ex)
             {
-                // LblPurchase.Text = "Please fill the Mandatory feild";
+                MessageBox.Show("Error" + ex.Message);
             }
+           
+        }
+        public void clear()
+        {
+            CommonFunctions objcmn = new CommonFunctions();
+            txtPurchaseTNo.Text = objcmn.GenerateRandomNo();
+            BindGrid();
+            txtQuantity.Text = "";
+            txtPrice.Text = "";
+            lblTotal.Text="0";
+            CmbName.Text = "select Vendor";
+            CmbItemName.Text = "select Item";
+            LblAddress.Text = "Address";
+            LblPhno.Text = "ContactNo";
         }
         public bool Validation()
         {
@@ -88,13 +108,15 @@ namespace TexolBilling
             CmbName.DisplayMember = "VendorName";
             CmbName.ValueMember = "VendorId";
             CmbName.DataSource = dt;
+            CmbName.Text = "select Vendor";
             Item itm = new Item();
             DataTable dt1 = itm.GetAllItem();
             CmbItemName.DisplayMember = "ItemName";
             CmbItemName.ValueMember = "ItemId";
             CmbItemName.DataSource = dt1;
+            CmbItemName.Text = "select Item";
             CommonFunctions objcmn = new CommonFunctions();
-            txtPurchaseTNo.Text = objcmn.GenerateRandomNo(); //testtttt
+            txtPurchaseTNo.Text = objcmn.GenerateRandomNo(); 
         }
         private void CBName_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -114,37 +136,52 @@ namespace TexolBilling
             {
                 txtPrice.Text = dt.Rows[0]["Rate"].ToString();
             }
-            else
-            {
-            }
         }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            lblTotal.Text = (Convert.ToInt32(lblTotal.Text)+(Convert.ToInt32(txtPrice.Text) * Convert.ToInt32(txtQuantity.Text))).ToString();
-           
-
-            string PurchaseTrNo = txtPurchaseTNo.Text;
-                int ItemId = Convert.ToInt32(CmbItemName.SelectedValue);
-                if (objprodetails.CheckIfPurchaseItemAlreadyInsert(PurchaseTrNo, ItemId))
+            try
+            {
+                int ItemId1 = Convert.ToInt32(CmbItemName.SelectedValue.ToString());
+                DataTable dt = itm.GetItemById(Convert.ToInt32(ItemId1));
+                if (dt.Rows.Count > 0)
                 {
-                    int i = objprodetails.UpdatePurchaseItem(Convert.ToInt32(txtQuantity.Text), txtPurchaseTNo.Text, Convert.ToInt32(CmbItemName.SelectedValue.ToString()));
-                    
-
+                    LblMessage.Text = dt.Rows[0]["Quantity"].ToString();
                 }
-                else
-                {
-                    int i = objprodetails.InsertPurchaseItem(txtPurchaseTNo.Text, Convert.ToInt32(CmbItemName.SelectedValue.ToString()), Convert.ToInt32(txtPrice.Text), Convert.ToInt32(txtQuantity.Text));
-                    
-                   
-                }
-            txtQuantity.Text = "";
-            BindGrid();
+              lblTotal.Text = (Convert.ToInt32(lblTotal.Text) + (Convert.ToInt32(txtPrice.Text) * Convert.ToInt32(txtQuantity.Text))).ToString();
+                    string PurchaseTrNo = txtPurchaseTNo.Text;
+                    int ItemId = Convert.ToInt32(CmbItemName.SelectedValue);
+                    if (objprodetails.CheckIfPurchaseItemAlreadyInsert(PurchaseTrNo, ItemId))
+                    {
+                        int i = objprodetails.UpdatePurchaseItem(Convert.ToInt32(txtQuantity.Text), txtPurchaseTNo.Text, Convert.ToInt32(CmbItemName.SelectedValue.ToString()));
+                        int j = itm.UpdatePurchaseQuantity(Convert.ToInt32(ItemId), Convert.ToInt32(txtQuantity.Text));
+                    }
+                    else
+                    {
+                        int i = objprodetails.InsertPurchaseItem(txtPurchaseTNo.Text, Convert.ToInt32(CmbItemName.SelectedValue.ToString()), Convert.ToInt32(txtPrice.Text), Convert.ToInt32(txtQuantity.Text));
+                        int j = itm.UpdatePurchaseQuantity(Convert.ToInt32(ItemId), Convert.ToInt32(txtQuantity.Text));
+                    }
+                               
+                txtQuantity.Text = "";
+                BindGrid();
             }
-            void BindGrid()
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+            }
+            }
+        void BindGrid()
+        {
+            try
             {
                 DataTable dt = objprodetails.AddedItemIntoGridView(txtPurchaseTNo.Text);
                 dgvPurchase.DataSource = dt;
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+                
+            }
+        }
 
        
     }

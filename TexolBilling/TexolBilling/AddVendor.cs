@@ -19,28 +19,42 @@ namespace TexolBilling
             InitializeComponent();
         }
         Vendor objvend = new Vendor();
+        Validation v = new Validation();
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            if (Validation())
+            try
             {
-                int i = objvend.InsertVendor(txtVname.Text, txtVaddress.Text, txtVcity.Text, txtVstate.Text, txtVzipcode.Text, txtVareacode.Text, txtVphoneno.Text);
-                if(i>0)
+                if (Validation())
                 {
-                    MessageBox.Show("Vendor Added Succesfully");
-                }
-                else
-                {
-                    MessageBox.Show("Failed to Vendor Add");
+                    int i = objvend.InsertVendor(txtVname.Text, txtVaddress.Text, txtVcity.Text, txtVstate.Text, txtVzipcode.Text, txtVareacode.Text, txtVphoneno.Text);
+                    if (i > 0)
+                    {
+                        MessageBox.Show("Vendor Added Succesfully");
+                        clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to Vendor Add");
+                    }
+
                 }
             }
-            else
+            catch(Exception ex)
             {
-              // lblMessage.Text = "* Please fill the mandatory field";
+                MessageBox.Show("Error" + ex.Message);
             }
+           
         }
-
-       
-
+        public void clear()
+        {
+            txtVname.Text = "";
+            txtVaddress.Text = "";
+            txtVcity.Text = "";
+            txtVstate.Text = "";
+            txtVareacode.Text = "";
+            txtVzipcode.Text = "";
+            txtVphoneno.Text = "";
+        }
         public bool Validation()
         {
             bool isValid = true;
@@ -62,7 +76,7 @@ namespace TexolBilling
             {
                 errorProvider2.SetError(txtVaddress, "");
             }
-            if (txtVcity.Text == "")
+           /* if (txtVcity.Text == "")
             {
                 errorProvider3.SetError(txtVcity, "Please enter the city");
                 isValid = false;
@@ -79,7 +93,7 @@ namespace TexolBilling
             else
             {
                 errorProvider4.SetError(txtVstate, "");
-            }
+            }*/
             if (txtVzipcode.Text == "")
             {
                 errorProvider5.SetError(txtVzipcode, "Please enter the ZipCode");
@@ -110,16 +124,14 @@ namespace TexolBilling
             return isValid;
         }
        
-        Validation v = new Validation();
-        private void txtVphoneno_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            v.digitonly(e);
-        }
-
-        
         private void BtnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtVphoneno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.digitonly(e);
         }
     }
 }

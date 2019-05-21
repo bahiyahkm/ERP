@@ -23,22 +23,45 @@ namespace TexolBilling
         Item itm = new Item();
         private void BtnSave_Click(object sender, EventArgs e)
         {
-           if(Validation())
+            try
             {
-                int i = objsaledetails.InsertDataToSalesTbl(txtSalesTranNo.Text, datetimepicker2.Value.Date, Convert.ToInt32(CmbNameS.SelectedValue.ToString()), Convert.ToInt32(lblTotal.Text));
-                if (i > 0)
+                if (Validation())
                 {
-                    MessageBox.Show(" Saved Succesfully");
+                    int i = objsaledetails.InsertDataToSalesTbl(txtSalesTranNo.Text, datetimepicker2.Value.Date, Convert.ToInt32(CmbNameS.SelectedValue.ToString()), Convert.ToInt32(lblTotal.Text));
+                    if (i > 0)
+                    {
+                        MessageBox.Show(" Saved Succesfully");
+                        clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Saving Failed");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Saving Failed");
+
                 }
             }
-           else
+            catch(Exception ex)
             {
-                
+                MessageBox.Show("Error" + ex.Message);
             }
+        }
+        public void clear()
+        {
+            CommonFunctions objcmn = new CommonFunctions();
+            txtSalesTranNo.Text = objcmn.GenerateSaleTransaction();
+            BindGrid();
+            txtPrice.Text = "";
+            txtQuantity.Text = "";
+            lblTotal.Text = "0";
+            LblAddress.Text = "Address";
+            LblPhno.Text = "ContactNo";
+            CmbNameS.Text = "select CustomerName";
+            CmbItemS.Text = "select Item";
+            
+
         }
         public bool Validation()
         {
@@ -96,56 +119,79 @@ namespace TexolBilling
         }
         private void Sales_Load(object sender, EventArgs e)
         {
+            CmbItemS.Items.Insert(0, "---Select--");
             CommonFunctions objcmn = new CommonFunctions();
             txtSalesTranNo.Text = objcmn.GenerateSaleTransaction();
             Customers cust = new Customers();
             DataTable dt = cust.GetAllCustomers();
+            DataRow row = dt.NewRow();
+            row["CustomerId"] = 0;
+            row["CustomerName"] = "--Select Cust--";
+            dt.Rows.InsertAt(row,0);
+
             CmbNameS.DisplayMember = "CustomerName";
             CmbNameS.ValueMember = "CustomerId";
             CmbNameS.DataSource = dt;
+            
             Item itm = new Item();
             DataTable dt1 = itm.GetAllItem();
             CmbItemS.DisplayMember = "ItemName";
             CmbItemS.ValueMember = "ItemId";
             CmbItemS.DataSource = dt1;
+            
         }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            lblTotal.Text = ((Convert.ToInt32(lblTotal.Text) + Convert.ToInt32(txtPrice.Text) * Convert.ToInt32(txtQuantity.Text))).ToString();
-            string SaleTrNo = txtSalesTranNo.Text;
-            int ItemId = Convert.ToInt32(CmbItemS.SelectedValue.ToString());
-            if (objsaledetails.CheckIfSalesItemAlreadyInsert(SaleTrNo, ItemId))
+            try
             {
-                int i = objsaledetails.UpdateSalesItem(txtSalesTranNo.Text, Convert.ToInt32(CmbItemS.SelectedValue.ToString()), Convert.ToInt32(txtQuantity.Text));
-                if (i > 0)
+                int ItemId1 = Convert.ToInt32(CmbItemS.SelectedValue.ToString());
+                DataTable dt = itm.GetItemById(ItemId1);
+                if (dt.Rows.Count > 0)
                 {
-                    MessageBox.Show("Item Added Succesfully");
+                    Lblmsg.Text = dt.Rows[0]["Quantity"].ToString();
+                }
+                
+                if (Convert.ToInt32( txtQuantity.Text)<= Convert.ToInt32(Lblmsg.Text))
+                {
+                    lblTotal.Text = ((Convert.ToInt32(lblTotal.Text) + Convert.ToInt32(txtPrice.Text) * Convert.ToInt32(txtQuantity.Text))).ToString();
+                    string SaleTrNo = txtSalesTranNo.Text;
+                    int ItemId = Convert.ToInt32(CmbItemS.SelectedValue.ToString());
+                    if (objsaledetails.CheckIfSalesItemAlreadyInsert(SaleTrNo, ItemId))
+                    {
+                        int i = objsaledetails.UpdateSalesItem(txtSalesTranNo.Text, Convert.ToInt32(CmbItemS.SelectedValue.ToString()), Convert.ToInt32(txtQuantity.Text));
+                        int j = itm.UpdateSalesQuantity(Convert.ToInt32(ItemId), Convert.ToInt32(txtQuantity.Text));
+                    }
+                    else
+                    {
+                        int i = objsaledetails.InsertSalesItem(txtSalesTranNo.Text, Convert.ToInt32(CmbItemS.SelectedValue.ToString()), Convert.ToInt32(txtPrice.Text), Convert.ToInt32(txtQuantity.Text));
+                        int j = itm.UpdateSalesQuantity(Convert.ToInt32(ItemId), Convert.ToInt32(txtQuantity.Text));
+                    }
                 }
                 else
                 {
-
-                }
-            }
-            else
-            {
-                int i = objsaledetails.InsertSalesItem(txtSalesTranNo.Text, Convert.ToInt32(CmbItemS.SelectedValue.ToString()), Convert.ToInt32(txtPrice.Text), Convert.ToInt32(txtQuantity.Text));
-                if (i > 0)
-                {
-                    MessageBox.Show("Item Added Successfully");
-                }
-                else
-                {
-                    MessageBox.Show("Fail to Add Item");
+                    MessageBox.Show("Out of stock");
                 }
                 txtQuantity.Text = "";
-                
+                BindGrid();
+
             }
-            BindGrid();
+            catch(Exception ex)
+            {
+                MessageBox.Show("Errror" + ex.Message);
+            }
+
         }
         void BindGrid()
         {
-            DataTable dt = objsaledetails.AddedItemIntoGridView(txtSalesTranNo.Text);
-            dgvSales.DataSource = dt;
+            try
+            {
+                DataTable dt = objsaledetails.AddedItemIntoGridView(txtSalesTranNo.Text);
+                dgvSales.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+            }
         }
 
        
@@ -169,6 +215,6 @@ namespace TexolBilling
             }
         }
 
-        
+       
     }
 }

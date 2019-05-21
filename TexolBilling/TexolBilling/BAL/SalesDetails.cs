@@ -49,5 +49,15 @@ namespace TexolBilling.BAL
             int i = db.InsertData(sql);
             return i;
         }
+        public DataTable GetSalesItemByDate(DateTime dtp1, DateTime dtp2)
+        {
+            string sql = "select sales_tbl.SalesTransactionNo,customers_tbl.CustomerName,sales_tbl.SalesDate,sales_tbl.TotalAmount from sales_tbl inner join customers_tbl on sales_tbl.CustomerId=customers_tbl.CustomerId where SalesDate between '" + dtp1.Date + "' and '" + dtp2.Date + "'";
+            return db.GetData(sql);
+        }
+        public DataTable GetSumOFTotalAmount(DateTime dtp1, DateTime dtp2)
+        {
+            string sql = "select sum(TotalAmount) as tt from sales_tbl inner join customers_tbl on sales_tbl.CustomerId=customers_tbl.CustomerId where SalesDate between '" + dtp1.Date + "' and '" + dtp2.Date + "'";
+            return db.GetData(sql);
+        }
     }
 }

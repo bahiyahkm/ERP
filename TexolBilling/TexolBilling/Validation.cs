@@ -13,7 +13,7 @@ namespace TexolBilling
         {
             if (Char.IsNumber(e.KeyChar) || Char.IsSymbol(e.KeyChar) || Char.IsWhiteSpace(e.KeyChar) || Char.IsPunctuation(e.KeyChar))
             {
-                MessageBox.Show("Only Char are allowed");
+                MessageBox.Show("Only Characters are allowed");
                 e.Handled = true;
             }
         }
@@ -22,7 +22,7 @@ namespace TexolBilling
         {
             try
             {
-                if (!(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar) || char.IsPunctuation(e.KeyChar)))
+                if (!(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar) || char.IsPunctuation(e.KeyChar)||char.IsSymbol(e.KeyChar)))
                 {
                     e.Handled = true;
                     MessageBox.Show("Enter only digit", "Alert!");

@@ -30,6 +30,7 @@ namespace TexolBilling
                 if(i>0)
                 {
                     MessageBox.Show("Item Added Successfully");
+                    clear();
                 }
                 else
                 {
@@ -42,6 +43,12 @@ namespace TexolBilling
                 //
             }
            
+        }
+        public void clear()
+        {
+            TxtItemName.Text = "";
+            TxtQuantity.Text = "";
+            TxtRate.Text = "";
         }
         public bool Validation()
         {
@@ -98,5 +105,7 @@ namespace TexolBilling
         {
             this.Close();
         }
+
+       
     }
 }

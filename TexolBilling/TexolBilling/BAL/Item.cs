@@ -30,7 +30,24 @@ namespace TexolBilling.BAL
             string sql = "select * from item_tbl where ItemId=" + ItemId + "";
             return db.GetData(sql);
         }
-       
+        public int UpdateSalesQuantity(int ItemId,int quantity)
+        {
+            string sql = "update item_tbl set Quantity=(Quantity-" + quantity + ") where ItemId="+ItemId+" ";
+           int i= db.InsertData(sql);
+            return i;
+        }
+        public int UpdatePurchaseQuantity(int ItemId,int quantity)
+        {
+            string sql = "update item_tbl set Quantity=(Quantity+" + quantity + ")where ItemId=" + ItemId + "";
+            int i = db.InsertData(sql);
+            return i;
+        }
+        public DataTable GetItemByDate(DateTime dtp1, DateTime dtp2)
+        {
+            string sql = "select   ItemName,Quantity,Rate from item_tbl  where Date between '" + dtp1.Date + "' and '" + dtp2.Date + "'";
+            return db.GetData(sql);
+        }
+
     }
 }
 

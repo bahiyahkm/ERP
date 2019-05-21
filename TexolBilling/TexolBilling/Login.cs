@@ -19,17 +19,7 @@ namespace TexolBilling
         {
             InitializeComponent();
         }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        Validation v = new Validation();
         private void BtnSignIn_Click(object sender, EventArgs e)
         {
             if (Validation())
@@ -38,19 +28,20 @@ namespace TexolBilling
                 dt = objaccount.Login(TxtUserName.Text, TxtPassword.Text);
                 if (dt.Rows.Count > 0)
                 {
-                    Form1 objHome = new Form1();
+                  Biilling_System objHome = new Biilling_System();
                     objHome.Show();
-
+                    this.Hide();
+                    TxtUserName.Text = " ";
+                    TxtPassword.Text = "";
                 }
                 else
                 {
                     MessageBox.Show("Login Failed");
                 }
-
             }
             else
             {
-                //
+               
             }
         }
         public bool Validation()
@@ -60,12 +51,12 @@ namespace TexolBilling
             {
                 errorProvider1.SetError(TxtUserName, "Please enter the UserName");
                 isValid = false;
-
             }
             else
             {
                 errorProvider1.SetError(TxtUserName, "");
             }
+           
             if (TxtPassword.Text == "")
             {
                 errorProvider2.SetError(TxtPassword, "Please enter the Password");
@@ -81,6 +72,11 @@ namespace TexolBilling
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void TxtUserName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.charonly(e);
         }
     }
 }

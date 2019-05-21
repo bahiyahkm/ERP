@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.FromDateS = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.BtnShowS = new System.Windows.Forms.Button();
+            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.ToDateS = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtp2 = new System.Windows.Forms.DateTimePicker();
+            this.dgvSalesReport = new System.Windows.Forms.DataGridView();
             this.BtnCancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Show = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.LblMessage = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalesReport)).BeginInit();
             this.SuspendLayout();
             // 
             // FromDateS
@@ -47,22 +49,12 @@
             this.FromDateS.TabIndex = 0;
             this.FromDateS.Text = "From Date";
             // 
-            // dateTimePicker1
+            // dtpFrom
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(116, 39);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 1;
-            // 
-            // BtnShowS
-            // 
-            this.BtnShowS.Location = new System.Drawing.Point(661, 39);
-            this.BtnShowS.Name = "BtnShowS";
-            this.BtnShowS.Size = new System.Drawing.Size(67, 23);
-            this.BtnShowS.TabIndex = 2;
-            this.BtnShowS.Text = "Show";
-            this.BtnShowS.UseVisualStyleBackColor = true;
-            this.BtnShowS.Click += new System.EventHandler(this.button1_Click);
+            this.dtpFrom.Location = new System.Drawing.Point(116, 39);
+            this.dtpFrom.Name = "dtpFrom";
+            this.dtpFrom.Size = new System.Drawing.Size(200, 20);
+            this.dtpFrom.TabIndex = 1;
             // 
             // ToDateS
             // 
@@ -73,20 +65,20 @@
             this.ToDateS.TabIndex = 3;
             this.ToDateS.Text = "To Date";
             // 
-            // dateTimePicker2
+            // dtp2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(428, 39);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 4;
+            this.dtp2.Location = new System.Drawing.Point(428, 39);
+            this.dtp2.Name = "dtp2";
+            this.dtp2.Size = new System.Drawing.Size(200, 20);
+            this.dtp2.TabIndex = 4;
             // 
-            // dataGridView1
+            // dgvSalesReport
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 131);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(747, 237);
-            this.dataGridView1.TabIndex = 5;
+            this.dgvSalesReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSalesReport.Location = new System.Drawing.Point(12, 131);
+            this.dgvSalesReport.Name = "dgvSalesReport";
+            this.dgvSalesReport.Size = new System.Drawing.Size(747, 237);
+            this.dgvSalesReport.TabIndex = 5;
             // 
             // BtnCancel
             // 
@@ -98,22 +90,54 @@
             this.BtnCancel.UseVisualStyleBackColor = true;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
+            // Show
+            // 
+            this.Show.Location = new System.Drawing.Point(654, 39);
+            this.Show.Name = "Show";
+            this.Show.Size = new System.Drawing.Size(75, 23);
+            this.Show.TabIndex = 7;
+            this.Show.Text = "Show";
+            this.Show.UseVisualStyleBackColor = true;
+            this.Show.Click += new System.EventHandler(this.Show_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(532, 395);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "TotalAmount:";
+            // 
+            // LblMessage
+            // 
+            this.LblMessage.AutoSize = true;
+            this.LblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblMessage.Location = new System.Drawing.Point(610, 395);
+            this.LblMessage.Name = "LblMessage";
+            this.LblMessage.Size = new System.Drawing.Size(14, 13);
+            this.LblMessage.TabIndex = 9;
+            this.LblMessage.Text = "0";
+            // 
             // SalesReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.LblMessage);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Show);
             this.Controls.Add(this.BtnCancel);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dgvSalesReport);
+            this.Controls.Add(this.dtp2);
             this.Controls.Add(this.ToDateS);
-            this.Controls.Add(this.BtnShowS);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpFrom);
             this.Controls.Add(this.FromDateS);
             this.Name = "SalesReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SalesReport";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalesReport)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,11 +146,13 @@
         #endregion
 
         private System.Windows.Forms.Label FromDateS;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button BtnShowS;
+        private System.Windows.Forms.DateTimePicker dtpFrom;
         private System.Windows.Forms.Label ToDateS;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DateTimePicker dtp2;
+        private System.Windows.Forms.DataGridView dgvSalesReport;
         private System.Windows.Forms.Button BtnCancel;
+        private System.Windows.Forms.Button Show;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LblMessage;
     }
 }

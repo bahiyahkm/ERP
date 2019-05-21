@@ -69,111 +69,118 @@
             // VendorName
             // 
             this.VendorName.AutoSize = true;
+            this.VendorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VendorName.Location = new System.Drawing.Point(40, 23);
             this.VendorName.Name = "VendorName";
-            this.VendorName.Size = new System.Drawing.Size(69, 13);
+            this.VendorName.Size = new System.Drawing.Size(79, 13);
             this.VendorName.TabIndex = 0;
             this.VendorName.Text = "VendorName";
             // 
             // VendorAddress
             // 
             this.VendorAddress.AutoSize = true;
+            this.VendorAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VendorAddress.Location = new System.Drawing.Point(40, 67);
             this.VendorAddress.Name = "VendorAddress";
-            this.VendorAddress.Size = new System.Drawing.Size(79, 13);
+            this.VendorAddress.Size = new System.Drawing.Size(92, 13);
             this.VendorAddress.TabIndex = 1;
             this.VendorAddress.Text = "VendorAddress";
             // 
             // VendorCity
             // 
             this.VendorCity.AutoSize = true;
+            this.VendorCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VendorCity.Location = new System.Drawing.Point(40, 110);
             this.VendorCity.Name = "VendorCity";
-            this.VendorCity.Size = new System.Drawing.Size(58, 13);
+            this.VendorCity.Size = new System.Drawing.Size(68, 13);
             this.VendorCity.TabIndex = 2;
             this.VendorCity.Text = "VendorCity";
             // 
             // VendorState
             // 
             this.VendorState.AutoSize = true;
+            this.VendorState.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VendorState.Location = new System.Drawing.Point(40, 151);
             this.VendorState.Name = "VendorState";
-            this.VendorState.Size = new System.Drawing.Size(66, 13);
+            this.VendorState.Size = new System.Drawing.Size(77, 13);
             this.VendorState.TabIndex = 3;
             this.VendorState.Text = "VendorState";
             // 
             // VendorZipCode
             // 
             this.VendorZipCode.AutoSize = true;
+            this.VendorZipCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VendorZipCode.Location = new System.Drawing.Point(40, 194);
             this.VendorZipCode.Name = "VendorZipCode";
-            this.VendorZipCode.Size = new System.Drawing.Size(81, 13);
+            this.VendorZipCode.Size = new System.Drawing.Size(94, 13);
             this.VendorZipCode.TabIndex = 4;
             this.VendorZipCode.Text = "VendorZipCode";
             // 
             // VendorAreaCode
             // 
             this.VendorAreaCode.AutoSize = true;
+            this.VendorAreaCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VendorAreaCode.Location = new System.Drawing.Point(40, 236);
             this.VendorAreaCode.Name = "VendorAreaCode";
-            this.VendorAreaCode.Size = new System.Drawing.Size(88, 13);
+            this.VendorAreaCode.Size = new System.Drawing.Size(102, 13);
             this.VendorAreaCode.TabIndex = 5;
             this.VendorAreaCode.Text = "VendorAreaCode";
             // 
             // VendorPhoneNo
             // 
             this.VendorPhoneNo.AutoSize = true;
+            this.VendorPhoneNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VendorPhoneNo.Location = new System.Drawing.Point(42, 280);
             this.VendorPhoneNo.Name = "VendorPhoneNo";
-            this.VendorPhoneNo.Size = new System.Drawing.Size(86, 13);
+            this.VendorPhoneNo.Size = new System.Drawing.Size(99, 13);
             this.VendorPhoneNo.TabIndex = 6;
             this.VendorPhoneNo.Text = "VendorPhoneNo";
             // 
             // txtVname
             // 
-            this.txtVname.Location = new System.Drawing.Point(206, 20);
+            this.txtVname.Location = new System.Drawing.Point(162, 23);
             this.txtVname.Name = "txtVname";
             this.txtVname.Size = new System.Drawing.Size(153, 20);
             this.txtVname.TabIndex = 7;
             // 
             // txtVaddress
             // 
-            this.txtVaddress.Location = new System.Drawing.Point(206, 64);
+            this.txtVaddress.Location = new System.Drawing.Point(162, 67);
             this.txtVaddress.Name = "txtVaddress";
             this.txtVaddress.Size = new System.Drawing.Size(153, 20);
             this.txtVaddress.TabIndex = 8;
             // 
             // txtVcity
             // 
-            this.txtVcity.Location = new System.Drawing.Point(206, 107);
+            this.txtVcity.Location = new System.Drawing.Point(162, 110);
             this.txtVcity.Name = "txtVcity";
             this.txtVcity.Size = new System.Drawing.Size(153, 20);
             this.txtVcity.TabIndex = 9;
             // 
             // txtVstate
             // 
-            this.txtVstate.Location = new System.Drawing.Point(206, 148);
+            this.txtVstate.Location = new System.Drawing.Point(162, 151);
             this.txtVstate.Name = "txtVstate";
             this.txtVstate.Size = new System.Drawing.Size(153, 20);
             this.txtVstate.TabIndex = 10;
             // 
             // txtVzipcode
             // 
-            this.txtVzipcode.Location = new System.Drawing.Point(206, 187);
+            this.txtVzipcode.Location = new System.Drawing.Point(162, 190);
             this.txtVzipcode.Name = "txtVzipcode";
             this.txtVzipcode.Size = new System.Drawing.Size(153, 20);
             this.txtVzipcode.TabIndex = 11;
             // 
             // txtVareacode
             // 
-            this.txtVareacode.Location = new System.Drawing.Point(206, 229);
+            this.txtVareacode.Location = new System.Drawing.Point(162, 232);
             this.txtVareacode.Name = "txtVareacode";
             this.txtVareacode.Size = new System.Drawing.Size(153, 20);
             this.txtVareacode.TabIndex = 12;
             // 
             // txtVphoneno
             // 
-            this.txtVphoneno.Location = new System.Drawing.Point(206, 270);
+            this.txtVphoneno.Location = new System.Drawing.Point(162, 273);
             this.txtVphoneno.Name = "txtVphoneno";
             this.txtVphoneno.Size = new System.Drawing.Size(153, 20);
             this.txtVphoneno.TabIndex = 13;
@@ -181,9 +188,10 @@
             // 
             // BtnAdd
             // 
-            this.BtnAdd.Location = new System.Drawing.Point(115, 325);
+            this.BtnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAdd.Location = new System.Drawing.Point(130, 325);
             this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(72, 23);
+            this.BtnAdd.Size = new System.Drawing.Size(91, 23);
             this.BtnAdd.TabIndex = 14;
             this.BtnAdd.Text = "Add Vendor";
             this.BtnAdd.UseVisualStyleBackColor = true;
@@ -271,15 +279,16 @@
             // 
             // BtnCancel
             // 
+            this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancel.Location = new System.Drawing.Point(227, 325);
             this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(72, 23);
+            this.BtnCancel.Size = new System.Drawing.Size(56, 23);
             this.BtnCancel.TabIndex = 23;
             this.BtnCancel.Text = "Cancel";
             this.BtnCancel.UseVisualStyleBackColor = true;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
-            // Vendor
+            // AddVendor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -305,7 +314,7 @@
             this.Controls.Add(this.VendorCity);
             this.Controls.Add(this.VendorAddress);
             this.Controls.Add(this.VendorName);
-            this.Name = "Vendor";
+            this.Name = "AddVendor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vendor";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

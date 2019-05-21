@@ -31,7 +31,7 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.ToDateItem = new System.Windows.Forms.Label();
             this.BtnShowItem = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.FromDateItem = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.BtnCancel = new System.Windows.Forms.Button();
@@ -63,12 +63,12 @@
             this.BtnShowItem.Text = "Show";
             this.BtnShowItem.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // dtpFrom
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(107, 23);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 6;
+            this.dtpFrom.Location = new System.Drawing.Point(107, 23);
+            this.dtpFrom.Name = "dtpFrom";
+            this.dtpFrom.Size = new System.Drawing.Size(200, 20);
+            this.dtpFrom.TabIndex = 6;
             // 
             // FromDateItem
             // 
@@ -107,7 +107,7 @@
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.ToDateItem);
             this.Controls.Add(this.BtnShowItem);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpFrom);
             this.Controls.Add(this.FromDateItem);
             this.Name = "ItemReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -123,7 +123,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label ToDateItem;
         private System.Windows.Forms.Button BtnShowItem;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFrom;
         private System.Windows.Forms.Label FromDateItem;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button BtnCancel;
