@@ -57,7 +57,7 @@ namespace TexolBilling.BAL
         {
             string sql = "select sum(TotalAmount) as tt from purchase_tbl inner join vendor_tbl on purchase_tbl.VendorId=vendor_tbl.VendorId where PurchaseDate between '" + dtp1.Date + "' and '" + dtp2.Date + "'";
             return db.GetData(sql);
-        }
+        }////test commit
 
     }
 }
