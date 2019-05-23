@@ -33,9 +33,10 @@
             this.BtnShowItem = new System.Windows.Forms.Button();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.FromDateItem = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvItemReport = new System.Windows.Forms.DataGridView();
             this.BtnCancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.BtnExport = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItemReport)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker2
@@ -48,20 +49,23 @@
             // ToDateItem
             // 
             this.ToDateItem.AutoSize = true;
-            this.ToDateItem.Location = new System.Drawing.Point(364, 30);
+            this.ToDateItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToDateItem.Location = new System.Drawing.Point(356, 28);
             this.ToDateItem.Name = "ToDateItem";
-            this.ToDateItem.Size = new System.Drawing.Size(46, 13);
+            this.ToDateItem.Size = new System.Drawing.Size(57, 13);
             this.ToDateItem.TabIndex = 8;
-            this.ToDateItem.Text = "To Date";
+            this.ToDateItem.Text = "To Date:";
             // 
             // BtnShowItem
             // 
+            this.BtnShowItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnShowItem.Location = new System.Drawing.Point(652, 23);
             this.BtnShowItem.Name = "BtnShowItem";
             this.BtnShowItem.Size = new System.Drawing.Size(67, 23);
             this.BtnShowItem.TabIndex = 7;
             this.BtnShowItem.Text = "Show";
             this.BtnShowItem.UseVisualStyleBackColor = true;
+            this.BtnShowItem.Click += new System.EventHandler(this.BtnShowItem_Click);
             // 
             // dtpFrom
             // 
@@ -73,22 +77,24 @@
             // FromDateItem
             // 
             this.FromDateItem.AutoSize = true;
-            this.FromDateItem.Location = new System.Drawing.Point(45, 30);
+            this.FromDateItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FromDateItem.Location = new System.Drawing.Point(32, 28);
             this.FromDateItem.Name = "FromDateItem";
-            this.FromDateItem.Size = new System.Drawing.Size(56, 13);
+            this.FromDateItem.Size = new System.Drawing.Size(69, 13);
             this.FromDateItem.TabIndex = 5;
-            this.FromDateItem.Text = "From Date";
+            this.FromDateItem.Text = "From Date:";
             // 
-            // dataGridView1
+            // dgvItemReport
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 107);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(747, 237);
-            this.dataGridView1.TabIndex = 10;
+            this.dgvItemReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItemReport.Location = new System.Drawing.Point(27, 107);
+            this.dgvItemReport.Name = "dgvItemReport";
+            this.dgvItemReport.Size = new System.Drawing.Size(747, 237);
+            this.dgvItemReport.TabIndex = 10;
             // 
             // BtnCancel
             // 
+            this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancel.Location = new System.Drawing.Point(652, 350);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(67, 23);
@@ -97,13 +103,25 @@
             this.BtnCancel.UseVisualStyleBackColor = true;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
+            // BtnExport
+            // 
+            this.BtnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnExport.Location = new System.Drawing.Point(579, 350);
+            this.BtnExport.Name = "BtnExport";
+            this.BtnExport.Size = new System.Drawing.Size(67, 23);
+            this.BtnExport.TabIndex = 12;
+            this.BtnExport.Text = "Export";
+            this.BtnExport.UseVisualStyleBackColor = true;
+            this.BtnExport.Click += new System.EventHandler(this.BtnExport_Click);
+            // 
             // ItemReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(786, 389);
+            this.Controls.Add(this.BtnExport);
             this.Controls.Add(this.BtnCancel);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvItemReport);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.ToDateItem);
             this.Controls.Add(this.BtnShowItem);
@@ -112,7 +130,7 @@
             this.Name = "ItemReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ItemReport";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItemReport)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,7 +143,8 @@
         private System.Windows.Forms.Button BtnShowItem;
         private System.Windows.Forms.DateTimePicker dtpFrom;
         private System.Windows.Forms.Label FromDateItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvItemReport;
         private System.Windows.Forms.Button BtnCancel;
+        private System.Windows.Forms.Button BtnExport;
     }
 }

@@ -21,17 +21,42 @@ namespace TexolBilling
         Customers objcust = new Customers();
         SalesDetails objsaledetails = new SalesDetails();
         Item itm = new Item();
+       
         private void BtnSave_Click(object sender, EventArgs e)
         {
             try
             {
                 if (Validation())
                 {
-                    int i = objsaledetails.InsertDataToSalesTbl(txtSalesTranNo.Text, datetimepicker2.Value.Date, Convert.ToInt32(CmbNameS.SelectedValue.ToString()), Convert.ToInt32(lblTotal.Text));
-                    if (i > 0)
-                    {
-                        MessageBox.Show(" Saved Succesfully");
-                        clear();
+                    label6.Text = dgvSales.Rows.Count.ToString();
+                    if (Convert.ToInt32(label6.Text)>1)
+                    { 
+
+                    int i = objsaledetails.InsertDataToSalesTbl(txtSalesTranNo.Text, datetimepicker2.Value.Date, Convert.ToInt32(CmbNameS.SelectedValue.ToString()),Convert.ToInt32(LblTax.Text), Convert.ToInt32(lblTotal.Text),Convert.ToInt32(LblSubTotal.Text));
+                        if (i > 0)
+                        {
+                            //label6.Text = dgvSales.Rows.Count.ToString();
+
+
+                            MessageBox.Show(" Saved Succesfully");
+                            /* SalesInvoiceReport objSReport = new SalesInvoiceReport();
+                             objSReport.LblSalesTrno.Text = txtSalesTranNo.Text;
+                             objSReport.LblSalesDate.Text = datetimepicker2.Value.ToString();
+                             objSReport.LblCustomerName.Text = CmbNameS.SelectedItem.ToString();
+                             objSReport.LblCustomerAddress.Text = LblAddress.Text;
+                             objSReport.LblPhno.Text = LblPhno.Text;
+                             objSReport.LblTotalAmount.Text = lblTotal.Text;
+                             objSReport.LblTaxAmount.Text = LblTax.Text;
+                             objSReport.LblSubTotal.Text = LblSubTotal.Text; */
+
+                            //objSReport.Show();
+                            clear();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please Add the items");
+                        }
+                        
                     }
                     else
                     {
@@ -56,6 +81,8 @@ namespace TexolBilling
             txtPrice.Text = "";
             txtQuantity.Text = "";
             lblTotal.Text = "0";
+            LblTax.Text = "0";
+            LblSubTotal.Text = "0";
             LblAddress.Text = "Address";
             LblPhno.Text = "ContactNo";
             CmbNameS.Text = "select CustomerName";
@@ -119,6 +146,7 @@ namespace TexolBilling
         }
         private void Sales_Load(object sender, EventArgs e)
         {
+            label1.Text = dgvSales.Rows.Count.ToString();
             CmbItemS.Items.Insert(0, "---Select--");
             CommonFunctions objcmn = new CommonFunctions();
             txtSalesTranNo.Text = objcmn.GenerateSaleTransaction();
@@ -128,22 +156,32 @@ namespace TexolBilling
             row["CustomerId"] = 0;
             row["CustomerName"] = "--Select Cust--";
             dt.Rows.InsertAt(row,0);
-
             CmbNameS.DisplayMember = "CustomerName";
             CmbNameS.ValueMember = "CustomerId";
             CmbNameS.DataSource = dt;
-            
             Item itm = new Item();
             DataTable dt1 = itm.GetAllItem();
+            DataRow row1 = dt1.NewRow();
+            row1["ItemId"] = 0;
+            row1["ItemName"] = "--Select Item--";
+            dt1.Rows.InsertAt(row1, 0);
             CmbItemS.DisplayMember = "ItemName";
             CmbItemS.ValueMember = "ItemId";
             CmbItemS.DataSource = dt1;
             
         }
+        public void CalculateTax()
+        {
+            
+            LblTax.Text = ((Convert.ToInt32(lblTotal.Text) * Convert.ToInt32(txtTax.Text) / 100)).ToString();
+            LblSubTotal.Text = (Convert.ToInt32(lblTotal.Text) + Convert.ToInt32(LblTax.Text)).ToString();
+        }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             try
             {
+                
+
                 int ItemId1 = Convert.ToInt32(CmbItemS.SelectedValue.ToString());
                 DataTable dt = itm.GetItemById(ItemId1);
                 if (dt.Rows.Count > 0)
@@ -153,7 +191,9 @@ namespace TexolBilling
                 
                 if (Convert.ToInt32( txtQuantity.Text)<= Convert.ToInt32(Lblmsg.Text))
                 {
+                   
                     lblTotal.Text = ((Convert.ToInt32(lblTotal.Text) + Convert.ToInt32(txtPrice.Text) * Convert.ToInt32(txtQuantity.Text))).ToString();
+                    CalculateTax();
                     string SaleTrNo = txtSalesTranNo.Text;
                     int ItemId = Convert.ToInt32(CmbItemS.SelectedValue.ToString());
                     if (objsaledetails.CheckIfSalesItemAlreadyInsert(SaleTrNo, ItemId))
@@ -179,6 +219,7 @@ namespace TexolBilling
             {
                 MessageBox.Show("Errror" + ex.Message);
             }
+             
 
         }
         void BindGrid()
@@ -187,6 +228,7 @@ namespace TexolBilling
             {
                 DataTable dt = objsaledetails.AddedItemIntoGridView(txtSalesTranNo.Text);
                 dgvSales.DataSource = dt;
+               
             }
             catch (Exception ex)
             {
@@ -215,6 +257,19 @@ namespace TexolBilling
             }
         }
 
-       
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblSubTotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTax_TextChanged(object sender, EventArgs e)
+        {
+            CalculateTax();
+        }
     }
 }

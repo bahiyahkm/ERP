@@ -61,6 +61,13 @@
             this.Lblmsg = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtTax = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.LblSubTotal = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.LblTax = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
@@ -110,7 +117,7 @@
             // BtnSave
             // 
             this.BtnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSave.Location = new System.Drawing.Point(662, 144);
+            this.BtnSave.Location = new System.Drawing.Point(663, 175);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(51, 21);
             this.BtnSave.TabIndex = 10;
@@ -172,7 +179,7 @@
             // dgvSales
             // 
             this.dgvSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSales.Location = new System.Drawing.Point(32, 230);
+            this.dgvSales.Location = new System.Drawing.Point(53, 225);
             this.dgvSales.Name = "dgvSales";
             this.dgvSales.Size = new System.Drawing.Size(535, 211);
             this.dgvSales.TabIndex = 15;
@@ -191,7 +198,7 @@
             // BtnCancel
             // 
             this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancel.Location = new System.Drawing.Point(719, 144);
+            this.BtnCancel.Location = new System.Drawing.Point(720, 175);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(57, 21);
             this.BtnCancel.TabIndex = 18;
@@ -223,7 +230,7 @@
             // 
             this.Lblquantity.AutoSize = true;
             this.Lblquantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lblquantity.Location = new System.Drawing.Point(331, 199);
+            this.Lblquantity.Location = new System.Drawing.Point(342, 200);
             this.Lblquantity.Name = "Lblquantity";
             this.Lblquantity.Size = new System.Drawing.Size(58, 13);
             this.Lblquantity.TabIndex = 21;
@@ -241,7 +248,7 @@
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(383, 195);
+            this.txtQuantity.Location = new System.Drawing.Point(399, 196);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(100, 20);
             this.txtQuantity.TabIndex = 23;
@@ -266,7 +273,7 @@
             // 
             this.BtnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAdd.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnAdd.Location = new System.Drawing.Point(501, 195);
+            this.BtnAdd.Location = new System.Drawing.Point(517, 196);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(43, 23);
             this.BtnAdd.TabIndex = 26;
@@ -296,17 +303,18 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(588, 416);
+            this.label2.Location = new System.Drawing.Point(394, 444);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 25);
+            this.label2.Size = new System.Drawing.Size(158, 25);
             this.label2.TabIndex = 29;
-            this.label2.Text = "Total :";
+            this.label2.Text = "Total Amount:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(673, 416);
+            this.lblTotal.Location = new System.Drawing.Point(558, 444);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(25, 25);
             this.lblTotal.TabIndex = 30;
@@ -316,7 +324,7 @@
             // 
             this.Lblmsg.AutoSize = true;
             this.Lblmsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lblmsg.Location = new System.Drawing.Point(569, 198);
+            this.Lblmsg.Location = new System.Drawing.Point(590, 244);
             this.Lblmsg.Name = "Lblmsg";
             this.Lblmsg.Size = new System.Drawing.Size(0, 15);
             this.Lblmsg.TabIndex = 31;
@@ -342,11 +350,89 @@
             this.label4.TabIndex = 33;
             this.label4.Text = "ContactNo:";
             // 
+            // txtTax
+            // 
+            this.txtTax.Location = new System.Drawing.Point(639, 139);
+            this.txtTax.Name = "txtTax";
+            this.txtTax.Size = new System.Drawing.Size(100, 20);
+            this.txtTax.TabIndex = 35;
+            this.txtTax.Text = "15";
+            this.txtTax.TextChanged += new System.EventHandler(this.txtTax_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(586, 142);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "Tax:";
+            // 
+            // LblSubTotal
+            // 
+            this.LblSubTotal.AutoSize = true;
+            this.LblSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblSubTotal.Location = new System.Drawing.Point(558, 525);
+            this.LblSubTotal.Name = "LblSubTotal";
+            this.LblSubTotal.Size = new System.Drawing.Size(25, 25);
+            this.LblSubTotal.TabIndex = 37;
+            this.LblSubTotal.Text = "0";
+            this.LblSubTotal.Click += new System.EventHandler(this.LblSubTotal_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(425, 525);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(127, 25);
+            this.label7.TabIndex = 36;
+            this.label7.Text = "Sub Total :";
+            // 
+            // LblTax
+            // 
+            this.LblTax.AutoSize = true;
+            this.LblTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTax.Location = new System.Drawing.Point(558, 484);
+            this.LblTax.Name = "LblTax";
+            this.LblTax.Size = new System.Drawing.Size(25, 25);
+            this.LblTax.TabIndex = 39;
+            this.LblTax.Text = "0";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(408, 484);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(144, 25);
+            this.label9.TabIndex = 38;
+            this.label9.Text = "Tax Amount:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(636, 310);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 13);
+            this.label6.TabIndex = 40;
+            this.label6.Text = "msg";
+            this.label6.Visible = false;
+            // 
             // Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 491);
+            this.ClientSize = new System.Drawing.Size(803, 559);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.LblTax);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.LblSubTotal);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtTax);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Lblmsg);
@@ -423,5 +509,12 @@
         private System.Windows.Forms.Label Lblmsg;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtTax;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label LblSubTotal;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label LblTax;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label6;
     }
 }

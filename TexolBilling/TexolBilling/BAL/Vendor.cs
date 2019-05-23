@@ -31,5 +31,10 @@ namespace TexolBilling.BAL
             string sql = "select * from vendor_tbl where VendorId='" + VendorId + "' ";
             return db.GetData(sql);
         }
+        public DataTable GetVendorByDate(DateTime dtp1, DateTime dtp2)
+        {
+            string sql = "select   VendorName,VendorAddress,VendorZipCode,VendorAreaCode,VendorPhoneNo from vendor_tbl  where Date between '" + dtp1.Date + "' and '" + dtp2.Date + "'";
+            return db.GetData(sql);
+        }
     }
 }

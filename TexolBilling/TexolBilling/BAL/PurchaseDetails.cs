@@ -42,9 +42,9 @@ namespace TexolBilling.BAL
            string sql = "select  item_tbl.ItemName,purchaseitem_tbl.Rate,purchaseitem_tbl.Quantity,(purchaseitem_tbl.Rate*purchaseitem_tbl.Quantity) as TotalAmount from item_tbl inner join purchaseitem_tbl on purchaseitem_tbl.ItemId=item_tbl.ItemId where purchaseitem_tbl.PurchaseTransactionNo='" + TransactionNo+"'";
             return db.GetData(sql);
         }
-        public int InsertDataToPurchaseTbl(string purchaseTrno,DateTime date,int vendorid,int tamount)
+        public int InsertDataToPurchaseTbl(string purchaseTrno,DateTime date,int vendorid,int tax,int tamount,int subtotal)
         {
-            string sql = "insert into purchase_tbl(PurchaseTransactionNo,PurchaseDate,VendorId,TotalAmount) values('"+ purchaseTrno+"','"+date+"',"+vendorid+","+tamount+") ";
+            string sql = "insert into purchase_tbl(PurchaseTransactionNo,PurchaseDate,VendorId,TaxAmount,TotalAmount,SubTotal) values('"+ purchaseTrno+"','"+date+"',"+vendorid+","+tax+","+tamount+","+subtotal+") ";
             int i = db.InsertData(sql);
             return i;
         }

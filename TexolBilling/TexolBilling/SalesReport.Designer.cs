@@ -37,17 +37,19 @@
             this.Show = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.LblMessage = new System.Windows.Forms.Label();
+            this.BtnExport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesReport)).BeginInit();
             this.SuspendLayout();
             // 
             // FromDateS
             // 
             this.FromDateS.AutoSize = true;
-            this.FromDateS.Location = new System.Drawing.Point(54, 46);
+            this.FromDateS.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FromDateS.Location = new System.Drawing.Point(41, 44);
             this.FromDateS.Name = "FromDateS";
-            this.FromDateS.Size = new System.Drawing.Size(56, 13);
+            this.FromDateS.Size = new System.Drawing.Size(69, 13);
             this.FromDateS.TabIndex = 0;
-            this.FromDateS.Text = "From Date";
+            this.FromDateS.Text = "From Date:";
             // 
             // dtpFrom
             // 
@@ -59,11 +61,12 @@
             // ToDateS
             // 
             this.ToDateS.AutoSize = true;
-            this.ToDateS.Location = new System.Drawing.Point(373, 46);
+            this.ToDateS.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToDateS.Location = new System.Drawing.Point(365, 44);
             this.ToDateS.Name = "ToDateS";
-            this.ToDateS.Size = new System.Drawing.Size(46, 13);
+            this.ToDateS.Size = new System.Drawing.Size(57, 13);
             this.ToDateS.TabIndex = 3;
-            this.ToDateS.Text = "To Date";
+            this.ToDateS.Text = "To Date:";
             // 
             // dtp2
             // 
@@ -82,6 +85,7 @@
             // 
             // BtnCancel
             // 
+            this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancel.Location = new System.Drawing.Point(704, 385);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(75, 23);
@@ -92,6 +96,7 @@
             // 
             // Show
             // 
+            this.Show.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Show.Location = new System.Drawing.Point(654, 39);
             this.Show.Name = "Show";
             this.Show.Size = new System.Drawing.Size(75, 23);
@@ -104,7 +109,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(532, 395);
+            this.label1.Location = new System.Drawing.Point(481, 395);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 8;
@@ -114,17 +119,29 @@
             // 
             this.LblMessage.AutoSize = true;
             this.LblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblMessage.Location = new System.Drawing.Point(610, 395);
+            this.LblMessage.Location = new System.Drawing.Point(559, 395);
             this.LblMessage.Name = "LblMessage";
             this.LblMessage.Size = new System.Drawing.Size(14, 13);
             this.LblMessage.TabIndex = 9;
             this.LblMessage.Text = "0";
+            // 
+            // BtnExport
+            // 
+            this.BtnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnExport.Location = new System.Drawing.Point(610, 385);
+            this.BtnExport.Name = "BtnExport";
+            this.BtnExport.Size = new System.Drawing.Size(75, 23);
+            this.BtnExport.TabIndex = 10;
+            this.BtnExport.Text = "Export";
+            this.BtnExport.UseVisualStyleBackColor = true;
+            this.BtnExport.Click += new System.EventHandler(this.BtnExport_Click);
             // 
             // SalesReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BtnExport);
             this.Controls.Add(this.LblMessage);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Show);
@@ -154,5 +171,6 @@
         private System.Windows.Forms.Button Show;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label LblMessage;
+        private System.Windows.Forms.Button BtnExport;
     }
 }

@@ -30,5 +30,10 @@ namespace TexolBilling.BAL
             string sql = "select * from customers_tbl where CustomerId=" + CustomerId + "";
             return db.GetData(sql);
         }
+        public DataTable GetCustomerByDate(DateTime dtp1, DateTime dtp2)
+        {
+            string sql = "select   CustomerName,CustomerAddress,CustomerZipCode,CustomerAreaCode,CustomerPhoneNo from customers_tbl  where Date between '" + dtp1.Date + "' and '" + dtp2.Date + "'";
+            return db.GetData(sql);
+        }
     }
 }

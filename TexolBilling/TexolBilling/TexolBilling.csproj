@@ -121,6 +121,12 @@
     <Compile Include="Purchase.Designer.cs">
       <DependentUpon>Purchase.cs</DependentUpon>
     </Compile>
+    <Compile Include="PurchaseInvoiceReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchaseInvoiceReport.Designer.cs">
+      <DependentUpon>PurchaseInvoiceReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="PurchaseReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,11 +139,23 @@
     <Compile Include="Sales.Designer.cs">
       <DependentUpon>Sales.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalesInvoiceReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesInvoiceReport.Designer.cs">
+      <DependentUpon>SalesInvoiceReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="SalesReport.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SalesReport.Designer.cs">
       <DependentUpon>SalesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testReport.Designer.cs">
+      <DependentUpon>testReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Validation.cs" />
     <Compile Include="AddVendor.cs">
@@ -185,17 +203,26 @@
     <EmbeddedResource Include="Purchase.resx">
       <DependentUpon>Purchase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseInvoiceReport.resx">
+      <DependentUpon>PurchaseInvoiceReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PurchaseReport.resx">
       <DependentUpon>PurchaseReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sales.resx">
       <DependentUpon>Sales.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SalesInvoiceReport.resx">
+      <DependentUpon>SalesInvoiceReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SalesReport.resx">
       <DependentUpon>SalesReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddVendor.resx">
       <DependentUpon>AddVendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testReport.resx">
+      <DependentUpon>testReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VendorReport.resx">
       <DependentUpon>VendorReport.cs</DependentUpon>
