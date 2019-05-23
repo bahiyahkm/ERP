@@ -13,7 +13,7 @@ namespace TexolBilling.DAL
     {
         public string GetConnection()
         {
-            return "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\QFTechnology\\Documents\\erp_db.mdf;Integrated Security=True;Connect Timeout=30";
+            return "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\TEXOL PROGRAMS\\BILLINGSOFTWARE\\ERP\\TEXOLBILLING\\ERP_DB.MDF;Integrated Security=True;Connect Timeout=30";
         }
         public DataTable GetData(string sql)
         {

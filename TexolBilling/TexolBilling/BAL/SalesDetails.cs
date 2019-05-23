@@ -60,6 +60,12 @@ namespace TexolBilling.BAL
             string sql = "select sum(TotalAmount) as tt from sales_tbl inner join customers_tbl on sales_tbl.CustomerId=customers_tbl.CustomerId where SalesDate between '" + dtp1.Date + "' and '" + dtp2.Date + "'";
             return db.GetData(sql);
         }
+        public DataTable GetSalesByTranNo(string TrnNo)
+        {
+            string sql = "select customers_tbl.CustomerName,customers_tbl.CustomerAddress,customers_tbl.CustomerPhoneNo,sales_tbl.SalesDate from customers_tbl inner join sales_tbl on sales_tbl.CustomerId=customers_tbl.CustomerId where sales_tbl.SalesTransactionNo='"+TrnNo+"'";
+            return db.GetData(sql);
+
+        }
        
     }
 }

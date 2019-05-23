@@ -187,7 +187,7 @@
             // dgvPurchase
             // 
             this.dgvPurchase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPurchase.Location = new System.Drawing.Point(32, 228);
+            this.dgvPurchase.Location = new System.Drawing.Point(50, 228);
             this.dgvPurchase.Name = "dgvPurchase";
             this.dgvPurchase.Size = new System.Drawing.Size(535, 199);
             this.dgvPurchase.TabIndex = 15;
@@ -373,10 +373,10 @@
             // LblMessage
             // 
             this.LblMessage.AutoSize = true;
-            this.LblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblMessage.Location = new System.Drawing.Point(603, 281);
             this.LblMessage.Name = "LblMessage";
-            this.LblMessage.Size = new System.Drawing.Size(139, 25);
+            this.LblMessage.Size = new System.Drawing.Size(74, 13);
             this.LblMessage.TabIndex = 35;
             this.LblMessage.Text = "LblMessage";
             this.LblMessage.Visible = false;

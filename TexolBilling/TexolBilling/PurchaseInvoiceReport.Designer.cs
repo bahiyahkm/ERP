@@ -37,11 +37,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPurchaseInvoice = new System.Windows.Forms.DataGridView();
             this.LblSubTotal = new System.Windows.Forms.Label();
             this.LblTaxAmount = new System.Windows.Forms.Label();
             this.LblTotalAmount = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.BtnCancel = new System.Windows.Forms.Button();
+            this.BtnPrint = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPurchaseInvoice)).BeginInit();
             this.SuspendLayout();
             // 
             // LblVendorName
@@ -134,13 +136,14 @@
             this.label9.TabIndex = 8;
             this.label9.Text = "Purchase Invoice";
             // 
-            // dataGridView1
+            // dgvPurchaseInvoice
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(47, 147);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(661, 213);
-            this.dataGridView1.TabIndex = 9;
+            this.dgvPurchaseInvoice.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvPurchaseInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPurchaseInvoice.Location = new System.Drawing.Point(47, 147);
+            this.dgvPurchaseInvoice.Name = "dgvPurchaseInvoice";
+            this.dgvPurchaseInvoice.Size = new System.Drawing.Size(661, 213);
+            this.dgvPurchaseInvoice.TabIndex = 9;
             // 
             // LblSubTotal
             // 
@@ -172,16 +175,40 @@
             this.LblTotalAmount.TabIndex = 10;
             this.LblTotalAmount.Text = "0";
             // 
+            // BtnCancel
+            // 
+            this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancel.Location = new System.Drawing.Point(382, 366);
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Size = new System.Drawing.Size(75, 35);
+            this.BtnCancel.TabIndex = 21;
+            this.BtnCancel.Text = "Cancel";
+            this.BtnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
+            // 
+            // BtnPrint
+            // 
+            this.BtnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPrint.Location = new System.Drawing.Point(301, 366);
+            this.BtnPrint.Name = "BtnPrint";
+            this.BtnPrint.Size = new System.Drawing.Size(75, 35);
+            this.BtnPrint.TabIndex = 20;
+            this.BtnPrint.Text = "Print";
+            this.BtnPrint.UseVisualStyleBackColor = true;
+            this.BtnPrint.Click += new System.EventHandler(this.BtnPrint_Click);
+            // 
             // PurchaseInvoiceReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BtnCancel);
+            this.Controls.Add(this.BtnPrint);
             this.Controls.Add(this.LblSubTotal);
             this.Controls.Add(this.LblTaxAmount);
             this.Controls.Add(this.LblTotalAmount);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvPurchaseInvoice);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -191,9 +218,13 @@
             this.Controls.Add(this.LblVendorPhno);
             this.Controls.Add(this.LblVendorAddress);
             this.Controls.Add(this.LblVendorName);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PurchaseInvoiceReport";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ShowIcon = false;
+            this.Load += new System.EventHandler(this.PurchaseInvoiceReport_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPurchaseInvoice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,9 +240,11 @@
         public System.Windows.Forms.Label label6;
         public System.Windows.Forms.Label label7;
         public System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPurchaseInvoice;
         public System.Windows.Forms.Label LblSubTotal;
         public System.Windows.Forms.Label LblTaxAmount;
         public System.Windows.Forms.Label LblTotalAmount;
+        private System.Windows.Forms.Button BtnCancel;
+        private System.Windows.Forms.Button BtnPrint;
     }
 }

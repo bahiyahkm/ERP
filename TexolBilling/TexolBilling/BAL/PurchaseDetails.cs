@@ -58,6 +58,11 @@ namespace TexolBilling.BAL
             string sql = "select sum(TotalAmount) as tt from purchase_tbl inner join vendor_tbl on purchase_tbl.VendorId=vendor_tbl.VendorId where PurchaseDate between '" + dtp1.Date + "' and '" + dtp2.Date + "'";
             return db.GetData(sql);
         }
+        public DataTable GetPurchaseByTrNo(string Trno)
+        {
+            string sql = "select vendor_tbl.VendorName,vendor_tbl.VendorAddress,vendor_tbl.VendorPhoneNo,purchase_tbl.PurchaseDate from vendor_tbl inner join purchase_tbl on purchase_tbl.VendorId=vendor_tbl.VendorId where PurchaseTransactionNo='" + Trno + "'";
+            return db.GetData(sql);
+        }
 
     }
 }

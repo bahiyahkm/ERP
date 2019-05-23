@@ -28,22 +28,19 @@ namespace TexolBilling
         {
             try
             {
+
                 if (Validation())
                 {
                     {
-                        lblsave.Text = dgvPurchase.Rows.Count.ToString();
-                        if (Convert.ToInt32(lblsave.Text) > 1)
+                     
+                        if (Convert.ToInt32(dgvPurchase.Rows.Count) > 1)
                         {
-                            int i = objprodetails.InsertDataToPurchaseTbl(txtPurchaseTNo.Text, dateTimePicker1.Value.Date, Convert.ToInt32(CmbName.SelectedValue.ToString()), Convert.ToInt32(LblTaxAmount.Text), Convert.ToInt32(lblTotal.Text),Convert.ToInt32(LblSubTotal.Text));
+                            int i = objprodetails.InsertDataToPurchaseTbl(txtPurchaseTNo.Text, dateTimePicker1.Value.Date, Convert.ToInt32(CmbName.SelectedValue.ToString()), Convert.ToInt32(LblTaxAmount.Text), Convert.ToInt32(lblTotal.Text), Convert.ToInt32(LblSubTotal.Text));
                             if (i > 0)
                             {
                                 MessageBox.Show(" Saved Succesfully");
                                 PurchaseInvoiceReport objPReport = new PurchaseInvoiceReport();
                                 objPReport.LblPurchaseTrNo.Text = txtPurchaseTNo.Text;
-                                objPReport.LblPurchaseDate.Text = dateTimePicker1.Value.ToString();
-                                objPReport.LblVendorName.Text = CmbName.SelectedValue.ToString();
-                                objPReport.LblVendorAddress.Text = LblAddress.Text;
-                                objPReport.LblVendorPhno.Text = LblPhno.Text;
                                 objPReport.LblTotalAmount.Text = lblTotal.Text;
                                 objPReport.LblTaxAmount.Text = LblTaxAmount.Text;
                                 objPReport.LblSubTotal.Text = LblSubTotal.Text;
@@ -61,15 +58,14 @@ namespace TexolBilling
                         }
                     }
                 }
-                else
-                {
-                    // LblPurchase.Text = "Please fill the Mandatory feild";
-                }
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error-------------:" + ex.Message);
             }
+               
+            
+            
            
         }
         public void clear()
@@ -77,9 +73,9 @@ namespace TexolBilling
             CommonFunctions objcmn = new CommonFunctions();
             txtPurchaseTNo.Text = objcmn.GenerateRandomNo();
             BindGrid();
-            txtQuantity.Text = "";
-            txtPrice.Text = "";
-            txtTax.Text = "";
+            txtQuantity.Text = "0";
+            txtPrice.Text = "0";
+            txtTax.Text = "0";
             lblTotal.Text="0";
             CmbName.Text = "--select Vendor--";
             CmbItemName.Text = "--select Item--";
@@ -163,7 +159,7 @@ namespace TexolBilling
                 txtPrice.Text = dt.Rows[0]["Rate"].ToString();
             }
         }
-        public void Calculator()
+        public void CalculateTax()
         {
            LblTaxAmount.Text = ((Convert.ToInt32(lblTotal.Text) * Convert.ToInt32(txtTax.Text) / 100)).ToString();
             LblSubTotal.Text = (Convert.ToInt32(lblTotal.Text) + Convert.ToInt32(LblTaxAmount.Text)).ToString();
@@ -179,7 +175,7 @@ namespace TexolBilling
                     LblMessage.Text = dt.Rows[0]["Quantity"].ToString();
                 }
               lblTotal.Text = (Convert.ToInt32(lblTotal.Text) + (Convert.ToInt32(txtPrice.Text) * Convert.ToInt32(txtQuantity.Text))).ToString();
-                Calculator();
+                CalculateTax();
                     string PurchaseTrNo = txtPurchaseTNo.Text;
                     int ItemId = Convert.ToInt32(CmbItemName.SelectedValue);
                     if (objprodetails.CheckIfPurchaseItemAlreadyInsert(PurchaseTrNo, ItemId))
@@ -203,21 +199,15 @@ namespace TexolBilling
             }
         void BindGrid()
         {
-            try
-            {
+           
                 DataTable dt = objprodetails.AddedItemIntoGridView(txtPurchaseTNo.Text);
                 dgvPurchase.DataSource = dt;
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Error" + ex.Message);
-                
-            }
+             
         }
 
         private void txtTax_TextChanged(object sender, EventArgs e)
         {
-            Calculator();
+            CalculateTax();
         }
     }
     }

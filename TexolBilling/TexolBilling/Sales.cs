@@ -35,21 +35,15 @@ namespace TexolBilling
                     int i = objsaledetails.InsertDataToSalesTbl(txtSalesTranNo.Text, datetimepicker2.Value.Date, Convert.ToInt32(CmbNameS.SelectedValue.ToString()),Convert.ToInt32(LblTax.Text), Convert.ToInt32(lblTotal.Text),Convert.ToInt32(LblSubTotal.Text));
                         if (i > 0)
                         {
-                           
-
-
                             MessageBox.Show(" Saved Succesfully");
                             SalesInvoiceReport objSReport = new SalesInvoiceReport();
                              objSReport.LblSalesTrno.Text = txtSalesTranNo.Text;
-                             objSReport.LblSalesDate.Text = datetimepicker2.Value.ToString();
-                             objSReport.LblCustomerName.Text = CmbNameS.SelectedItem.ToString();
-                             objSReport.LblCustomerAddress.Text = LblAddress.Text;
-                             objSReport.LblPhno.Text = LblPhno.Text;
-                             objSReport.LblTotalAmount.Text = lblTotal.Text;
+                            
+                             objSReport.LblTotalAmount.Text =lblTotal.Text;
                              objSReport.LblTaxAmount.Text = LblTax.Text;
-                             objSReport.LblSubTotal.Text = LblSubTotal.Text; 
+                             objSReport.LblSubTotal.Text = LblSubTotal.Text;
 
-                            objSReport.Show();
+                           objSReport.Show();
                             clear();
                         }
                         else
@@ -78,8 +72,8 @@ namespace TexolBilling
             CommonFunctions objcmn = new CommonFunctions();
             txtSalesTranNo.Text = objcmn.GenerateSaleTransaction();
             BindGrid();
-            txtPrice.Text = "";
-            txtQuantity.Text = "";
+            txtPrice.Text = "0";
+            txtQuantity.Text = "0";
             lblTotal.Text = "0";
             LblTax.Text = "0";
             LblSubTotal.Text = "0";

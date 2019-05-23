@@ -29,11 +29,7 @@
         private void InitializeComponent()
         {
             this.dgvVendorReport = new System.Windows.Forms.DataGridView();
-            this.dtpTo = new System.Windows.Forms.DateTimePicker();
-            this.ToDateVendor = new System.Windows.Forms.Label();
             this.BtnShowVendor = new System.Windows.Forms.Button();
-            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
-            this.FromDateVendor = new System.Windows.Forms.Label();
             this.BtnCancel = new System.Windows.Forms.Button();
             this.BtnExport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendorReport)).BeginInit();
@@ -47,50 +43,16 @@
             this.dgvVendorReport.Size = new System.Drawing.Size(747, 237);
             this.dgvVendorReport.TabIndex = 22;
             // 
-            // dtpTo
-            // 
-            this.dtpTo.Location = new System.Drawing.Point(422, 25);
-            this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(200, 20);
-            this.dtpTo.TabIndex = 21;
-            // 
-            // ToDateVendor
-            // 
-            this.ToDateVendor.AutoSize = true;
-            this.ToDateVendor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ToDateVendor.Location = new System.Drawing.Point(359, 30);
-            this.ToDateVendor.Name = "ToDateVendor";
-            this.ToDateVendor.Size = new System.Drawing.Size(57, 13);
-            this.ToDateVendor.TabIndex = 20;
-            this.ToDateVendor.Text = "To Date:";
-            // 
             // BtnShowVendor
             // 
             this.BtnShowVendor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnShowVendor.Location = new System.Drawing.Point(655, 25);
+            this.BtnShowVendor.Location = new System.Drawing.Point(308, 38);
             this.BtnShowVendor.Name = "BtnShowVendor";
-            this.BtnShowVendor.Size = new System.Drawing.Size(67, 23);
+            this.BtnShowVendor.Size = new System.Drawing.Size(208, 46);
             this.BtnShowVendor.TabIndex = 19;
-            this.BtnShowVendor.Text = "Show";
+            this.BtnShowVendor.Text = "Show Vendor Details";
             this.BtnShowVendor.UseVisualStyleBackColor = true;
             this.BtnShowVendor.Click += new System.EventHandler(this.BtnShowVendor_Click);
-            // 
-            // dtpFrom
-            // 
-            this.dtpFrom.Location = new System.Drawing.Point(110, 25);
-            this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(200, 20);
-            this.dtpFrom.TabIndex = 18;
-            // 
-            // FromDateVendor
-            // 
-            this.FromDateVendor.AutoSize = true;
-            this.FromDateVendor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FromDateVendor.Location = new System.Drawing.Point(35, 30);
-            this.FromDateVendor.Name = "FromDateVendor";
-            this.FromDateVendor.Size = new System.Drawing.Size(69, 13);
-            this.FromDateVendor.TabIndex = 17;
-            this.FromDateVendor.Text = "From Date:";
             // 
             // BtnCancel
             // 
@@ -122,28 +84,19 @@
             this.Controls.Add(this.BtnExport);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.dgvVendorReport);
-            this.Controls.Add(this.dtpTo);
-            this.Controls.Add(this.ToDateVendor);
             this.Controls.Add(this.BtnShowVendor);
-            this.Controls.Add(this.dtpFrom);
-            this.Controls.Add(this.FromDateVendor);
             this.Name = "VendorReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VendorReport";
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendorReport)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dgvVendorReport;
-        private System.Windows.Forms.DateTimePicker dtpTo;
-        private System.Windows.Forms.Label ToDateVendor;
         private System.Windows.Forms.Button BtnShowVendor;
-        private System.Windows.Forms.DateTimePicker dtpFrom;
-        private System.Windows.Forms.Label FromDateVendor;
         private System.Windows.Forms.Button BtnCancel;
         private System.Windows.Forms.Button BtnExport;
     }

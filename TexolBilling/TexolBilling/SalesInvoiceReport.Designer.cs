@@ -37,11 +37,13 @@
             this.LblCustomerName = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvSalesInvoice = new System.Windows.Forms.DataGridView();
             this.LblTaxAmount = new System.Windows.Forms.Label();
             this.LblSubTotal = new System.Windows.Forms.Label();
             this.LblTotalAmount = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.BtnPrint = new System.Windows.Forms.Button();
+            this.BtnCancel = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalesInvoice)).BeginInit();
             this.SuspendLayout();
             // 
             // PaymentMethod
@@ -135,13 +137,14 @@
             this.label8.TabIndex = 13;
             this.label8.Text = "Tax Amount:";
             // 
-            // dataGridView1
+            // dgvSalesInvoice
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(75, 153);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(635, 213);
-            this.dataGridView1.TabIndex = 14;
+            this.dgvSalesInvoice.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvSalesInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSalesInvoice.Location = new System.Drawing.Point(75, 153);
+            this.dgvSalesInvoice.Name = "dgvSalesInvoice";
+            this.dgvSalesInvoice.Size = new System.Drawing.Size(635, 213);
+            this.dgvSalesInvoice.TabIndex = 14;
             // 
             // LblTaxAmount
             // 
@@ -173,16 +176,40 @@
             this.LblTotalAmount.TabIndex = 15;
             this.LblTotalAmount.Text = "0";
             // 
+            // BtnPrint
+            // 
+            this.BtnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPrint.Location = new System.Drawing.Point(302, 372);
+            this.BtnPrint.Name = "BtnPrint";
+            this.BtnPrint.Size = new System.Drawing.Size(75, 35);
+            this.BtnPrint.TabIndex = 18;
+            this.BtnPrint.Text = "Print";
+            this.BtnPrint.UseVisualStyleBackColor = true;
+            this.BtnPrint.Click += new System.EventHandler(this.BtnPrint_Click);
+            // 
+            // BtnCancel
+            // 
+            this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancel.Location = new System.Drawing.Point(383, 372);
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Size = new System.Drawing.Size(75, 35);
+            this.BtnCancel.TabIndex = 19;
+            this.BtnCancel.Text = "Cancel";
+            this.BtnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
+            // 
             // SalesInvoiceReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(806, 497);
+            this.Controls.Add(this.BtnCancel);
+            this.Controls.Add(this.BtnPrint);
             this.Controls.Add(this.LblTaxAmount);
             this.Controls.Add(this.LblSubTotal);
             this.Controls.Add(this.LblTotalAmount);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvSalesInvoice);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.LblCustomerName);
@@ -192,9 +219,10 @@
             this.Controls.Add(this.LblSalesTrno);
             this.Controls.Add(this.LblSalesDate);
             this.Controls.Add(this.PaymentMethod);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SalesInvoiceReport";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.SalesInvoiceReport_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalesInvoice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,9 +239,11 @@
         public System.Windows.Forms.Label LblCustomerName;
         public System.Windows.Forms.Label label7;
         public System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvSalesInvoice;
         public System.Windows.Forms.Label LblTaxAmount;
         public System.Windows.Forms.Label LblSubTotal;
         public System.Windows.Forms.Label LblTotalAmount;
+        private System.Windows.Forms.Button BtnPrint;
+        private System.Windows.Forms.Button BtnCancel;
     }
 }

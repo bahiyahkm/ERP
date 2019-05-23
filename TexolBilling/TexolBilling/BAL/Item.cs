@@ -42,9 +42,9 @@ namespace TexolBilling.BAL
             int i = db.InsertData(sql);
             return i;
         }
-        public DataTable GetItemByDate(DateTime dtp1, DateTime dtp2)
+        public DataTable GetItemReport()
         {
-            string sql = "select   ItemName,Quantity,Rate from item_tbl  where Date between '" + dtp1.Date + "' and '" + dtp2.Date + "'";
+            string sql = "select item_tbl.ItemName,item_tbl.Quantity,item_tbl.Rate from item_tbl";
             return db.GetData(sql);
         }
 

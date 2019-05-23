@@ -27,11 +27,11 @@ namespace TexolBilling
 
         private void BtnShowVendor_Click(object sender, EventArgs e)
         {
-
+            Bind();
         }
         public void Bind()
         {
-            DataTable dt = objvend.GetVendorByDate(Convert.ToDateTime(dtpFrom.Value.ToString()), Convert.ToDateTime(dtpTo.Value.ToString()));
+            DataTable dt = objvend.GetVendorReport();
             dgvVendorReport.DataSource = dt;
         }
         public void copyAlltoClipboard()
