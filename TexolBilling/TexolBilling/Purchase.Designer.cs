@@ -448,6 +448,7 @@
             this.lblsave.Name = "lblsave";
             this.lblsave.Size = new System.Drawing.Size(0, 13);
             this.lblsave.TabIndex = 42;
+            this.lblsave.Visible = false;
             // 
             // Purchase
             // 

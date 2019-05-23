@@ -35,11 +35,11 @@ namespace TexolBilling
                     int i = objsaledetails.InsertDataToSalesTbl(txtSalesTranNo.Text, datetimepicker2.Value.Date, Convert.ToInt32(CmbNameS.SelectedValue.ToString()),Convert.ToInt32(LblTax.Text), Convert.ToInt32(lblTotal.Text),Convert.ToInt32(LblSubTotal.Text));
                         if (i > 0)
                         {
-                            //label6.Text = dgvSales.Rows.Count.ToString();
+                           
 
 
                             MessageBox.Show(" Saved Succesfully");
-                            /* SalesInvoiceReport objSReport = new SalesInvoiceReport();
+                            SalesInvoiceReport objSReport = new SalesInvoiceReport();
                              objSReport.LblSalesTrno.Text = txtSalesTranNo.Text;
                              objSReport.LblSalesDate.Text = datetimepicker2.Value.ToString();
                              objSReport.LblCustomerName.Text = CmbNameS.SelectedItem.ToString();
@@ -47,20 +47,20 @@ namespace TexolBilling
                              objSReport.LblPhno.Text = LblPhno.Text;
                              objSReport.LblTotalAmount.Text = lblTotal.Text;
                              objSReport.LblTaxAmount.Text = LblTax.Text;
-                             objSReport.LblSubTotal.Text = LblSubTotal.Text; */
+                             objSReport.LblSubTotal.Text = LblSubTotal.Text; 
 
-                            //objSReport.Show();
+                            objSReport.Show();
                             clear();
                         }
                         else
                         {
-                            MessageBox.Show("Please Add the items");
+                            MessageBox.Show("Saving Failed");
                         }
                         
                     }
                     else
                     {
-                        MessageBox.Show("Saving Failed");
+                        MessageBox.Show("Please Add the items");
                     }
                 }
                 else

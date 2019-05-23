@@ -81,8 +81,8 @@ namespace TexolBilling
             txtPrice.Text = "";
             txtTax.Text = "";
             lblTotal.Text="0";
-            CmbName.Text = "select Vendor";
-            CmbItemName.Text = "select Item";
+            CmbName.Text = "--select Vendor--";
+            CmbItemName.Text = "--select Item--";
             LblAddress.Text = "Address";
             LblPhno.Text = "ContactNo";
         }
