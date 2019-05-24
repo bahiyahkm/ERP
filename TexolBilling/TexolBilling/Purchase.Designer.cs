@@ -40,7 +40,7 @@
             this.PurchaseTransactionNo = new System.Windows.Forms.Label();
             this.txtPurchaseTNo = new System.Windows.Forms.TextBox();
             this.PaymentMethod = new System.Windows.Forms.Label();
-            this.CBPayMet = new System.Windows.Forms.ComboBox();
+            this.CmbPayMet = new System.Windows.Forms.ComboBox();
             this.CmbName = new System.Windows.Forms.ComboBox();
             this.dgvPurchase = new System.Windows.Forms.DataGridView();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -164,16 +164,16 @@
             this.PaymentMethod.TabIndex = 3;
             this.PaymentMethod.Text = "Payment Method:";
             // 
-            // CBPayMet
+            // CmbPayMet
             // 
-            this.CBPayMet.FormattingEnabled = true;
-            this.CBPayMet.Items.AddRange(new object[] {
+            this.CmbPayMet.FormattingEnabled = true;
+            this.CmbPayMet.Items.AddRange(new object[] {
             "Credit",
             "Debit"});
-            this.CBPayMet.Location = new System.Drawing.Point(562, 99);
-            this.CBPayMet.Name = "CBPayMet";
-            this.CBPayMet.Size = new System.Drawing.Size(171, 21);
-            this.CBPayMet.TabIndex = 13;
+            this.CmbPayMet.Location = new System.Drawing.Point(562, 99);
+            this.CmbPayMet.Name = "CmbPayMet";
+            this.CmbPayMet.Size = new System.Drawing.Size(171, 21);
+            this.CmbPayMet.TabIndex = 13;
             // 
             // CmbName
             // 
@@ -481,7 +481,7 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.dgvPurchase);
             this.Controls.Add(this.CmbName);
-            this.Controls.Add(this.CBPayMet);
+            this.Controls.Add(this.CmbPayMet);
             this.Controls.Add(this.txtPurchaseTNo);
             this.Controls.Add(this.PurchaseTransactionNo);
             this.Controls.Add(this.label2);
@@ -517,7 +517,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.DataGridView dgvPurchase;
         private System.Windows.Forms.ComboBox CmbName;
-        private System.Windows.Forms.ComboBox CBPayMet;
+        private System.Windows.Forms.ComboBox CmbPayMet;
         private System.Windows.Forms.TextBox txtPurchaseTNo;
         private System.Windows.Forms.Label PurchaseTransactionNo;
         private System.Windows.Forms.Label PaymentMethod;

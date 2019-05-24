@@ -221,6 +221,7 @@
             this.Controls.Add(this.PaymentMethod);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SalesInvoiceReport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.SalesInvoiceReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesInvoice)).EndInit();
             this.ResumeLayout(false);

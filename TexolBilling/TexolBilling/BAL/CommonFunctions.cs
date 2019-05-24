@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,8 +31,6 @@ namespace TexolBilling.BAL
             int Year = DateTime.Now.Year;
             return "" + prefix + "" + random + "" + day + "" + Month + "" + Year + "";
         }
-        
-
        
     }
 }

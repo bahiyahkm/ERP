@@ -63,6 +63,11 @@ namespace TexolBilling.BAL
             string sql = "select vendor_tbl.VendorName,vendor_tbl.VendorAddress,vendor_tbl.VendorPhoneNo,purchase_tbl.PurchaseDate from vendor_tbl inner join purchase_tbl on purchase_tbl.VendorId=vendor_tbl.VendorId where PurchaseTransactionNo='" + Trno + "'";
             return db.GetData(sql);
         }
+        public DataTable GetTotalPurchase(string date)
+        {
+            string sql = "select sum(TotalAmount) as TotalPurchase from purchase_tbl where PurchaseDate='" + date + "'";
+            return db.GetData(sql);
+        }
 
     }
 }

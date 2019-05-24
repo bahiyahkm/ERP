@@ -168,7 +168,7 @@
         private System.Windows.Forms.DateTimePicker dtp2;
         private System.Windows.Forms.DataGridView dgvSalesReport;
         private System.Windows.Forms.Button BtnCancel;
-        private System.Windows.Forms.Button Show;
+        private new System.Windows.Forms.Button Show;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label LblMessage;
         private System.Windows.Forms.Button BtnExport;

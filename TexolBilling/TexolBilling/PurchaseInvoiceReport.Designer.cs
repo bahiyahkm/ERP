@@ -223,6 +223,7 @@
             this.MinimizeBox = false;
             this.Name = "PurchaseInvoiceReport";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.PurchaseInvoiceReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchaseInvoice)).EndInit();
             this.ResumeLayout(false);

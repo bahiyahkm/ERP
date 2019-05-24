@@ -34,6 +34,7 @@ namespace TexolBilling
         }
       public  void Bind()
         {
+           
             DataTable dt = objsalereport.GetSalesItemByDate(Convert.ToDateTime(dtpFrom.Value.ToString()), Convert.ToDateTime(dtp2.Value.ToString()));
             dgvSalesReport.DataSource = dt;
 

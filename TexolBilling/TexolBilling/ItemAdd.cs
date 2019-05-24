@@ -106,6 +106,9 @@ namespace TexolBilling
             this.Close();
         }
 
-       
+        private void ItemAdd_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

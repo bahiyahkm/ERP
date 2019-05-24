@@ -193,5 +193,21 @@ namespace TexolBilling
             this.Close();
             
         }
+
+        private void dailyReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f is DailyReport)
+                {
+                    f.Focus();
+                    return;
+                }
+            }
+            DailyReport objdailyreport = new DailyReport();
+           objdailyreport.MdiParent = this;
+            objdailyreport.Show();
+        }
     }
 }

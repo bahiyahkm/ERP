@@ -40,7 +40,7 @@
             this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.cbSPayMet = new System.Windows.Forms.ComboBox();
+            this.CmbPayMet = new System.Windows.Forms.ComboBox();
             this.CmbNameS = new System.Windows.Forms.ComboBox();
             this.dgvSales = new System.Windows.Forms.DataGridView();
             this.datetimepicker2 = new System.Windows.Forms.DateTimePicker();
@@ -156,16 +156,16 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "*";
             // 
-            // cbSPayMet
+            // CmbPayMet
             // 
-            this.cbSPayMet.FormattingEnabled = true;
-            this.cbSPayMet.Items.AddRange(new object[] {
+            this.CmbPayMet.FormattingEnabled = true;
+            this.CmbPayMet.Items.AddRange(new object[] {
             "Credit",
             "Debit"});
-            this.cbSPayMet.Location = new System.Drawing.Point(639, 108);
-            this.cbSPayMet.Name = "cbSPayMet";
-            this.cbSPayMet.Size = new System.Drawing.Size(149, 21);
-            this.cbSPayMet.TabIndex = 12;
+            this.CmbPayMet.Location = new System.Drawing.Point(639, 108);
+            this.CmbPayMet.Name = "CmbPayMet";
+            this.CmbPayMet.Size = new System.Drawing.Size(149, 21);
+            this.CmbPayMet.TabIndex = 12;
             // 
             // CmbNameS
             // 
@@ -308,7 +308,6 @@
             this.label2.Size = new System.Drawing.Size(158, 25);
             this.label2.TabIndex = 29;
             this.label2.Text = "Total Amount:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // lblTotal
             // 
@@ -378,7 +377,6 @@
             this.LblSubTotal.Size = new System.Drawing.Size(25, 25);
             this.LblSubTotal.TabIndex = 37;
             this.LblSubTotal.Text = "0";
-            this.LblSubTotal.Click += new System.EventHandler(this.LblSubTotal_Click);
             // 
             // label7
             // 
@@ -451,7 +449,7 @@
             this.Controls.Add(this.datetimepicker2);
             this.Controls.Add(this.dgvSales);
             this.Controls.Add(this.CmbNameS);
-            this.Controls.Add(this.cbSPayMet);
+            this.Controls.Add(this.CmbPayMet);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnSave);
             this.Controls.Add(this.txtSalesTranNo);
@@ -487,7 +485,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider4;
         private System.Windows.Forms.ErrorProvider errorProvider5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbSPayMet;
+        private System.Windows.Forms.ComboBox CmbPayMet;
         private System.Windows.Forms.ComboBox CmbNameS;
         private System.Windows.Forms.DataGridView dgvSales;
         private System.Windows.Forms.DateTimePicker datetimepicker2;

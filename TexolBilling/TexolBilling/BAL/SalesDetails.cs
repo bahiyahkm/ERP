@@ -66,6 +66,11 @@ namespace TexolBilling.BAL
             return db.GetData(sql);
 
         }
+        public DataTable GetTotalSale(string date)
+        {
+            string sql = "select sum(TotalAmount) as TotalSales from sales_tbl where SalesDate='"+date+"'";
+            return db.GetData(sql);
+        }
        
     }
 }

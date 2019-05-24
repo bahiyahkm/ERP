@@ -30,21 +30,29 @@ namespace TexolBilling
                 {
                     label6.Text = dgvSales.Rows.Count.ToString();
                     if (Convert.ToInt32(label6.Text)>1)
-                    { 
-
-                    int i = objsaledetails.InsertDataToSalesTbl(txtSalesTranNo.Text, datetimepicker2.Value.Date, Convert.ToInt32(CmbNameS.SelectedValue.ToString()),Convert.ToInt32(LblTax.Text), Convert.ToInt32(lblTotal.Text),Convert.ToInt32(LblSubTotal.Text));
+                    {
+                        int i = objsaledetails.InsertDataToSalesTbl(txtSalesTranNo.Text, datetimepicker2.Value.Date, Convert.ToInt32(CmbNameS.SelectedValue.ToString()),Convert.ToInt32(LblTax.Text), Convert.ToInt32(lblTotal.Text),Convert.ToInt32(LblSubTotal.Text));
                         if (i > 0)
                         {
                             MessageBox.Show(" Saved Succesfully");
                             SalesInvoiceReport objSReport = new SalesInvoiceReport();
                              objSReport.LblSalesTrno.Text = txtSalesTranNo.Text;
-                            
                              objSReport.LblTotalAmount.Text =lblTotal.Text;
                              objSReport.LblTaxAmount.Text = LblTax.Text;
                              objSReport.LblSubTotal.Text = LblSubTotal.Text;
-
-                           objSReport.Show();
+                            objSReport.Show();
                             clear();
+                            foreach (Form f in Application.OpenForms)
+                            {
+                                if (f is SalesInvoiceReport)
+                                {
+                                    f.Focus();
+                                    return;
+                                }
+                            }
+                            objSReport.MdiParent = this;
+                            
+
                         }
                         else
                         {
@@ -59,7 +67,7 @@ namespace TexolBilling
                 }
                 else
                 {
-
+                    MessageBox.Show("Please fill all the fields");
                 }
             }
             catch(Exception ex)
@@ -81,6 +89,7 @@ namespace TexolBilling
             LblPhno.Text = "ContactNo";
             CmbNameS.Text = "select CustomerName";
             CmbItemS.Text = "select Item";
+            CmbPayMet.Text = "";
             
 
         }
@@ -105,16 +114,16 @@ namespace TexolBilling
             {
                 errorProvider2.SetError(datetimepicker2, "");
             }
-            if (cbSPayMet.SelectedItem == null)
+            if (CmbPayMet.SelectedItem == null)
             {
-                errorProvider3.SetError(cbSPayMet, "Please select the Payment Method");
+                errorProvider3.SetError(CmbPayMet, "Please select the Payment Method");
                 isValid = false;
             }
             else
             {
-                errorProvider3.SetError(cbSPayMet, "");
+                errorProvider3.SetError(CmbPayMet, "");
             }
-            if (CmbNameS.SelectedItem == null)
+            if (CmbNameS.SelectedValue.ToString() =="0")
             {
                 errorProvider4.SetError(CmbNameS, "Please select the Name");
                 isValid = false;
@@ -140,7 +149,7 @@ namespace TexolBilling
         }
         private void Sales_Load(object sender, EventArgs e)
         {
-            label1.Text = dgvSales.Rows.Count.ToString();
+           // label1.Text = dgvSales.Rows.Count.ToString();
             CmbItemS.Items.Insert(0, "---Select--");
             CommonFunctions objcmn = new CommonFunctions();
             txtSalesTranNo.Text = objcmn.GenerateSaleTransaction();
@@ -250,17 +259,6 @@ namespace TexolBilling
                 txtPrice.Text = dt.Rows[0]["Rate"].ToString();
             }
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LblSubTotal_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtTax_TextChanged(object sender, EventArgs e)
         {
             CalculateTax();

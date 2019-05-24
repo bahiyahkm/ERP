@@ -31,42 +31,53 @@ namespace TexolBilling
 
                 if (Validation())
                 {
+                    if (Convert.ToInt32(dgvPurchase.Rows.Count) > 1)
                     {
-                     
-                        if (Convert.ToInt32(dgvPurchase.Rows.Count) > 1)
+                        int i = objprodetails.InsertDataToPurchaseTbl(txtPurchaseTNo.Text, dateTimePicker1.Value.Date, Convert.ToInt32(CmbName.SelectedValue.ToString()), Convert.ToInt32(LblTaxAmount.Text), Convert.ToInt32(lblTotal.Text), Convert.ToInt32(LblSubTotal.Text));
+                        if (i > 0)
                         {
-                            int i = objprodetails.InsertDataToPurchaseTbl(txtPurchaseTNo.Text, dateTimePicker1.Value.Date, Convert.ToInt32(CmbName.SelectedValue.ToString()), Convert.ToInt32(LblTaxAmount.Text), Convert.ToInt32(lblTotal.Text), Convert.ToInt32(LblSubTotal.Text));
-                            if (i > 0)
+                            MessageBox.Show(" Saved Succesfully");
+                            PurchaseInvoiceReport objPReport = new PurchaseInvoiceReport();
+                            objPReport.LblPurchaseTrNo.Text = txtPurchaseTNo.Text;
+                            objPReport.LblTotalAmount.Text = lblTotal.Text;
+                            objPReport.LblTaxAmount.Text = LblTaxAmount.Text;
+                            objPReport.LblSubTotal.Text = LblSubTotal.Text;
+                            objPReport.Show();
+                            clear();
+                            foreach (Form f in Application.OpenForms)
                             {
-                                MessageBox.Show(" Saved Succesfully");
-                                PurchaseInvoiceReport objPReport = new PurchaseInvoiceReport();
-                                objPReport.LblPurchaseTrNo.Text = txtPurchaseTNo.Text;
-                                objPReport.LblTotalAmount.Text = lblTotal.Text;
-                                objPReport.LblTaxAmount.Text = LblTaxAmount.Text;
-                                objPReport.LblSubTotal.Text = LblSubTotal.Text;
-                                objPReport.Show();
-                                clear();
+                                if (f is PurchaseInvoiceReport)
+                                {
+                                    f.Focus();
+                                    return;
+                                }
                             }
-                            else
-                            {
-                                MessageBox.Show("Saving Failed");
-                            }
+
+
+                            
+                            objPReport.MdiParent = this;
+                            
                         }
                         else
                         {
-                            MessageBox.Show("Please add the items");
+                            MessageBox.Show("Saving Failed");
                         }
                     }
+                    else
+                    {
+                        MessageBox.Show("Please add the items");
+                    }
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Please fill all the fields");
                 }
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Error-------------:" + ex.Message);
+                MessageBox.Show("Error:" + ex.Message);
             }
-               
-            
-            
-           
         }
         public void clear()
         {
@@ -75,12 +86,13 @@ namespace TexolBilling
             BindGrid();
             txtQuantity.Text = "0";
             txtPrice.Text = "0";
-            txtTax.Text = "0";
-            lblTotal.Text="0";
+             lblTotal.Text="0";
             CmbName.Text = "--select Vendor--";
             CmbItemName.Text = "--select Item--";
             LblAddress.Text = "Address";
             LblPhno.Text = "ContactNo";
+            CmbPayMet.Text = "";
+            
         }
         public bool Validation()
         {
@@ -93,7 +105,7 @@ namespace TexolBilling
             {
                 errorProvider1.SetError(txtPurchaseTNo, "");
             }
-            if (CmbName.SelectedItem == null)
+            if (CmbName.SelectedValue.ToString() == "0")
             {
                 errorProvider2.SetError(CmbName, "Please select a name");
             }
@@ -101,13 +113,13 @@ namespace TexolBilling
             {
                 errorProvider2.SetError(CmbName, "");
             }
-            if (CBPayMet.SelectedItem == null)
+            if (CmbPayMet.SelectedItem == null)
             {
-                errorProvider3.SetError(CBPayMet, "Please select a Payment Method");
+                errorProvider3.SetError(CmbPayMet, "Please select a Payment Method");
             }
             else
             {
-                errorProvider3.SetError(CBPayMet, "");
+                errorProvider3.SetError(CmbPayMet, "");
             }
             return isValid;
         }
@@ -117,6 +129,10 @@ namespace TexolBilling
         }
         private void Purchase_Load(object sender, EventArgs e)
         {
+          // label1.Text= dgvPurchase.Rows.Count.ToString();
+            CmbItemName.Items.Insert(0, "---Select--");
+            CommonFunctions objcmn = new CommonFunctions();
+            txtPurchaseTNo.Text = objcmn.GenerateRandomNo();
             Vendor vend = new Vendor();
             DataTable dt = vend.GetAllVendor();
             DataRow row = dt.NewRow();
@@ -126,7 +142,6 @@ namespace TexolBilling
             CmbName.DisplayMember = "VendorName";
             CmbName.ValueMember = "VendorId";
             CmbName.DataSource = dt;
-           
             Item itm = new Item();
             DataTable dt1 = itm.GetAllItem();
             DataRow row1 = dt1.NewRow();
@@ -137,8 +152,7 @@ namespace TexolBilling
             CmbItemName.ValueMember = "ItemId";
             CmbItemName.DataSource = dt1;
           
-            CommonFunctions objcmn = new CommonFunctions();
-            txtPurchaseTNo.Text = objcmn.GenerateRandomNo(); 
+           
         }
         private void CBName_SelectedIndexChanged(object sender, EventArgs e)
         {
