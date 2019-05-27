@@ -42,8 +42,8 @@
             this.customerReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itemReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.loToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dailyReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,37 +130,44 @@
             // purchaseReportToolStripMenuItem1
             // 
             this.purchaseReportToolStripMenuItem1.Name = "purchaseReportToolStripMenuItem1";
-            this.purchaseReportToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.purchaseReportToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
             this.purchaseReportToolStripMenuItem1.Text = "Purchase Report";
             this.purchaseReportToolStripMenuItem1.Click += new System.EventHandler(this.purchaseReportToolStripMenuItem1_Click);
             // 
             // salesReportToolStripMenuItem1
             // 
             this.salesReportToolStripMenuItem1.Name = "salesReportToolStripMenuItem1";
-            this.salesReportToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.salesReportToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
             this.salesReportToolStripMenuItem1.Text = "Sales Report";
             this.salesReportToolStripMenuItem1.Click += new System.EventHandler(this.salesReportToolStripMenuItem1_Click);
             // 
             // customerReportToolStripMenuItem
             // 
             this.customerReportToolStripMenuItem.Name = "customerReportToolStripMenuItem";
-            this.customerReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.customerReportToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.customerReportToolStripMenuItem.Text = "Customer Report";
             this.customerReportToolStripMenuItem.Click += new System.EventHandler(this.customerReportToolStripMenuItem_Click);
             // 
             // itemReportToolStripMenuItem
             // 
             this.itemReportToolStripMenuItem.Name = "itemReportToolStripMenuItem";
-            this.itemReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.itemReportToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.itemReportToolStripMenuItem.Text = "Item Report";
             this.itemReportToolStripMenuItem.Click += new System.EventHandler(this.itemReportToolStripMenuItem_Click);
             // 
             // vendorToolStripMenuItem1
             // 
             this.vendorToolStripMenuItem1.Name = "vendorToolStripMenuItem1";
-            this.vendorToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.vendorToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
             this.vendorToolStripMenuItem1.Text = " Vendor Report";
             this.vendorToolStripMenuItem1.Click += new System.EventHandler(this.vendorToolStripMenuItem1_Click);
+            // 
+            // dailyReportToolStripMenuItem
+            // 
+            this.dailyReportToolStripMenuItem.Name = "dailyReportToolStripMenuItem";
+            this.dailyReportToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.dailyReportToolStripMenuItem.Text = "Daily Report";
+            this.dailyReportToolStripMenuItem.Click += new System.EventHandler(this.dailyReportToolStripMenuItem_Click);
             // 
             // loToolStripMenuItem
             // 
@@ -168,13 +175,6 @@
             this.loToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.loToolStripMenuItem.Text = "Log out";
             this.loToolStripMenuItem.Click += new System.EventHandler(this.loToolStripMenuItem_Click);
-            // 
-            // dailyReportToolStripMenuItem
-            // 
-            this.dailyReportToolStripMenuItem.Name = "dailyReportToolStripMenuItem";
-            this.dailyReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.dailyReportToolStripMenuItem.Text = "Daily Report";
-            this.dailyReportToolStripMenuItem.Click += new System.EventHandler(this.dailyReportToolStripMenuItem_Click);
             // 
             // Biilling_System
             // 
@@ -188,6 +188,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Biilling_System";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Biilling_System_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

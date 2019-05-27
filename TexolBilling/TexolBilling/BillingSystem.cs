@@ -209,5 +209,10 @@ namespace TexolBilling
            objdailyreport.MdiParent = this;
             objdailyreport.Show();
         }
+
+        private void Biilling_System_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

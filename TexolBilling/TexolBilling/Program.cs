@@ -16,7 +16,7 @@ namespace TexolBilling
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Biilling_System());
+            Application.Run(new Login());
         }
     }
 }
