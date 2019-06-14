@@ -51,65 +51,81 @@
             // LblItemName
             // 
             this.LblItemName.AutoSize = true;
-            this.LblItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblItemName.Location = new System.Drawing.Point(29, 45);
+            this.LblItemName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LblItemName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblItemName.Location = new System.Drawing.Point(13, 26);
             this.LblItemName.Name = "LblItemName";
-            this.LblItemName.Size = new System.Drawing.Size(63, 13);
+            this.LblItemName.Size = new System.Drawing.Size(64, 13);
             this.LblItemName.TabIndex = 0;
-            this.LblItemName.Text = "ItemName";
+            this.LblItemName.Text = "Item Name";
             // 
             // LblQuantity
             // 
             this.LblQuantity.AutoSize = true;
-            this.LblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblQuantity.Location = new System.Drawing.Point(32, 105);
+            this.LblQuantity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LblQuantity.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblQuantity.Location = new System.Drawing.Point(16, 52);
             this.LblQuantity.Name = "LblQuantity";
-            this.LblQuantity.Size = new System.Drawing.Size(54, 13);
+            this.LblQuantity.Size = new System.Drawing.Size(52, 13);
             this.LblQuantity.TabIndex = 1;
             this.LblQuantity.Text = "Quantity";
             // 
             // LblRate
             // 
             this.LblRate.AutoSize = true;
-            this.LblRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRate.Location = new System.Drawing.Point(32, 176);
+            this.LblRate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LblRate.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRate.Location = new System.Drawing.Point(16, 78);
             this.LblRate.Name = "LblRate";
-            this.LblRate.Size = new System.Drawing.Size(34, 13);
+            this.LblRate.Size = new System.Drawing.Size(30, 13);
             this.LblRate.TabIndex = 2;
             this.LblRate.Text = "Rate";
             // 
             // TxtItemName
             // 
-            this.TxtItemName.Location = new System.Drawing.Point(111, 43);
+            this.TxtItemName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtItemName.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtItemName.Location = new System.Drawing.Point(95, 24);
+            this.TxtItemName.MaxLength = 100;
             this.TxtItemName.Name = "TxtItemName";
-            this.TxtItemName.Size = new System.Drawing.Size(162, 20);
+            this.TxtItemName.Size = new System.Drawing.Size(162, 22);
             this.TxtItemName.TabIndex = 3;
             // 
             // TxtQuantity
             // 
-            this.TxtQuantity.Location = new System.Drawing.Point(111, 103);
+            this.TxtQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtQuantity.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtQuantity.Location = new System.Drawing.Point(95, 50);
+            this.TxtQuantity.MaxLength = 10;
             this.TxtQuantity.Name = "TxtQuantity";
-            this.TxtQuantity.Size = new System.Drawing.Size(162, 20);
+            this.TxtQuantity.Size = new System.Drawing.Size(162, 22);
             this.TxtQuantity.TabIndex = 4;
+            this.TxtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtQuantity_KeyPress);
             // 
             // TxtRate
             // 
-            this.TxtRate.Location = new System.Drawing.Point(111, 174);
+            this.TxtRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtRate.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtRate.Location = new System.Drawing.Point(95, 76);
+            this.TxtRate.MaxLength = 10;
             this.TxtRate.Name = "TxtRate";
-            this.TxtRate.Size = new System.Drawing.Size(162, 20);
+            this.TxtRate.Size = new System.Drawing.Size(162, 22);
             this.TxtRate.TabIndex = 5;
+            this.TxtRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtRate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtRate_KeyPress);
             // 
             // BtnAddItem
             // 
-            this.BtnAddItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAddItem.Location = new System.Drawing.Point(111, 233);
+            this.BtnAddItem.BackColor = System.Drawing.Color.Peru;
+            this.BtnAddItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAddItem.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAddItem.Location = new System.Drawing.Point(64, 102);
             this.BtnAddItem.Name = "BtnAddItem";
-            this.BtnAddItem.Size = new System.Drawing.Size(75, 25);
+            this.BtnAddItem.Size = new System.Drawing.Size(54, 25);
             this.BtnAddItem.TabIndex = 6;
-            this.BtnAddItem.Text = "Add Item";
-            this.BtnAddItem.UseVisualStyleBackColor = true;
+            this.BtnAddItem.Text = "Add ";
+            this.BtnAddItem.UseVisualStyleBackColor = false;
             this.BtnAddItem.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // errorProvider1
@@ -129,7 +145,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(92, 44);
+            this.label1.Location = new System.Drawing.Point(76, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(13, 16);
             this.label1.TabIndex = 7;
@@ -140,7 +156,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(92, 103);
+            this.label2.Location = new System.Drawing.Point(76, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(13, 16);
             this.label2.TabIndex = 8;
@@ -151,7 +167,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(92, 175);
+            this.label3.Location = new System.Drawing.Point(76, 77);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(13, 16);
             this.label3.TabIndex = 9;
@@ -159,20 +175,23 @@
             // 
             // BtnCancel
             // 
-            this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancel.Location = new System.Drawing.Point(198, 233);
+            this.BtnCancel.BackColor = System.Drawing.Color.Peru;
+            this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancel.Location = new System.Drawing.Point(130, 102);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(75, 25);
             this.BtnCancel.TabIndex = 10;
             this.BtnCancel.Text = "Cancel";
-            this.BtnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.UseVisualStyleBackColor = false;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // ItemAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(308, 291);
+            this.BackColor = System.Drawing.Color.DarkOrange;
+            this.ClientSize = new System.Drawing.Size(271, 144);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

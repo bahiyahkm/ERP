@@ -69,132 +69,156 @@
             // VendorName
             // 
             this.VendorName.AutoSize = true;
-            this.VendorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VendorName.Location = new System.Drawing.Point(40, 23);
+            this.VendorName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VendorName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VendorName.Location = new System.Drawing.Point(29, 23);
             this.VendorName.Name = "VendorName";
-            this.VendorName.Size = new System.Drawing.Size(79, 13);
+            this.VendorName.Size = new System.Drawing.Size(78, 13);
             this.VendorName.TabIndex = 0;
-            this.VendorName.Text = "VendorName";
+            this.VendorName.Text = "Vendor Name";
             // 
             // VendorAddress
             // 
             this.VendorAddress.AutoSize = true;
-            this.VendorAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VendorAddress.Location = new System.Drawing.Point(40, 67);
+            this.VendorAddress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VendorAddress.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VendorAddress.Location = new System.Drawing.Point(29, 49);
             this.VendorAddress.Name = "VendorAddress";
-            this.VendorAddress.Size = new System.Drawing.Size(92, 13);
+            this.VendorAddress.Size = new System.Drawing.Size(89, 13);
             this.VendorAddress.TabIndex = 1;
-            this.VendorAddress.Text = "VendorAddress";
+            this.VendorAddress.Text = "Vendor Address";
             // 
             // VendorCity
             // 
             this.VendorCity.AutoSize = true;
-            this.VendorCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VendorCity.Location = new System.Drawing.Point(40, 110);
+            this.VendorCity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VendorCity.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VendorCity.Location = new System.Drawing.Point(29, 96);
             this.VendorCity.Name = "VendorCity";
-            this.VendorCity.Size = new System.Drawing.Size(68, 13);
+            this.VendorCity.Size = new System.Drawing.Size(67, 13);
             this.VendorCity.TabIndex = 2;
-            this.VendorCity.Text = "VendorCity";
+            this.VendorCity.Text = "Vendor City";
             // 
             // VendorState
             // 
             this.VendorState.AutoSize = true;
-            this.VendorState.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VendorState.Location = new System.Drawing.Point(40, 151);
+            this.VendorState.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VendorState.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VendorState.Location = new System.Drawing.Point(29, 122);
             this.VendorState.Name = "VendorState";
-            this.VendorState.Size = new System.Drawing.Size(77, 13);
+            this.VendorState.Size = new System.Drawing.Size(73, 13);
             this.VendorState.TabIndex = 3;
-            this.VendorState.Text = "VendorState";
+            this.VendorState.Text = "Vendor State";
             // 
             // VendorZipCode
             // 
             this.VendorZipCode.AutoSize = true;
-            this.VendorZipCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VendorZipCode.Location = new System.Drawing.Point(40, 194);
+            this.VendorZipCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VendorZipCode.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VendorZipCode.Location = new System.Drawing.Point(29, 152);
             this.VendorZipCode.Name = "VendorZipCode";
-            this.VendorZipCode.Size = new System.Drawing.Size(94, 13);
+            this.VendorZipCode.Size = new System.Drawing.Size(91, 13);
             this.VendorZipCode.TabIndex = 4;
-            this.VendorZipCode.Text = "VendorZipCode";
+            this.VendorZipCode.Text = "Vendor ZipCode";
             // 
             // VendorAreaCode
             // 
             this.VendorAreaCode.AutoSize = true;
-            this.VendorAreaCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VendorAreaCode.Location = new System.Drawing.Point(40, 236);
+            this.VendorAreaCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VendorAreaCode.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VendorAreaCode.Location = new System.Drawing.Point(29, 178);
             this.VendorAreaCode.Name = "VendorAreaCode";
-            this.VendorAreaCode.Size = new System.Drawing.Size(102, 13);
+            this.VendorAreaCode.Size = new System.Drawing.Size(98, 13);
             this.VendorAreaCode.TabIndex = 5;
-            this.VendorAreaCode.Text = "VendorAreaCode";
+            this.VendorAreaCode.Text = "Vendor AreaCode";
             // 
             // VendorPhoneNo
             // 
             this.VendorPhoneNo.AutoSize = true;
-            this.VendorPhoneNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VendorPhoneNo.Location = new System.Drawing.Point(42, 280);
+            this.VendorPhoneNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VendorPhoneNo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VendorPhoneNo.Location = new System.Drawing.Point(31, 207);
             this.VendorPhoneNo.Name = "VendorPhoneNo";
-            this.VendorPhoneNo.Size = new System.Drawing.Size(99, 13);
+            this.VendorPhoneNo.Size = new System.Drawing.Size(97, 13);
             this.VendorPhoneNo.TabIndex = 6;
-            this.VendorPhoneNo.Text = "VendorPhoneNo";
+            this.VendorPhoneNo.Text = "Vendor PhoneNo";
             // 
             // txtVname
             // 
-            this.txtVname.Location = new System.Drawing.Point(162, 23);
+            this.txtVname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtVname.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVname.Location = new System.Drawing.Point(146, 23);
             this.txtVname.Name = "txtVname";
-            this.txtVname.Size = new System.Drawing.Size(153, 20);
+            this.txtVname.Size = new System.Drawing.Size(153, 22);
             this.txtVname.TabIndex = 7;
             // 
             // txtVaddress
             // 
-            this.txtVaddress.Location = new System.Drawing.Point(162, 67);
+            this.txtVaddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtVaddress.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVaddress.Location = new System.Drawing.Point(146, 49);
+            this.txtVaddress.Multiline = true;
             this.txtVaddress.Name = "txtVaddress";
-            this.txtVaddress.Size = new System.Drawing.Size(153, 20);
+            this.txtVaddress.Size = new System.Drawing.Size(153, 41);
             this.txtVaddress.TabIndex = 8;
             // 
             // txtVcity
             // 
-            this.txtVcity.Location = new System.Drawing.Point(162, 110);
+            this.txtVcity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtVcity.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVcity.Location = new System.Drawing.Point(146, 96);
             this.txtVcity.Name = "txtVcity";
-            this.txtVcity.Size = new System.Drawing.Size(153, 20);
+            this.txtVcity.Size = new System.Drawing.Size(106, 22);
             this.txtVcity.TabIndex = 9;
             // 
             // txtVstate
             // 
-            this.txtVstate.Location = new System.Drawing.Point(162, 151);
+            this.txtVstate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtVstate.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVstate.Location = new System.Drawing.Point(146, 122);
             this.txtVstate.Name = "txtVstate";
-            this.txtVstate.Size = new System.Drawing.Size(153, 20);
+            this.txtVstate.Size = new System.Drawing.Size(106, 22);
             this.txtVstate.TabIndex = 10;
             // 
             // txtVzipcode
             // 
-            this.txtVzipcode.Location = new System.Drawing.Point(162, 190);
+            this.txtVzipcode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtVzipcode.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVzipcode.Location = new System.Drawing.Point(146, 148);
             this.txtVzipcode.Name = "txtVzipcode";
-            this.txtVzipcode.Size = new System.Drawing.Size(153, 20);
+            this.txtVzipcode.Size = new System.Drawing.Size(153, 22);
             this.txtVzipcode.TabIndex = 11;
             // 
             // txtVareacode
             // 
-            this.txtVareacode.Location = new System.Drawing.Point(162, 232);
+            this.txtVareacode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtVareacode.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVareacode.Location = new System.Drawing.Point(146, 174);
             this.txtVareacode.Name = "txtVareacode";
-            this.txtVareacode.Size = new System.Drawing.Size(153, 20);
+            this.txtVareacode.Size = new System.Drawing.Size(153, 22);
             this.txtVareacode.TabIndex = 12;
             // 
             // txtVphoneno
             // 
-            this.txtVphoneno.Location = new System.Drawing.Point(162, 273);
+            this.txtVphoneno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtVphoneno.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVphoneno.Location = new System.Drawing.Point(146, 200);
             this.txtVphoneno.Name = "txtVphoneno";
-            this.txtVphoneno.Size = new System.Drawing.Size(153, 20);
+            this.txtVphoneno.Size = new System.Drawing.Size(153, 22);
             this.txtVphoneno.TabIndex = 13;
             this.txtVphoneno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVphoneno_KeyPress);
             // 
             // BtnAdd
             // 
-            this.BtnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAdd.Location = new System.Drawing.Point(130, 325);
+            this.BtnAdd.BackColor = System.Drawing.Color.ForestGreen;
+            this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAdd.Location = new System.Drawing.Point(87, 230);
             this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(91, 23);
+            this.BtnAdd.Size = new System.Drawing.Size(57, 23);
             this.BtnAdd.TabIndex = 14;
-            this.BtnAdd.Text = "Add Vendor";
-            this.BtnAdd.UseVisualStyleBackColor = true;
+            this.BtnAdd.Text = "Add";
+            this.BtnAdd.UseVisualStyleBackColor = false;
             this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // errorProvider1
@@ -230,7 +254,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(142, 280);
+            this.label4.Location = new System.Drawing.Point(123, 203);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(17, 24);
             this.label4.TabIndex = 18;
@@ -241,7 +265,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(140, 236);
+            this.label1.Location = new System.Drawing.Point(124, 178);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(17, 24);
             this.label1.TabIndex = 19;
@@ -252,7 +276,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(140, 194);
+            this.label2.Location = new System.Drawing.Point(124, 152);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(17, 24);
             this.label2.TabIndex = 20;
@@ -263,7 +287,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(140, 23);
+            this.label3.Location = new System.Drawing.Point(124, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(17, 24);
             this.label3.TabIndex = 21;
@@ -279,20 +303,23 @@
             // 
             // BtnCancel
             // 
-            this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancel.Location = new System.Drawing.Point(227, 325);
+            this.BtnCancel.BackColor = System.Drawing.Color.ForestGreen;
+            this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancel.Location = new System.Drawing.Point(150, 230);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(56, 23);
             this.BtnCancel.TabIndex = 23;
             this.BtnCancel.Text = "Cancel";
-            this.BtnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.UseVisualStyleBackColor = false;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // AddVendor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 368);
+            this.BackColor = System.Drawing.Color.LimeGreen;
+            this.ClientSize = new System.Drawing.Size(310, 258);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.label3);
@@ -317,6 +344,7 @@
             this.Name = "AddVendor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vendor";
+            this.Load += new System.EventHandler(this.AddVendor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();

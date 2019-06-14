@@ -31,7 +31,7 @@ namespace TexolBilling.BAL
             int i= db.InsertData(sql);
             return i;
         }
-        public int InsertPurchaseItem(string purchasetno, int itemid, int rate, int quantity)
+        public int InsertPurchaseItem(string purchasetno, int itemid, decimal rate, int quantity)
         {
             string sql = "insert into purchaseitem_tbl(PurchaseTransactionNo,ItemId,Rate,Quantity) values('" + purchasetno + "'," + itemid + "," + rate + "," + quantity + ")";
             int i = db.InsertData(sql);
@@ -42,7 +42,7 @@ namespace TexolBilling.BAL
            string sql = "select  item_tbl.ItemName,purchaseitem_tbl.Rate,purchaseitem_tbl.Quantity,(purchaseitem_tbl.Rate*purchaseitem_tbl.Quantity) as TotalAmount from item_tbl inner join purchaseitem_tbl on purchaseitem_tbl.ItemId=item_tbl.ItemId where purchaseitem_tbl.PurchaseTransactionNo='" + TransactionNo+"'";
             return db.GetData(sql);
         }
-        public int InsertDataToPurchaseTbl(string purchaseTrno,DateTime date,int vendorid,int tax,int tamount,int subtotal)
+        public int InsertDataToPurchaseTbl(string purchaseTrno,DateTime date,int vendorid,decimal tax,decimal tamount,decimal subtotal)
         {
             string sql = "insert into purchase_tbl(PurchaseTransactionNo,PurchaseDate,VendorId,TaxAmount,TotalAmount,SubTotal) values('"+ purchaseTrno+"','"+date+"',"+vendorid+","+tax+","+tamount+","+subtotal+") ";
             int i = db.InsertData(sql);

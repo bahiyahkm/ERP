@@ -133,5 +133,10 @@ namespace TexolBilling
         {
             v.digitonly(e);
         }
+
+        private void AddVendor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

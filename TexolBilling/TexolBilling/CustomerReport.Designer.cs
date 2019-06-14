@@ -37,6 +37,7 @@
             // 
             // dgvCustomerReport
             // 
+            this.dgvCustomerReport.BackgroundColor = System.Drawing.Color.Goldenrod;
             this.dgvCustomerReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCustomerReport.Location = new System.Drawing.Point(22, 113);
             this.dgvCustomerReport.Name = "dgvCustomerReport";
@@ -45,42 +46,49 @@
             // 
             // BtnShowCust
             // 
-            this.BtnShowCust.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnShowCust.Location = new System.Drawing.Point(288, 52);
+            this.BtnShowCust.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.BtnShowCust.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnShowCust.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnShowCust.Location = new System.Drawing.Point(22, 82);
             this.BtnShowCust.Name = "BtnShowCust";
-            this.BtnShowCust.Size = new System.Drawing.Size(262, 41);
+            this.BtnShowCust.Size = new System.Drawing.Size(168, 25);
             this.BtnShowCust.TabIndex = 13;
             this.BtnShowCust.Text = "Show Customer Details";
-            this.BtnShowCust.UseVisualStyleBackColor = true;
+            this.BtnShowCust.UseVisualStyleBackColor = false;
             this.BtnShowCust.Click += new System.EventHandler(this.BtnShowCust_Click);
             // 
             // BtnCancel
             // 
-            this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancel.Location = new System.Drawing.Point(651, 356);
+            this.BtnCancel.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancel.Location = new System.Drawing.Point(646, 356);
             this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(67, 23);
+            this.BtnCancel.Size = new System.Drawing.Size(69, 31);
             this.BtnCancel.TabIndex = 17;
             this.BtnCancel.Text = "Cancel";
-            this.BtnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.UseVisualStyleBackColor = false;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // BtnExport
             // 
-            this.BtnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnExport.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.BtnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnExport.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExport.Location = new System.Drawing.Point(569, 356);
             this.BtnExport.Name = "BtnExport";
-            this.BtnExport.Size = new System.Drawing.Size(67, 23);
+            this.BtnExport.Size = new System.Drawing.Size(61, 31);
             this.BtnExport.TabIndex = 18;
             this.BtnExport.Text = "Export";
-            this.BtnExport.UseVisualStyleBackColor = true;
+            this.BtnExport.UseVisualStyleBackColor = false;
             this.BtnExport.Click += new System.EventHandler(this.BtnExport_Click);
             // 
             // CustomerReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(773, 387);
+            this.BackColor = System.Drawing.Color.Goldenrod;
+            this.ClientSize = new System.Drawing.Size(773, 391);
             this.Controls.Add(this.BtnExport);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.dgvCustomerReport);

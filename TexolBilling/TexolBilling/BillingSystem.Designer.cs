@@ -73,22 +73,22 @@
             // addItemToolStripMenuItem1
             // 
             this.addItemToolStripMenuItem1.Name = "addItemToolStripMenuItem1";
-            this.addItemToolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
-            this.addItemToolStripMenuItem1.Text = "Add Item";
+            this.addItemToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
+            this.addItemToolStripMenuItem1.Text = " Item Master";
             this.addItemToolStripMenuItem1.Click += new System.EventHandler(this.addItemToolStripMenuItem1_Click);
             // 
             // addVendorToolStripMenuItem1
             // 
             this.addVendorToolStripMenuItem1.Name = "addVendorToolStripMenuItem1";
-            this.addVendorToolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
-            this.addVendorToolStripMenuItem1.Text = "Add Vendor";
+            this.addVendorToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
+            this.addVendorToolStripMenuItem1.Text = " Vendor Master";
             this.addVendorToolStripMenuItem1.Click += new System.EventHandler(this.addVendorToolStripMenuItem1_Click);
             // 
             // addCustomerToolStripMenuItem1
             // 
             this.addCustomerToolStripMenuItem1.Name = "addCustomerToolStripMenuItem1";
-            this.addCustomerToolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
-            this.addCustomerToolStripMenuItem1.Text = "Add Customer";
+            this.addCustomerToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
+            this.addCustomerToolStripMenuItem1.Text = " Customer Master";
             this.addCustomerToolStripMenuItem1.Click += new System.EventHandler(this.addCustomerToolStripMenuItem1_Click);
             // 
             // authorsToolStripMenuItem
@@ -180,13 +180,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1348, 733);
+            this.ClientSize = new System.Drawing.Size(1348, 735);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Biilling_System";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Biilling_System";
+            this.Text = "Billing System";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Biilling_System_Load);
             this.menuStrip1.ResumeLayout(false);

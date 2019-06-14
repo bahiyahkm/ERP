@@ -37,20 +37,22 @@
             // ToDateS
             // 
             this.ToDateS.AutoSize = true;
-            this.ToDateS.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToDateS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ToDateS.Font = new System.Drawing.Font("Segoe UI Semibold", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ToDateS.Location = new System.Drawing.Point(59, 222);
             this.ToDateS.Name = "ToDateS";
-            this.ToDateS.Size = new System.Drawing.Size(216, 42);
+            this.ToDateS.Size = new System.Drawing.Size(196, 50);
             this.ToDateS.TabIndex = 4;
             this.ToDateS.Text = "TotalSales:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(34, 128);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(284, 42);
+            this.label1.Size = new System.Drawing.Size(263, 50);
             this.label1.TabIndex = 5;
             this.label1.Text = "TotalPurchase:";
             // 
@@ -76,6 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Salmon;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.LblTotalSale);
             this.Controls.Add(this.LblTotalPurchase);

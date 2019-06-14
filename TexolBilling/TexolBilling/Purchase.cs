@@ -33,7 +33,7 @@ namespace TexolBilling
                 {
                     if (Convert.ToInt32(dgvPurchase.Rows.Count) > 1)
                     {
-                        int i = objprodetails.InsertDataToPurchaseTbl(txtPurchaseTNo.Text, dateTimePicker1.Value.Date, Convert.ToInt32(CmbName.SelectedValue.ToString()), Convert.ToInt32(LblTaxAmount.Text), Convert.ToInt32(lblTotal.Text), Convert.ToInt32(LblSubTotal.Text));
+                        int i = objprodetails.InsertDataToPurchaseTbl(txtPurchaseTNo.Text, dateTimePicker1.Value.Date, Convert.ToInt32(CmbName.SelectedValue.ToString()), Convert.ToDecimal(LblTaxAmount.Text), Convert.ToDecimal(lblTotal.Text), Convert.ToDecimal(LblSubTotal.Text));
                         if (i > 0)
                         {
                             MessageBox.Show(" Saved Succesfully");
@@ -87,11 +87,13 @@ namespace TexolBilling
             txtQuantity.Text = "0";
             txtPrice.Text = "0";
              lblTotal.Text="0";
+            LblTaxAmount.Text = "0";
+            LblSubTotal.Text = "0";
             CmbName.Text = "--select Vendor--";
             CmbItemName.Text = "--select Item--";
             LblAddress.Text = "Address";
             LblPhno.Text = "ContactNo";
-            CmbPayMet.Text = "";
+            CmbPayMet.Text = "--select payment--";
             
         }
         public bool Validation()
@@ -175,8 +177,10 @@ namespace TexolBilling
         }
         public void CalculateTax()
         {
-           LblTaxAmount.Text = ((Convert.ToInt32(lblTotal.Text) * Convert.ToInt32(txtTax.Text) / 100)).ToString();
-            LblSubTotal.Text = (Convert.ToInt32(lblTotal.Text) + Convert.ToInt32(LblTaxAmount.Text)).ToString();
+            decimal tax = ((Convert.ToDecimal(lblTotal.Text) * Convert.ToDecimal(txtTax.Text) / 100));
+           LblTaxAmount.Text = tax.ToString();
+            decimal subtotoal = (Convert.ToDecimal(lblTotal.Text) + Convert.ToDecimal(LblTaxAmount.Text));
+            LblSubTotal.Text =subtotoal.ToString();
         }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
@@ -188,7 +192,8 @@ namespace TexolBilling
                 {
                     LblMessage.Text = dt.Rows[0]["Quantity"].ToString();
                 }
-              lblTotal.Text = (Convert.ToInt32(lblTotal.Text) + (Convert.ToInt32(txtPrice.Text) * Convert.ToInt32(txtQuantity.Text))).ToString();
+                decimal total = (Convert.ToDecimal(lblTotal.Text) + (Convert.ToDecimal(txtPrice.Text) * Convert.ToInt32(txtQuantity.Text)));
+              lblTotal.Text = total.ToString();
                 CalculateTax();
                     string PurchaseTrNo = txtPurchaseTNo.Text;
                     int ItemId = Convert.ToInt32(CmbItemName.SelectedValue);
@@ -199,7 +204,7 @@ namespace TexolBilling
                     }
                     else
                     {
-                        int i = objprodetails.InsertPurchaseItem(txtPurchaseTNo.Text, Convert.ToInt32(CmbItemName.SelectedValue.ToString()), Convert.ToInt32(txtPrice.Text), Convert.ToInt32(txtQuantity.Text));
+                        int i = objprodetails.InsertPurchaseItem(txtPurchaseTNo.Text, Convert.ToInt32(CmbItemName.SelectedValue.ToString()), Convert.ToDecimal(txtPrice.Text), Convert.ToInt32(txtQuantity.Text));
                         int j = itm.UpdatePurchaseQuantity(Convert.ToInt32(ItemId), Convert.ToInt32(txtQuantity.Text));
                     }
                                
@@ -223,6 +228,8 @@ namespace TexolBilling
         {
             CalculateTax();
         }
+
+      
     }
     }
 

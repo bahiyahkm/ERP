@@ -44,49 +44,58 @@
             // UserName
             // 
             this.UserName.AutoSize = true;
-            this.UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserName.Location = new System.Drawing.Point(42, 36);
+            this.UserName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UserName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserName.Location = new System.Drawing.Point(11, 15);
             this.UserName.Name = "UserName";
-            this.UserName.Size = new System.Drawing.Size(65, 13);
+            this.UserName.Size = new System.Drawing.Size(64, 13);
             this.UserName.TabIndex = 0;
-            this.UserName.Text = "UserName";
+            this.UserName.Text = "User Name";
             // 
             // Password
             // 
             this.Password.AutoSize = true;
-            this.Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Password.Location = new System.Drawing.Point(42, 97);
+            this.Password.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Password.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Password.Location = new System.Drawing.Point(15, 41);
             this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(61, 13);
+            this.Password.Size = new System.Drawing.Size(57, 13);
             this.Password.TabIndex = 1;
             this.Password.Text = "Password";
             // 
             // TxtUserName
             // 
+            this.TxtUserName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtUserName.CausesValidation = false;
-            this.TxtUserName.Location = new System.Drawing.Point(113, 33);
+            this.TxtUserName.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtUserName.Location = new System.Drawing.Point(82, 12);
             this.TxtUserName.Name = "TxtUserName";
-            this.TxtUserName.Size = new System.Drawing.Size(129, 20);
+            this.TxtUserName.Size = new System.Drawing.Size(164, 22);
             this.TxtUserName.TabIndex = 2;
+            this.TxtUserName.TextChanged += new System.EventHandler(this.TxtUserName_TextChanged);
             this.TxtUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtUserName_KeyPress);
             // 
             // TxtPassword
             // 
-            this.TxtPassword.Location = new System.Drawing.Point(109, 94);
+            this.TxtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPassword.Location = new System.Drawing.Point(82, 38);
             this.TxtPassword.Name = "TxtPassword";
-            this.TxtPassword.Size = new System.Drawing.Size(129, 20);
+            this.TxtPassword.Size = new System.Drawing.Size(164, 22);
             this.TxtPassword.TabIndex = 3;
             this.TxtPassword.UseSystemPasswordChar = true;
             // 
             // BtnSignIn
             // 
-            this.BtnSignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSignIn.Location = new System.Drawing.Point(55, 138);
+            this.BtnSignIn.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.BtnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSignIn.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSignIn.Location = new System.Drawing.Point(48, 64);
             this.BtnSignIn.Name = "BtnSignIn";
-            this.BtnSignIn.Size = new System.Drawing.Size(76, 23);
+            this.BtnSignIn.Size = new System.Drawing.Size(64, 28);
             this.BtnSignIn.TabIndex = 4;
             this.BtnSignIn.Text = "Sign In";
-            this.BtnSignIn.UseVisualStyleBackColor = true;
+            this.BtnSignIn.UseVisualStyleBackColor = false;
             this.BtnSignIn.Click += new System.EventHandler(this.BtnSignIn_Click);
             // 
             // errorProvider1
@@ -99,20 +108,24 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(146, 138);
+            this.button1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(118, 64);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 23);
+            this.button1.Size = new System.Drawing.Size(63, 28);
             this.button1.TabIndex = 5;
             this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(266, 204);
+            this.BackColor = System.Drawing.Color.DodgerBlue;
+            this.ClientSize = new System.Drawing.Size(257, 105);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnSignIn);
             this.Controls.Add(this.TxtPassword);

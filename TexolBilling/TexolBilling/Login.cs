@@ -78,5 +78,10 @@ namespace TexolBilling
         {
             v.charonly(e);
         }
+
+        private void TxtUserName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

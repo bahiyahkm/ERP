@@ -153,6 +153,16 @@ namespace TexolBilling
         {
             v.digitonly(e);
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Customer_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -56,5 +56,10 @@ namespace TexolBilling
             CR.Select();
             xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
         }
+
+        private void VendorReport_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

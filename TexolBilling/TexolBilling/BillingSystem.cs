@@ -191,6 +191,7 @@ namespace TexolBilling
         private void loToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
             
         }
 
